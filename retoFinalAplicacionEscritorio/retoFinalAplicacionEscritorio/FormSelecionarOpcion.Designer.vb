@@ -65,6 +65,8 @@ Partial Class FormSelecionarOpcion
 		Me.Controls.Add(Me.Button3)
 		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.Button1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = False
 		Me.Name = "FormSelecionarOpcion"
 		Me.Text = "Opciones"
 		Me.ResumeLayout(False)

@@ -73,6 +73,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormGestionarAlojamientos.Designer.vb">
+      <DependentUpon>FormGestionarAlojamientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionarAlojamientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionarReservas.Designer.vb">
+      <DependentUpon>FormGestionarReservas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionarReservas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionarUsuarios.Designer.vb">
+      <DependentUpon>FormGestionarUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGestionarUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormSelecionarOpcion.Designer.vb">
       <DependentUpon>FormSelecionarOpcion.vb</DependentUpon>
     </Compile>
@@ -103,6 +121,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormGestionarAlojamientos.resx">
+      <DependentUpon>FormGestionarAlojamientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionarReservas.resx">
+      <DependentUpon>FormGestionarReservas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionarUsuarios.resx">
+      <DependentUpon>FormGestionarUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSelecionarOpcion.resx">
       <DependentUpon>FormSelecionarOpcion.vb</DependentUpon>
     </EmbeddedResource>

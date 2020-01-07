@@ -26,8 +26,8 @@ Partial Class FormInicioSesion
 		Me.TextBox2 = New System.Windows.Forms.TextBox()
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
+		Me.iniciarSesion = New System.Windows.Forms.Button()
+		Me.cancelar = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'TextBox1
@@ -67,35 +67,37 @@ Partial Class FormInicioSesion
 		Me.Label2.TabIndex = 3
 		Me.Label2.Text = "Contraseña:"
 		'
-		'Button1
+		'iniciarSesion
 		'
-		Me.Button1.Location = New System.Drawing.Point(230, 278)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(97, 23)
-		Me.Button1.TabIndex = 4
-		Me.Button1.Text = "Iniciar Sesion"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.iniciarSesion.Location = New System.Drawing.Point(230, 278)
+		Me.iniciarSesion.Name = "iniciarSesion"
+		Me.iniciarSesion.Size = New System.Drawing.Size(97, 23)
+		Me.iniciarSesion.TabIndex = 4
+		Me.iniciarSesion.Text = "Iniciar Sesion"
+		Me.iniciarSesion.UseVisualStyleBackColor = True
 		'
-		'Button2
+		'cancelar
 		'
-		Me.Button2.Location = New System.Drawing.Point(51, 278)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(97, 23)
-		Me.Button2.TabIndex = 5
-		Me.Button2.Text = "Cancelar"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.cancelar.Location = New System.Drawing.Point(51, 278)
+		Me.cancelar.Name = "cancelar"
+		Me.cancelar.Size = New System.Drawing.Size(97, 23)
+		Me.cancelar.TabIndex = 5
+		Me.cancelar.Text = "Cancelar"
+		Me.cancelar.UseVisualStyleBackColor = True
 		'
 		'FormInicioSesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(378, 366)
-		Me.Controls.Add(Me.Button2)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.cancelar)
+		Me.Controls.Add(Me.iniciarSesion)
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.TextBox2)
 		Me.Controls.Add(Me.TextBox1)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = False
 		Me.Name = "FormInicioSesion"
 		Me.Text = "Iniciar Sesion"
 		Me.ResumeLayout(False)
@@ -107,6 +109,6 @@ Partial Class FormInicioSesion
 	Friend WithEvents TextBox2 As TextBox
 	Friend WithEvents Label1 As Label
 	Friend WithEvents Label2 As Label
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button2 As Button
+	Friend WithEvents iniciarSesion As Button
+	Friend WithEvents cancelar As Button
 End Class
