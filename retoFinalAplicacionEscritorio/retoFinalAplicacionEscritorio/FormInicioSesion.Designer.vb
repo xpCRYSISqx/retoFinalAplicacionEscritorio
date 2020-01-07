@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class FormInicioSesion
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -85,7 +85,7 @@ Partial Class Form1
 		Me.Button2.Text = "Cancelar"
 		Me.Button2.UseVisualStyleBackColor = True
 		'
-		'Form1
+		'FormInicioSesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -96,8 +96,8 @@ Partial Class Form1
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.TextBox2)
 		Me.Controls.Add(Me.TextBox1)
-		Me.Name = "Form1"
-		Me.Text = "Form1"
+		Me.Name = "FormInicioSesion"
+		Me.Text = "Iniciar Sesion"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
