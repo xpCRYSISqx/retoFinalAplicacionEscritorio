@@ -57,7 +57,7 @@ Partial Class SelecionarOpcion
 		Me.Button3.Text = "Gestionar Reservas"
 		Me.Button3.UseVisualStyleBackColor = True
 		'
-		'FormSelecionarOpcion
+		'SelecionarOpcion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -67,7 +67,7 @@ Partial Class SelecionarOpcion
 		Me.Controls.Add(Me.Button1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
-		Me.Name = "FormSelecionarOpcion"
+		Me.Name = "SelecionarOpcion"
 		Me.Text = "Opciones"
 		Me.ResumeLayout(False)
 

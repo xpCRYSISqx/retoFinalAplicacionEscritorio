@@ -130,6 +130,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DetallesAlojamiento.resx">
+      <DependentUpon>DetallesAlojamiento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionarAlojamientos.resx">
       <DependentUpon>GestionarAlojamientos.vb</DependentUpon>
     </EmbeddedResource>

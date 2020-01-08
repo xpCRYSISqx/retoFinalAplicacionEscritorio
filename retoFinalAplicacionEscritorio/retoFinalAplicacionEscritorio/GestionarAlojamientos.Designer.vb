@@ -25,6 +25,7 @@ Partial Class GestionarAlojamientos
 		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.ListBox1 = New System.Windows.Forms.ListBox()
 		Me.Button1 = New System.Windows.Forms.Button()
+		Me.Button2 = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'ComboBox1
@@ -33,7 +34,7 @@ Partial Class GestionarAlojamientos
 		Me.ComboBox1.FormattingEnabled = True
 		Me.ComboBox1.Location = New System.Drawing.Point(47, 41)
 		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+		Me.ComboBox1.Size = New System.Drawing.Size(163, 21)
 		Me.ComboBox1.TabIndex = 0
 		'
 		'ListBox1
@@ -46,23 +47,33 @@ Partial Class GestionarAlojamientos
 		'
 		'Button1
 		'
-		Me.Button1.Location = New System.Drawing.Point(47, 114)
+		Me.Button1.Location = New System.Drawing.Point(69, 93)
 		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(75, 23)
+		Me.Button1.Size = New System.Drawing.Size(121, 23)
 		Me.Button1.TabIndex = 2
-		Me.Button1.Text = "Button1"
+		Me.Button1.Text = "Filtrar"
 		Me.Button1.UseVisualStyleBackColor = True
 		'
-		'FormGestionarAlojamientos
+		'Button2
+		'
+		Me.Button2.Location = New System.Drawing.Point(47, 386)
+		Me.Button2.Name = "Button2"
+		Me.Button2.Size = New System.Drawing.Size(75, 23)
+		Me.Button2.TabIndex = 3
+		Me.Button2.Text = "Atras"
+		Me.Button2.UseVisualStyleBackColor = True
+		'
+		'GestionarAlojamientos
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(800, 450)
+		Me.ClientSize = New System.Drawing.Size(561, 450)
+		Me.Controls.Add(Me.Button2)
 		Me.Controls.Add(Me.Button1)
 		Me.Controls.Add(Me.ListBox1)
 		Me.Controls.Add(Me.ComboBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Name = "FormGestionarAlojamientos"
+		Me.Name = "GestionarAlojamientos"
 		Me.Text = "Gestion de alojamientos"
 		Me.ResumeLayout(False)
 
@@ -71,4 +82,5 @@ Partial Class GestionarAlojamientos
 	Friend WithEvents ComboBox1 As ComboBox
 	Friend WithEvents ListBox1 As ListBox
 	Friend WithEvents Button1 As Button
+	Friend WithEvents Button2 As Button
 End Class
