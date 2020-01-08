@@ -19,7 +19,7 @@ Public Class GestionarAlojamientos
 		ListBox1.DisplayMember = "documentname"
 	End Sub
 
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles filtrar.Click
 		Dim adapter As New MySqlDataAdapter("SELECT `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
 		Dim tabla As New DataTable()
 
@@ -28,7 +28,7 @@ Public Class GestionarAlojamientos
 		ListBox1.DisplayMember = "documentname"
 	End Sub
 
-	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles atras.Click
 		SelecionarOpcion.Show()
 		Me.Hide()
 	End Sub

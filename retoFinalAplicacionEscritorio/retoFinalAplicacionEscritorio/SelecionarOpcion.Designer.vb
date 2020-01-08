@@ -22,49 +22,49 @@ Partial Class SelecionarOpcion
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
-		Me.Button3 = New System.Windows.Forms.Button()
+		Me.usuarios = New System.Windows.Forms.Button()
+		Me.alojamientos = New System.Windows.Forms.Button()
+		Me.reservas = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
-		'Button1
+		'usuarios
 		'
-		Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button1.Location = New System.Drawing.Point(91, 76)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(190, 23)
-		Me.Button1.TabIndex = 0
-		Me.Button1.Text = "Gestionar Usuarios"
-		Me.Button1.UseVisualStyleBackColor = False
+		Me.usuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.usuarios.Location = New System.Drawing.Point(91, 76)
+		Me.usuarios.Name = "usuarios"
+		Me.usuarios.Size = New System.Drawing.Size(190, 23)
+		Me.usuarios.TabIndex = 0
+		Me.usuarios.Text = "Gestionar Usuarios"
+		Me.usuarios.UseVisualStyleBackColor = False
 		'
-		'Button2
+		'alojamientos
 		'
-		Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button2.Location = New System.Drawing.Point(91, 130)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(190, 23)
-		Me.Button2.TabIndex = 1
-		Me.Button2.Text = "Gestionar Alojamientos"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.alojamientos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.alojamientos.Location = New System.Drawing.Point(91, 130)
+		Me.alojamientos.Name = "alojamientos"
+		Me.alojamientos.Size = New System.Drawing.Size(190, 23)
+		Me.alojamientos.TabIndex = 1
+		Me.alojamientos.Text = "Gestionar Alojamientos"
+		Me.alojamientos.UseVisualStyleBackColor = True
 		'
-		'Button3
+		'reservas
 		'
-		Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Button3.Location = New System.Drawing.Point(91, 183)
-		Me.Button3.Name = "Button3"
-		Me.Button3.Size = New System.Drawing.Size(190, 23)
-		Me.Button3.TabIndex = 2
-		Me.Button3.Text = "Gestionar Reservas"
-		Me.Button3.UseVisualStyleBackColor = True
+		Me.reservas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.reservas.Location = New System.Drawing.Point(91, 183)
+		Me.reservas.Name = "reservas"
+		Me.reservas.Size = New System.Drawing.Size(190, 23)
+		Me.reservas.TabIndex = 2
+		Me.reservas.Text = "Gestionar Reservas"
+		Me.reservas.UseVisualStyleBackColor = True
 		'
 		'SelecionarOpcion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(378, 299)
-		Me.Controls.Add(Me.Button3)
-		Me.Controls.Add(Me.Button2)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.reservas)
+		Me.Controls.Add(Me.alojamientos)
+		Me.Controls.Add(Me.usuarios)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
 		Me.Name = "SelecionarOpcion"
@@ -73,7 +73,7 @@ Partial Class SelecionarOpcion
 
 	End Sub
 
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button2 As Button
-	Friend WithEvents Button3 As Button
+	Friend WithEvents usuarios As Button
+	Friend WithEvents alojamientos As Button
+	Friend WithEvents reservas As Button
 End Class

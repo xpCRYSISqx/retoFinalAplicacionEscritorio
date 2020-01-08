@@ -24,8 +24,8 @@ Partial Class GestionarAlojamientos
 	Private Sub InitializeComponent()
 		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.ListBox1 = New System.Windows.Forms.ListBox()
-		Me.Button1 = New System.Windows.Forms.Button()
-		Me.Button2 = New System.Windows.Forms.Button()
+		Me.filtrar = New System.Windows.Forms.Button()
+		Me.atras = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'ComboBox1
@@ -45,31 +45,31 @@ Partial Class GestionarAlojamientos
 		Me.ListBox1.Size = New System.Drawing.Size(229, 368)
 		Me.ListBox1.TabIndex = 1
 		'
-		'Button1
+		'filtrar
 		'
-		Me.Button1.Location = New System.Drawing.Point(69, 93)
-		Me.Button1.Name = "Button1"
-		Me.Button1.Size = New System.Drawing.Size(121, 23)
-		Me.Button1.TabIndex = 2
-		Me.Button1.Text = "Filtrar"
-		Me.Button1.UseVisualStyleBackColor = True
+		Me.filtrar.Location = New System.Drawing.Point(69, 93)
+		Me.filtrar.Name = "filtrar"
+		Me.filtrar.Size = New System.Drawing.Size(121, 23)
+		Me.filtrar.TabIndex = 2
+		Me.filtrar.Text = "Filtrar"
+		Me.filtrar.UseVisualStyleBackColor = True
 		'
-		'Button2
+		'atras
 		'
-		Me.Button2.Location = New System.Drawing.Point(47, 386)
-		Me.Button2.Name = "Button2"
-		Me.Button2.Size = New System.Drawing.Size(75, 23)
-		Me.Button2.TabIndex = 3
-		Me.Button2.Text = "Atras"
-		Me.Button2.UseVisualStyleBackColor = True
+		Me.atras.Location = New System.Drawing.Point(47, 386)
+		Me.atras.Name = "atras"
+		Me.atras.Size = New System.Drawing.Size(75, 23)
+		Me.atras.TabIndex = 3
+		Me.atras.Text = "Atras"
+		Me.atras.UseVisualStyleBackColor = True
 		'
 		'GestionarAlojamientos
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(561, 450)
-		Me.Controls.Add(Me.Button2)
-		Me.Controls.Add(Me.Button1)
+		Me.Controls.Add(Me.atras)
+		Me.Controls.Add(Me.filtrar)
 		Me.Controls.Add(Me.ListBox1)
 		Me.Controls.Add(Me.ComboBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -81,6 +81,6 @@ Partial Class GestionarAlojamientos
 
 	Friend WithEvents ComboBox1 As ComboBox
 	Friend WithEvents ListBox1 As ListBox
-	Friend WithEvents Button1 As Button
-	Friend WithEvents Button2 As Button
+	Friend WithEvents filtrar As Button
+	Friend WithEvents atras As Button
 End Class
