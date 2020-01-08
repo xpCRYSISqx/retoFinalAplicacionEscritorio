@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormGestionarReservas
+Partial Class GestionarUsuarios
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,14 +24,14 @@ Partial Class FormGestionarReservas
 	Private Sub InitializeComponent()
 		Me.SuspendLayout()
 		'
-		'FormGestionarReservas
+		'FormGestionarUsuarios
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(800, 450)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-		Me.Name = "FormGestionarReservas"
-		Me.Text = "Gestion de reservas"
+		Me.Name = "FormGestionarUsuarios"
+		Me.Text = "Gestion de usuarios"
 		Me.ResumeLayout(False)
 
 	End Sub

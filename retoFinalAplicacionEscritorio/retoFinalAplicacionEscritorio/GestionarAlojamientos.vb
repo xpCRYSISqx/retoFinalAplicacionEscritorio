@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class FormGestionarAlojamientos
+Public Class GestionarAlojamientos
 	Dim conexion As New MySqlConnection("datasource=192.168.101.15;port=3306;username=ldmj;password=ladamijo")
 	Private Sub FormGestionarAlojamientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		Dim adapter As New MySqlDataAdapter("SELECT `id`, `nombre` FROM prueba.provincias", conexion)

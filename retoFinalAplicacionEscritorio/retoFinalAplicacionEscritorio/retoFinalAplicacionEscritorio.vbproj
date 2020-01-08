@@ -76,35 +76,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormGestionarAlojamientos.Designer.vb">
-      <DependentUpon>FormGestionarAlojamientos.vb</DependentUpon>
+    <Compile Include="DetallesAlojamiento.Designer.vb">
+      <DependentUpon>DetallesAlojamiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormGestionarAlojamientos.vb">
+    <Compile Include="DetallesAlojamiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGestionarReservas.Designer.vb">
-      <DependentUpon>FormGestionarReservas.vb</DependentUpon>
+    <Compile Include="GestionarAlojamientos.Designer.vb">
+      <DependentUpon>GestionarAlojamientos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormGestionarReservas.vb">
+    <Compile Include="GestionarAlojamientos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGestionarUsuarios.Designer.vb">
-      <DependentUpon>FormGestionarUsuarios.vb</DependentUpon>
+    <Compile Include="GestionarReservas.Designer.vb">
+      <DependentUpon>GestionarReservas.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormGestionarUsuarios.vb">
+    <Compile Include="GestionarReservas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSelecionarOpcion.Designer.vb">
-      <DependentUpon>FormSelecionarOpcion.vb</DependentUpon>
+    <Compile Include="GestionarUsuarios.Designer.vb">
+      <DependentUpon>GestionarUsuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSelecionarOpcion.vb">
+    <Compile Include="GestionarUsuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicioSesion.vb">
+    <Compile Include="SelecionarOpcion.Designer.vb">
+      <DependentUpon>SelecionarOpcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelecionarOpcion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicioSesion.Designer.vb">
-      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    <Compile Include="InicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.vb">
+      <DependentUpon>InicioSesion.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -124,20 +130,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormGestionarAlojamientos.resx">
-      <DependentUpon>FormGestionarAlojamientos.vb</DependentUpon>
+    <EmbeddedResource Include="GestionarAlojamientos.resx">
+      <DependentUpon>GestionarAlojamientos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGestionarReservas.resx">
-      <DependentUpon>FormGestionarReservas.vb</DependentUpon>
+    <EmbeddedResource Include="GestionarReservas.resx">
+      <DependentUpon>GestionarReservas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGestionarUsuarios.resx">
-      <DependentUpon>FormGestionarUsuarios.vb</DependentUpon>
+    <EmbeddedResource Include="GestionarUsuarios.resx">
+      <DependentUpon>GestionarUsuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSelecionarOpcion.resx">
-      <DependentUpon>FormSelecionarOpcion.vb</DependentUpon>
+    <EmbeddedResource Include="SelecionarOpcion.resx">
+      <DependentUpon>SelecionarOpcion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInicioSesion.resx">
-      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
