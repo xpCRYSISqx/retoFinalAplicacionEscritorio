@@ -62,6 +62,8 @@ Partial Class DetallesAlojamiento
 		Me.imagen = New System.Windows.Forms.PictureBox()
 		Me.telefono = New System.Windows.Forms.MaskedTextBox()
 		Me.cargarImagen = New System.Windows.Forms.Button()
+		Me.editar = New System.Windows.Forms.Button()
+		Me.actualizar = New System.Windows.Forms.Button()
 		Me.restaurante.SuspendLayout()
 		Me.tienda.SuspendLayout()
 		Me.autocaravana.SuspendLayout()
@@ -71,9 +73,9 @@ Partial Class DetallesAlojamiento
 		'cancelar
 		'
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.cancelar.Location = New System.Drawing.Point(33, 662)
+		Me.cancelar.Location = New System.Drawing.Point(33, 653)
 		Me.cancelar.Name = "cancelar"
-		Me.cancelar.Size = New System.Drawing.Size(75, 23)
+		Me.cancelar.Size = New System.Drawing.Size(75, 32)
 		Me.cancelar.TabIndex = 0
 		Me.cancelar.Text = "Cancelar"
 		Me.cancelar.UseVisualStyleBackColor = True
@@ -447,7 +449,7 @@ Partial Class DetallesAlojamiento
 		'
 		Me.telefono.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.telefono.Location = New System.Drawing.Point(101, 172)
-		Me.telefono.Mask = "0000000000"
+		Me.telefono.Mask = "000000000"
 		Me.telefono.Name = "telefono"
 		Me.telefono.Size = New System.Drawing.Size(117, 23)
 		Me.telefono.TabIndex = 43
@@ -462,11 +464,35 @@ Partial Class DetallesAlojamiento
 		Me.cargarImagen.Text = "Seleccionar imagen"
 		Me.cargarImagen.UseVisualStyleBackColor = True
 		'
+		'editar
+		'
+		Me.editar.AutoSize = True
+		Me.editar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+		Me.editar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.editar.Location = New System.Drawing.Point(185, 653)
+		Me.editar.Name = "editar"
+		Me.editar.Size = New System.Drawing.Size(52, 27)
+		Me.editar.TabIndex = 45
+		Me.editar.Text = "Editar"
+		Me.editar.UseVisualStyleBackColor = True
+		'
+		'actualizar
+		'
+		Me.actualizar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.actualizar.Location = New System.Drawing.Point(354, 653)
+		Me.actualizar.Name = "actualizar"
+		Me.actualizar.Size = New System.Drawing.Size(75, 32)
+		Me.actualizar.TabIndex = 46
+		Me.actualizar.Text = "Actualizar"
+		Me.actualizar.UseVisualStyleBackColor = True
+		'
 		'DetallesAlojamiento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(462, 718)
+		Me.Controls.Add(Me.actualizar)
+		Me.Controls.Add(Me.editar)
 		Me.Controls.Add(Me.cargarImagen)
 		Me.Controls.Add(Me.telefono)
 		Me.Controls.Add(Me.imagen)
@@ -557,4 +583,6 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents imagen As PictureBox
 	Friend WithEvents telefono As MaskedTextBox
 	Friend WithEvents cargarImagen As Button
+	Friend WithEvents editar As Button
+	Friend WithEvents actualizar As Button
 End Class

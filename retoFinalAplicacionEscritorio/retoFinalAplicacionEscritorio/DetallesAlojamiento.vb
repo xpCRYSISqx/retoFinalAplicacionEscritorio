@@ -13,7 +13,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `marks`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura=" & cod, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `marks`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos2 WHERE signatura=" & cod, conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
@@ -92,6 +92,28 @@ Public Class DetallesAlojamiento
 		tienda.Enabled = False
 		autocaravana.Enabled = False
 		cargarImagen.Enabled = False
+		actualizar.Enabled = False
+	End Sub
+
+	Private Sub HabilitarCampos()
+		nombre.ReadOnly = False
+		descripcion.ReadOnly = False
+		tipo.ReadOnly = False
+		direccion.ReadOnly = False
+		telefono.ReadOnly = False
+		mail.ReadOnly = False
+		web.ReadOnly = False
+		textRegion.ReadOnly = False
+		provincia.Enabled = True
+		latitud.ReadOnly = False
+		longitud.ReadOnly = False
+		codigoPostal.ReadOnly = False
+		capacidad.ReadOnly = False
+		restaurante.Enabled = True
+		tienda.Enabled = True
+		autocaravana.Enabled = True
+		cargarImagen.Enabled = True
+		actualizar.Enabled = True
 	End Sub
 
 	Private Sub CargarImagen_Click(sender As Object, e As EventArgs) Handles cargarImagen.Click
@@ -101,5 +123,56 @@ Public Class DetallesAlojamiento
 		If dialogo.ShowDialog = Windows.Forms.DialogResult.OK Then
 			imagen.Image = Image.FromFile(dialogo.FileName)
 		End If
+	End Sub
+
+	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
+		If editar.Text = "Editar" Then
+			HabilitarCampos()
+			editar.Text = "Terminar Edición"
+		Else
+			DeshabilitarCampos()
+			editar.Text = "Editar"
+		End If
+	End Sub
+
+	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
+		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos2 SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, marks = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
+		Dim ms As New MemoryStream
+		imagen.Image.Save(ms, imagen.Image.RawFormat)
+
+		actualizacion.Parameters.AddWithValue("@nombre", nombre.Text)
+		actualizacion.Parameters.AddWithValue("@descripcion", descripcion.Text)
+		actualizacion.Parameters.AddWithValue("@tipo", tipo.Text)
+		actualizacion.Parameters.AddWithValue("@direccion", direccion.Text)
+		actualizacion.Parameters.AddWithValue("@telefono", Integer.Parse(telefono.Text))
+		actualizacion.Parameters.AddWithValue("@mail", mail.Text)
+		actualizacion.Parameters.AddWithValue("@web", web.Text)
+		actualizacion.Parameters.AddWithValue("@region", textRegion.Text)
+		actualizacion.Parameters.AddWithValue("@provincia", Integer.Parse(provincia.SelectedValue))
+		actualizacion.Parameters.AddWithValue("@latitud", Double.Parse(latitud.Text))
+		actualizacion.Parameters.AddWithValue("@longitud", Double.Parse(longitud.Text))
+		actualizacion.Parameters.AddWithValue("@codigoPostal", Integer.Parse(codigoPostal.Text))
+		actualizacion.Parameters.AddWithValue("@capacidad", Integer.Parse(capacidad.Text))
+		If restSi.Checked = True Then
+			actualizacion.Parameters.AddWithValue("@restaurante", 1)
+		Else
+			actualizacion.Parameters.AddWithValue("@restaurante", 0)
+		End If
+		If tiendaSi.Checked = True Then
+			actualizacion.Parameters.AddWithValue("@tienda", 1)
+		Else
+			actualizacion.Parameters.AddWithValue("@tienda", 0)
+		End If
+		If autoSi.Checked = True Then
+			actualizacion.Parameters.AddWithValue("@autocaravana", 1)
+		Else
+			actualizacion.Parameters.AddWithValue("@autocaravana", 0)
+		End If
+		actualizacion.Parameters.AddWithValue("@imagen", ms.ToArray())
+		conexion.Open()
+		actualizacion.ExecuteNonQuery()
+		conexion.Close()
+		GestionarAlojamientos.Show()
+		Me.Hide()
 	End Sub
 End Class

@@ -11,7 +11,7 @@ Public Class GestionarAlojamientos
 		ComboBox1.ValueMember = "id"
 		ComboBox1.DisplayMember = "nombre"
 
-		Dim adapter2 As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
+		Dim adapter2 As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos2 WHERE territory=" & ComboBox1.SelectedValue, conexion)
 		Dim tabla2 As New DataTable()
 
 		adapter2.Fill(tabla2)
@@ -21,7 +21,7 @@ Public Class GestionarAlojamientos
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles filtrar.Click
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos2 WHERE territory=" & ComboBox1.SelectedValue, conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
