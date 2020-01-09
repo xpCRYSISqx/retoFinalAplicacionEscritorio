@@ -99,6 +99,7 @@ Partial Class InicioSesion
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
 		Me.Name = "InicioSesion"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Iniciar Sesion"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()

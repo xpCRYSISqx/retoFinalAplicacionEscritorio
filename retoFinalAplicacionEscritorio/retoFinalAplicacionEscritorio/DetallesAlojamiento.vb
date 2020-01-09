@@ -13,7 +13,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `marks`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos2 WHERE signatura=" & cod, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `marks`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura=" & cod, conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
@@ -136,7 +136,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos2 SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, marks = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, marks = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
 		Dim ms As New MemoryStream
 		imagen.Image.Save(ms, imagen.Image.RawFormat)
 
@@ -173,6 +173,7 @@ Public Class DetallesAlojamiento
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
 		GestionarAlojamientos.Show()
+		GestionarAlojamientos.Update()
 		Me.Hide()
 	End Sub
 End Class

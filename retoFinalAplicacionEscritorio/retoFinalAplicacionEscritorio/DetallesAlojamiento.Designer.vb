@@ -24,7 +24,6 @@ Partial Class DetallesAlojamiento
 	Private Sub InitializeComponent()
 		Me.cancelar = New System.Windows.Forms.Button()
 		Me.Label1 = New System.Windows.Forms.Label()
-		Me.nombre = New System.Windows.Forms.TextBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.labelCodigo = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
@@ -64,6 +63,7 @@ Partial Class DetallesAlojamiento
 		Me.cargarImagen = New System.Windows.Forms.Button()
 		Me.editar = New System.Windows.Forms.Button()
 		Me.actualizar = New System.Windows.Forms.Button()
+		Me.nombre = New System.Windows.Forms.TextBox()
 		Me.restaurante.SuspendLayout()
 		Me.tienda.SuspendLayout()
 		Me.autocaravana.SuspendLayout()
@@ -89,16 +89,6 @@ Partial Class DetallesAlojamiento
 		Me.Label1.Size = New System.Drawing.Size(60, 17)
 		Me.Label1.TabIndex = 1
 		Me.Label1.Text = "Nombre:"
-		'
-		'nombre
-		'
-		Me.nombre.BackColor = System.Drawing.SystemColors.Window
-		Me.nombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.nombre.ForeColor = System.Drawing.SystemColors.WindowText
-		Me.nombre.Location = New System.Drawing.Point(99, 29)
-		Me.nombre.Name = "nombre"
-		Me.nombre.Size = New System.Drawing.Size(160, 23)
-		Me.nombre.TabIndex = 2
 		'
 		'Label2
 		'
@@ -486,11 +476,20 @@ Partial Class DetallesAlojamiento
 		Me.actualizar.Text = "Actualizar"
 		Me.actualizar.UseVisualStyleBackColor = True
 		'
+		'nombre
+		'
+		Me.nombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.nombre.Location = New System.Drawing.Point(99, 29)
+		Me.nombre.Name = "nombre"
+		Me.nombre.Size = New System.Drawing.Size(161, 23)
+		Me.nombre.TabIndex = 47
+		'
 		'DetallesAlojamiento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(462, 718)
+		Me.Controls.Add(Me.nombre)
 		Me.Controls.Add(Me.actualizar)
 		Me.Controls.Add(Me.editar)
 		Me.Controls.Add(Me.cargarImagen)
@@ -524,12 +523,14 @@ Partial Class DetallesAlojamiento
 		Me.Controls.Add(Me.Label3)
 		Me.Controls.Add(Me.labelCodigo)
 		Me.Controls.Add(Me.Label2)
-		Me.Controls.Add(Me.nombre)
 		Me.Controls.Add(Me.Label1)
 		Me.Controls.Add(Me.cancelar)
 		Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = False
 		Me.Name = "DetallesAlojamiento"
 		Me.Padding = New System.Windows.Forms.Padding(30)
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Detalles Alojamiento"
 		Me.restaurante.ResumeLayout(False)
 		Me.restaurante.PerformLayout()
@@ -545,7 +546,6 @@ Partial Class DetallesAlojamiento
 
 	Friend WithEvents cancelar As Button
 	Friend WithEvents Label1 As Label
-	Friend WithEvents nombre As TextBox
 	Friend WithEvents Label2 As Label
 	Friend WithEvents labelCodigo As Label
 	Friend WithEvents Label3 As Label
@@ -585,4 +585,5 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents cargarImagen As Button
 	Friend WithEvents editar As Button
 	Friend WithEvents actualizar As Button
+	Friend WithEvents nombre As TextBox
 End Class

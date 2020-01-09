@@ -73,7 +73,9 @@ Partial Class GestionarAlojamientos
 		Me.Controls.Add(Me.ListBox1)
 		Me.Controls.Add(Me.ComboBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.MaximizeBox = False
 		Me.Name = "GestionarAlojamientos"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Gestion de alojamientos"
 		Me.ResumeLayout(False)
 

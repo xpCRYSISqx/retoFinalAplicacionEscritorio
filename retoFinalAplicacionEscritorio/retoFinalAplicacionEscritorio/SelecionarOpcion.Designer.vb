@@ -68,6 +68,7 @@ Partial Class SelecionarOpcion
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
 		Me.Name = "SelecionarOpcion"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Opciones"
 		Me.ResumeLayout(False)
 
