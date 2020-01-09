@@ -85,7 +85,7 @@ Partial Class InicioSesion
 		Me.cancelar.Text = "Cancelar"
 		Me.cancelar.UseVisualStyleBackColor = True
 		'
-		'FormInicioSesion
+		'InicioSesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -98,7 +98,7 @@ Partial Class InicioSesion
 		Me.Controls.Add(Me.TextBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
-		Me.Name = "FormInicioSesion"
+		Me.Name = "InicioSesion"
 		Me.Text = "Iniciar Sesion"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()

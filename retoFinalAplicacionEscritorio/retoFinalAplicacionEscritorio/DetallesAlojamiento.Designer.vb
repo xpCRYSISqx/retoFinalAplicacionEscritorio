@@ -34,15 +34,12 @@ Partial Class DetallesAlojamiento
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.direccion = New System.Windows.Forms.TextBox()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.telefono = New System.Windows.Forms.TextBox()
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.mail = New System.Windows.Forms.TextBox()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.web = New System.Windows.Forms.TextBox()
-		Me.Label9 = New System.Windows.Forms.Label()
-		Me.Region = New System.Windows.Forms.TextBox()
+		Me.textRegion = New System.Windows.Forms.TextBox()
 		Me.Label10 = New System.Windows.Forms.Label()
-		Me.provincia = New System.Windows.Forms.TextBox()
 		Me.Label11 = New System.Windows.Forms.Label()
 		Me.latitud = New System.Windows.Forms.TextBox()
 		Me.Label12 = New System.Windows.Forms.Label()
@@ -51,21 +48,30 @@ Partial Class DetallesAlojamiento
 		Me.codigoPostal = New System.Windows.Forms.TextBox()
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.capacidad = New System.Windows.Forms.TextBox()
-		Me.Label15 = New System.Windows.Forms.Label()
-		Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-		Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-		Me.Label16 = New System.Windows.Forms.Label()
-		Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-		Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-		Me.Label17 = New System.Windows.Forms.Label()
-		Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-		Me.RadioButton6 = New System.Windows.Forms.RadioButton()
+		Me.restSi = New System.Windows.Forms.RadioButton()
+		Me.restNo = New System.Windows.Forms.RadioButton()
+		Me.tiendaSi = New System.Windows.Forms.RadioButton()
+		Me.tiendaNo = New System.Windows.Forms.RadioButton()
+		Me.autoSi = New System.Windows.Forms.RadioButton()
+		Me.autoNo = New System.Windows.Forms.RadioButton()
+		Me.Label9 = New System.Windows.Forms.Label()
+		Me.restaurante = New System.Windows.Forms.GroupBox()
+		Me.tienda = New System.Windows.Forms.GroupBox()
+		Me.autocaravana = New System.Windows.Forms.GroupBox()
+		Me.provincia = New System.Windows.Forms.ComboBox()
+		Me.imagen = New System.Windows.Forms.PictureBox()
+		Me.telefono = New System.Windows.Forms.MaskedTextBox()
+		Me.cargarImagen = New System.Windows.Forms.Button()
+		Me.restaurante.SuspendLayout()
+		Me.tienda.SuspendLayout()
+		Me.autocaravana.SuspendLayout()
+		CType(Me.imagen, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'cancelar
 		'
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.cancelar.Location = New System.Drawing.Point(33, 599)
+		Me.cancelar.Location = New System.Drawing.Point(33, 662)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 23)
 		Me.cancelar.TabIndex = 0
@@ -84,7 +90,9 @@ Partial Class DetallesAlojamiento
 		'
 		'nombre
 		'
+		Me.nombre.BackColor = System.Drawing.SystemColors.Window
 		Me.nombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.nombre.ForeColor = System.Drawing.SystemColors.WindowText
 		Me.nombre.Location = New System.Drawing.Point(99, 29)
 		Me.nombre.Name = "nombre"
 		Me.nombre.Size = New System.Drawing.Size(160, 23)
@@ -174,14 +182,6 @@ Partial Class DetallesAlojamiento
 		Me.Label6.TabIndex = 11
 		Me.Label6.Text = "Teléfono:"
 		'
-		'telefono
-		'
-		Me.telefono.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.telefono.Location = New System.Drawing.Point(101, 174)
-		Me.telefono.Name = "telefono"
-		Me.telefono.Size = New System.Drawing.Size(117, 23)
-		Me.telefono.TabIndex = 12
-		'
 		'Label7
 		'
 		Me.Label7.AutoSize = True
@@ -195,6 +195,7 @@ Partial Class DetallesAlojamiento
 		'mail
 		'
 		Me.mail.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.mail.ForeColor = System.Drawing.SystemColors.WindowText
 		Me.mail.Location = New System.Drawing.Point(88, 210)
 		Me.mail.Name = "mail"
 		Me.mail.Size = New System.Drawing.Size(343, 23)
@@ -218,23 +219,13 @@ Partial Class DetallesAlojamiento
 		Me.web.Size = New System.Drawing.Size(353, 23)
 		Me.web.TabIndex = 16
 		'
-		'Label9
+		'textRegion
 		'
-		Me.Label9.AutoSize = True
-		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.Label9.Location = New System.Drawing.Point(33, 343)
-		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(52, 17)
-		Me.Label9.TabIndex = 17
-		Me.Label9.Text = "Region:"
-		'
-		'Region
-		'
-		Me.Region.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.Region.Location = New System.Drawing.Point(91, 340)
-		Me.Region.Name = "Region"
-		Me.Region.Size = New System.Drawing.Size(168, 23)
-		Me.Region.TabIndex = 18
+		Me.textRegion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.textRegion.Location = New System.Drawing.Point(91, 340)
+		Me.textRegion.Name = "textRegion"
+		Me.textRegion.Size = New System.Drawing.Size(168, 23)
+		Me.textRegion.TabIndex = 18
 		'
 		'Label10
 		'
@@ -245,15 +236,6 @@ Partial Class DetallesAlojamiento
 		Me.Label10.Size = New System.Drawing.Size(63, 17)
 		Me.Label10.TabIndex = 19
 		Me.Label10.Text = "Provincia:"
-		'
-		'provincia
-		'
-		Me.provincia.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.provincia.Location = New System.Drawing.Point(102, 308)
-		Me.provincia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-		Me.provincia.Name = "provincia"
-		Me.provincia.Size = New System.Drawing.Size(167, 23)
-		Me.provincia.TabIndex = 20
 		'
 		'Label11
 		'
@@ -325,122 +307,173 @@ Partial Class DetallesAlojamiento
 		Me.capacidad.Size = New System.Drawing.Size(55, 20)
 		Me.capacidad.TabIndex = 28
 		'
-		'Label15
+		'restSi
 		'
-		Me.Label15.AutoSize = True
-		Me.Label15.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.Label15.Location = New System.Drawing.Point(33, 502)
-		Me.Label15.Name = "Label15"
-		Me.Label15.Size = New System.Drawing.Size(80, 17)
-		Me.Label15.TabIndex = 29
-		Me.Label15.Text = "Restaurante:"
+		Me.restSi.AutoSize = True
+		Me.restSi.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.restSi.Location = New System.Drawing.Point(10, 17)
+		Me.restSi.Name = "restSi"
+		Me.restSi.Size = New System.Drawing.Size(36, 21)
+		Me.restSi.TabIndex = 30
+		Me.restSi.TabStop = True
+		Me.restSi.Text = "Si"
+		Me.restSi.UseVisualStyleBackColor = True
 		'
-		'RadioButton1
+		'restNo
 		'
-		Me.RadioButton1.AutoSize = True
-		Me.RadioButton1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton1.Location = New System.Drawing.Point(119, 500)
-		Me.RadioButton1.Name = "RadioButton1"
-		Me.RadioButton1.Size = New System.Drawing.Size(36, 21)
-		Me.RadioButton1.TabIndex = 30
-		Me.RadioButton1.TabStop = True
-		Me.RadioButton1.Text = "Si"
-		Me.RadioButton1.UseVisualStyleBackColor = True
+		Me.restNo.AutoSize = True
+		Me.restNo.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.restNo.Location = New System.Drawing.Point(52, 17)
+		Me.restNo.Name = "restNo"
+		Me.restNo.Size = New System.Drawing.Size(44, 21)
+		Me.restNo.TabIndex = 31
+		Me.restNo.TabStop = True
+		Me.restNo.Text = "No"
+		Me.restNo.UseVisualStyleBackColor = True
 		'
-		'RadioButton2
+		'tiendaSi
 		'
-		Me.RadioButton2.AutoSize = True
-		Me.RadioButton2.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton2.Location = New System.Drawing.Point(161, 500)
-		Me.RadioButton2.Name = "RadioButton2"
-		Me.RadioButton2.Size = New System.Drawing.Size(44, 21)
-		Me.RadioButton2.TabIndex = 31
-		Me.RadioButton2.TabStop = True
-		Me.RadioButton2.Text = "No"
-		Me.RadioButton2.UseVisualStyleBackColor = True
+		Me.tiendaSi.AutoSize = True
+		Me.tiendaSi.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.tiendaSi.Location = New System.Drawing.Point(6, 19)
+		Me.tiendaSi.Name = "tiendaSi"
+		Me.tiendaSi.Size = New System.Drawing.Size(37, 21)
+		Me.tiendaSi.TabIndex = 33
+		Me.tiendaSi.TabStop = True
+		Me.tiendaSi.Text = "SI"
+		Me.tiendaSi.UseVisualStyleBackColor = True
 		'
-		'Label16
+		'tiendaNo
 		'
-		Me.Label16.AutoSize = True
-		Me.Label16.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.Label16.Location = New System.Drawing.Point(33, 529)
-		Me.Label16.Name = "Label16"
-		Me.Label16.Size = New System.Drawing.Size(50, 17)
-		Me.Label16.TabIndex = 32
-		Me.Label16.Text = "Tienda:"
+		Me.tiendaNo.AutoSize = True
+		Me.tiendaNo.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.tiendaNo.Location = New System.Drawing.Point(49, 19)
+		Me.tiendaNo.Name = "tiendaNo"
+		Me.tiendaNo.Size = New System.Drawing.Size(44, 21)
+		Me.tiendaNo.TabIndex = 34
+		Me.tiendaNo.TabStop = True
+		Me.tiendaNo.Text = "No"
+		Me.tiendaNo.UseVisualStyleBackColor = True
 		'
-		'RadioButton3
+		'autoSi
 		'
-		Me.RadioButton3.AutoSize = True
-		Me.RadioButton3.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton3.Location = New System.Drawing.Point(89, 527)
-		Me.RadioButton3.Name = "RadioButton3"
-		Me.RadioButton3.Size = New System.Drawing.Size(37, 21)
-		Me.RadioButton3.TabIndex = 33
-		Me.RadioButton3.TabStop = True
-		Me.RadioButton3.Text = "SI"
-		Me.RadioButton3.UseVisualStyleBackColor = True
+		Me.autoSi.AutoSize = True
+		Me.autoSi.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.autoSi.Location = New System.Drawing.Point(6, 22)
+		Me.autoSi.Name = "autoSi"
+		Me.autoSi.Size = New System.Drawing.Size(36, 21)
+		Me.autoSi.TabIndex = 36
+		Me.autoSi.TabStop = True
+		Me.autoSi.Text = "Si"
+		Me.autoSi.UseVisualStyleBackColor = True
 		'
-		'RadioButton4
+		'autoNo
 		'
-		Me.RadioButton4.AutoSize = True
-		Me.RadioButton4.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton4.Location = New System.Drawing.Point(132, 527)
-		Me.RadioButton4.Name = "RadioButton4"
-		Me.RadioButton4.Size = New System.Drawing.Size(44, 21)
-		Me.RadioButton4.TabIndex = 34
-		Me.RadioButton4.TabStop = True
-		Me.RadioButton4.Text = "No"
-		Me.RadioButton4.UseVisualStyleBackColor = True
+		Me.autoNo.AutoSize = True
+		Me.autoNo.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.autoNo.Location = New System.Drawing.Point(48, 22)
+		Me.autoNo.Name = "autoNo"
+		Me.autoNo.Size = New System.Drawing.Size(44, 21)
+		Me.autoNo.TabIndex = 37
+		Me.autoNo.TabStop = True
+		Me.autoNo.Text = "No"
+		Me.autoNo.UseVisualStyleBackColor = True
 		'
-		'Label17
+		'Label9
 		'
-		Me.Label17.AutoSize = True
-		Me.Label17.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.Label17.Location = New System.Drawing.Point(33, 551)
-		Me.Label17.Name = "Label17"
-		Me.Label17.Size = New System.Drawing.Size(90, 17)
-		Me.Label17.TabIndex = 35
-		Me.Label17.Text = "Autocaravana:"
+		Me.Label9.AutoSize = True
+		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label9.Location = New System.Drawing.Point(33, 343)
+		Me.Label9.Name = "Label9"
+		Me.Label9.Size = New System.Drawing.Size(52, 17)
+		Me.Label9.TabIndex = 17
+		Me.Label9.Text = "Region:"
 		'
-		'RadioButton5
+		'restaurante
 		'
-		Me.RadioButton5.AutoSize = True
-		Me.RadioButton5.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton5.Location = New System.Drawing.Point(129, 549)
-		Me.RadioButton5.Name = "RadioButton5"
-		Me.RadioButton5.Size = New System.Drawing.Size(36, 21)
-		Me.RadioButton5.TabIndex = 36
-		Me.RadioButton5.TabStop = True
-		Me.RadioButton5.Text = "Si"
-		Me.RadioButton5.UseVisualStyleBackColor = True
+		Me.restaurante.Controls.Add(Me.restNo)
+		Me.restaurante.Controls.Add(Me.restSi)
+		Me.restaurante.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.restaurante.Location = New System.Drawing.Point(33, 496)
+		Me.restaurante.Name = "restaurante"
+		Me.restaurante.Size = New System.Drawing.Size(108, 39)
+		Me.restaurante.TabIndex = 38
+		Me.restaurante.TabStop = False
+		Me.restaurante.Text = "Restaurante:"
 		'
-		'RadioButton6
+		'tienda
 		'
-		Me.RadioButton6.AutoSize = True
-		Me.RadioButton6.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.RadioButton6.Location = New System.Drawing.Point(171, 549)
-		Me.RadioButton6.Name = "RadioButton6"
-		Me.RadioButton6.Size = New System.Drawing.Size(44, 21)
-		Me.RadioButton6.TabIndex = 37
-		Me.RadioButton6.TabStop = True
-		Me.RadioButton6.Text = "No"
-		Me.RadioButton6.UseVisualStyleBackColor = True
+		Me.tienda.Controls.Add(Me.tiendaNo)
+		Me.tienda.Controls.Add(Me.tiendaSi)
+		Me.tienda.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.tienda.Location = New System.Drawing.Point(33, 540)
+		Me.tienda.Name = "tienda"
+		Me.tienda.Size = New System.Drawing.Size(108, 40)
+		Me.tienda.TabIndex = 39
+		Me.tienda.TabStop = False
+		Me.tienda.Text = "Tienda:"
+		'
+		'autocaravana
+		'
+		Me.autocaravana.Controls.Add(Me.autoSi)
+		Me.autocaravana.Controls.Add(Me.autoNo)
+		Me.autocaravana.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.autocaravana.Location = New System.Drawing.Point(33, 586)
+		Me.autocaravana.Name = "autocaravana"
+		Me.autocaravana.Size = New System.Drawing.Size(108, 39)
+		Me.autocaravana.TabIndex = 40
+		Me.autocaravana.TabStop = False
+		Me.autocaravana.Text = "Autocaravana:"
+		'
+		'provincia
+		'
+		Me.provincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.provincia.FormattingEnabled = True
+		Me.provincia.Location = New System.Drawing.Point(102, 308)
+		Me.provincia.Name = "provincia"
+		Me.provincia.Size = New System.Drawing.Size(157, 21)
+		Me.provincia.TabIndex = 41
+		'
+		'imagen
+		'
+		Me.imagen.Location = New System.Drawing.Point(201, 471)
+		Me.imagen.Name = "imagen"
+		Me.imagen.Size = New System.Drawing.Size(228, 125)
+		Me.imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+		Me.imagen.TabIndex = 42
+		Me.imagen.TabStop = False
+		'
+		'telefono
+		'
+		Me.telefono.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.telefono.Location = New System.Drawing.Point(101, 172)
+		Me.telefono.Mask = "0000000000"
+		Me.telefono.Name = "telefono"
+		Me.telefono.Size = New System.Drawing.Size(117, 23)
+		Me.telefono.TabIndex = 43
+		'
+		'cargarImagen
+		'
+		Me.cargarImagen.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.cargarImagen.Location = New System.Drawing.Point(201, 602)
+		Me.cargarImagen.Name = "cargarImagen"
+		Me.cargarImagen.Size = New System.Drawing.Size(228, 27)
+		Me.cargarImagen.TabIndex = 44
+		Me.cargarImagen.Text = "Seleccionar imagen"
+		Me.cargarImagen.UseVisualStyleBackColor = True
 		'
 		'DetallesAlojamiento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(462, 655)
-		Me.Controls.Add(Me.RadioButton6)
-		Me.Controls.Add(Me.RadioButton5)
-		Me.Controls.Add(Me.Label17)
-		Me.Controls.Add(Me.RadioButton4)
-		Me.Controls.Add(Me.RadioButton3)
-		Me.Controls.Add(Me.Label16)
-		Me.Controls.Add(Me.RadioButton2)
-		Me.Controls.Add(Me.RadioButton1)
-		Me.Controls.Add(Me.Label15)
+		Me.ClientSize = New System.Drawing.Size(462, 718)
+		Me.Controls.Add(Me.cargarImagen)
+		Me.Controls.Add(Me.telefono)
+		Me.Controls.Add(Me.imagen)
+		Me.Controls.Add(Me.provincia)
+		Me.Controls.Add(Me.autocaravana)
+		Me.Controls.Add(Me.tienda)
+		Me.Controls.Add(Me.restaurante)
 		Me.Controls.Add(Me.capacidad)
 		Me.Controls.Add(Me.Label14)
 		Me.Controls.Add(Me.codigoPostal)
@@ -449,15 +482,13 @@ Partial Class DetallesAlojamiento
 		Me.Controls.Add(Me.Label12)
 		Me.Controls.Add(Me.latitud)
 		Me.Controls.Add(Me.Label11)
-		Me.Controls.Add(Me.provincia)
 		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.Region)
+		Me.Controls.Add(Me.textRegion)
 		Me.Controls.Add(Me.Label9)
 		Me.Controls.Add(Me.web)
 		Me.Controls.Add(Me.Label8)
 		Me.Controls.Add(Me.mail)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.telefono)
 		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.direccion)
 		Me.Controls.Add(Me.Label5)
@@ -472,8 +503,15 @@ Partial Class DetallesAlojamiento
 		Me.Controls.Add(Me.cancelar)
 		Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.Name = "DetallesAlojamiento"
-		Me.Padding = New System.Windows.Forms.Padding(30, 30, 30, 30)
+		Me.Padding = New System.Windows.Forms.Padding(30)
 		Me.Text = "Detalles Alojamiento"
+		Me.restaurante.ResumeLayout(False)
+		Me.restaurante.PerformLayout()
+		Me.tienda.ResumeLayout(False)
+		Me.tienda.PerformLayout()
+		Me.autocaravana.ResumeLayout(False)
+		Me.autocaravana.PerformLayout()
+		CType(Me.imagen, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -491,15 +529,12 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents Label5 As Label
 	Friend WithEvents direccion As TextBox
 	Friend WithEvents Label6 As Label
-	Friend WithEvents telefono As TextBox
 	Friend WithEvents Label7 As Label
 	Friend WithEvents mail As TextBox
 	Friend WithEvents Label8 As Label
 	Friend WithEvents web As TextBox
-	Friend WithEvents Label9 As Label
-	Friend WithEvents Region As TextBox
+	Friend WithEvents textRegion As TextBox
 	Friend WithEvents Label10 As Label
-	Friend WithEvents provincia As TextBox
 	Friend WithEvents Label11 As Label
 	Friend WithEvents latitud As TextBox
 	Friend WithEvents Label12 As Label
@@ -508,13 +543,18 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents codigoPostal As TextBox
 	Friend WithEvents Label14 As Label
 	Friend WithEvents capacidad As TextBox
-	Friend WithEvents Label15 As Label
-	Friend WithEvents RadioButton1 As RadioButton
-	Friend WithEvents RadioButton2 As RadioButton
-	Friend WithEvents Label16 As Label
-	Friend WithEvents RadioButton3 As RadioButton
-	Friend WithEvents RadioButton4 As RadioButton
-	Friend WithEvents Label17 As Label
-	Friend WithEvents RadioButton5 As RadioButton
-	Friend WithEvents RadioButton6 As RadioButton
+	Friend WithEvents restSi As RadioButton
+	Friend WithEvents restNo As RadioButton
+	Friend WithEvents tiendaSi As RadioButton
+	Friend WithEvents tiendaNo As RadioButton
+	Friend WithEvents autoSi As RadioButton
+	Friend WithEvents autoNo As RadioButton
+	Friend WithEvents Label9 As Label
+	Friend WithEvents restaurante As GroupBox
+	Friend WithEvents tienda As GroupBox
+	Friend WithEvents autocaravana As GroupBox
+	Friend WithEvents provincia As ComboBox
+	Friend WithEvents imagen As PictureBox
+	Friend WithEvents telefono As MaskedTextBox
+	Friend WithEvents cargarImagen As Button
 End Class
