@@ -24,7 +24,6 @@ Partial Class GestionarAlojamientos
 	Private Sub InitializeComponent()
 		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.ListBox1 = New System.Windows.Forms.ListBox()
-		Me.filtrar = New System.Windows.Forms.Button()
 		Me.atras = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
@@ -45,15 +44,6 @@ Partial Class GestionarAlojamientos
 		Me.ListBox1.Size = New System.Drawing.Size(229, 368)
 		Me.ListBox1.TabIndex = 1
 		'
-		'filtrar
-		'
-		Me.filtrar.Location = New System.Drawing.Point(69, 93)
-		Me.filtrar.Name = "filtrar"
-		Me.filtrar.Size = New System.Drawing.Size(121, 23)
-		Me.filtrar.TabIndex = 2
-		Me.filtrar.Text = "Filtrar"
-		Me.filtrar.UseVisualStyleBackColor = True
-		'
 		'atras
 		'
 		Me.atras.Location = New System.Drawing.Point(47, 386)
@@ -69,7 +59,6 @@ Partial Class GestionarAlojamientos
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(561, 450)
 		Me.Controls.Add(Me.atras)
-		Me.Controls.Add(Me.filtrar)
 		Me.Controls.Add(Me.ListBox1)
 		Me.Controls.Add(Me.ComboBox1)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -83,6 +72,5 @@ Partial Class GestionarAlojamientos
 
 	Friend WithEvents ComboBox1 As ComboBox
 	Friend WithEvents ListBox1 As ListBox
-	Friend WithEvents filtrar As Button
 	Friend WithEvents atras As Button
 End Class

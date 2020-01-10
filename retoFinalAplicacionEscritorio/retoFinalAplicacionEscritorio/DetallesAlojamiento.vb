@@ -13,7 +13,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `marks`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura=" & cod, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura=" & cod, conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
@@ -35,7 +35,7 @@ Public Class DetallesAlojamiento
 		telefono.Text = tabla(0)(5)
 		mail.Text = tabla(0)(6)
 		web.Text = tabla(0)(7)
-		textRegion.Text = tabla(0)(8)
+		localidad.Text = tabla(0)(8)
 		provincia.SelectedValue = tabla(0)(9)
 		latitud.Text = tabla(0)(10)
 		longitud.Text = tabla(0)(11)
@@ -82,7 +82,7 @@ Public Class DetallesAlojamiento
 		telefono.ReadOnly = True
 		mail.ReadOnly = True
 		web.ReadOnly = True
-		textRegion.ReadOnly = True
+		localidad.ReadOnly = True
 		provincia.Enabled = False
 		latitud.ReadOnly = True
 		longitud.ReadOnly = True
@@ -103,7 +103,7 @@ Public Class DetallesAlojamiento
 		telefono.ReadOnly = False
 		mail.ReadOnly = False
 		web.ReadOnly = False
-		textRegion.ReadOnly = False
+		localidad.ReadOnly = False
 		provincia.Enabled = True
 		latitud.ReadOnly = False
 		longitud.ReadOnly = False
@@ -136,7 +136,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, marks = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
 		Dim ms As New MemoryStream
 		imagen.Image.Save(ms, imagen.Image.RawFormat)
 
@@ -147,7 +147,7 @@ Public Class DetallesAlojamiento
 		actualizacion.Parameters.AddWithValue("@telefono", Integer.Parse(telefono.Text))
 		actualizacion.Parameters.AddWithValue("@mail", mail.Text)
 		actualizacion.Parameters.AddWithValue("@web", web.Text)
-		actualizacion.Parameters.AddWithValue("@region", textRegion.Text)
+		actualizacion.Parameters.AddWithValue("@region", localidad.Text)
 		actualizacion.Parameters.AddWithValue("@provincia", Integer.Parse(provincia.SelectedValue))
 		actualizacion.Parameters.AddWithValue("@latitud", Double.Parse(latitud.Text))
 		actualizacion.Parameters.AddWithValue("@longitud", Double.Parse(longitud.Text))
@@ -172,8 +172,8 @@ Public Class DetallesAlojamiento
 		conexion.Open()
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
+		GestionarAlojamientos.ActualizarLista()
 		GestionarAlojamientos.Show()
-		GestionarAlojamientos.Update()
 		Me.Hide()
 	End Sub
 End Class

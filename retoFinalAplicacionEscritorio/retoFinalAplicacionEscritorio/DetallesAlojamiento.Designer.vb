@@ -37,7 +37,7 @@ Partial Class DetallesAlojamiento
 		Me.mail = New System.Windows.Forms.TextBox()
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.web = New System.Windows.Forms.TextBox()
-		Me.textRegion = New System.Windows.Forms.TextBox()
+		Me.localidad = New System.Windows.Forms.TextBox()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.Label11 = New System.Windows.Forms.Label()
 		Me.latitud = New System.Windows.Forms.TextBox()
@@ -211,13 +211,13 @@ Partial Class DetallesAlojamiento
 		Me.web.Size = New System.Drawing.Size(353, 23)
 		Me.web.TabIndex = 16
 		'
-		'textRegion
+		'localidad
 		'
-		Me.textRegion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.textRegion.Location = New System.Drawing.Point(91, 340)
-		Me.textRegion.Name = "textRegion"
-		Me.textRegion.Size = New System.Drawing.Size(168, 23)
-		Me.textRegion.TabIndex = 18
+		Me.localidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.localidad.Location = New System.Drawing.Point(106, 340)
+		Me.localidad.Name = "localidad"
+		Me.localidad.Size = New System.Drawing.Size(154, 23)
+		Me.localidad.TabIndex = 18
 		'
 		'Label10
 		'
@@ -377,9 +377,9 @@ Partial Class DetallesAlojamiento
 		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.Label9.Location = New System.Drawing.Point(33, 343)
 		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(52, 17)
+		Me.Label9.Size = New System.Drawing.Size(67, 17)
 		Me.Label9.TabIndex = 17
-		Me.Label9.Text = "Region:"
+		Me.Label9.Text = "Localidad:"
 		'
 		'restaurante
 		'
@@ -508,7 +508,7 @@ Partial Class DetallesAlojamiento
 		Me.Controls.Add(Me.latitud)
 		Me.Controls.Add(Me.Label11)
 		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.textRegion)
+		Me.Controls.Add(Me.localidad)
 		Me.Controls.Add(Me.Label9)
 		Me.Controls.Add(Me.web)
 		Me.Controls.Add(Me.Label8)
@@ -559,7 +559,7 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents mail As TextBox
 	Friend WithEvents Label8 As Label
 	Friend WithEvents web As TextBox
-	Friend WithEvents textRegion As TextBox
+	Friend WithEvents localidad As TextBox
 	Friend WithEvents Label10 As Label
 	Friend WithEvents Label11 As Label
 	Friend WithEvents latitud As TextBox

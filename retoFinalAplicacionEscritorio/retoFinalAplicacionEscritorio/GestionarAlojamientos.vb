@@ -11,23 +11,7 @@ Public Class GestionarAlojamientos
 		ComboBox1.ValueMember = "id"
 		ComboBox1.DisplayMember = "nombre"
 
-		Dim adapter2 As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
-		Dim tabla2 As New DataTable()
-
-		adapter2.Fill(tabla2)
-		ListBox1.DataSource = tabla2
-		ListBox1.ValueMember = "signatura"
-		ListBox1.DisplayMember = "documentname"
-	End Sub
-
-	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles filtrar.Click
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
-		Dim tabla As New DataTable()
-
-		adapter.Fill(tabla)
-		ListBox1.DataSource = tabla
-		ListBox1.ValueMember = "signatura"
-		ListBox1.DisplayMember = "documentname"
+		ActualizarLista()
 	End Sub
 
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles atras.Click
@@ -43,5 +27,19 @@ Public Class GestionarAlojamientos
 		Dim formulario As New DetallesAlojamiento(Integer.Parse(ListBox1.SelectedValue))
 		formulario.Show()
 		Me.Hide()
+	End Sub
+
+	Public Sub ActualizarLista()
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
+		Dim tabla As New DataTable()
+
+		adapter.Fill(tabla)
+		ListBox1.DataSource = tabla
+		ListBox1.ValueMember = "signatura"
+		ListBox1.DisplayMember = "documentname"
+	End Sub
+
+	Private Sub ComboBox1_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles ComboBox1.SelectionChangeCommitted
+		ActualizarLista()
 	End Sub
 End Class
