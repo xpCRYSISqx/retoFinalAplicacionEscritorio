@@ -92,7 +92,6 @@ Public Class DetallesAlojamiento
 		tienda.Enabled = False
 		autocaravana.Enabled = False
 		cargarImagen.Enabled = False
-		actualizar.Enabled = False
 	End Sub
 
 	Private Sub HabilitarCampos()
@@ -113,7 +112,6 @@ Public Class DetallesAlojamiento
 		tienda.Enabled = True
 		autocaravana.Enabled = True
 		cargarImagen.Enabled = True
-		actualizar.Enabled = True
 	End Sub
 
 	Private Sub CargarImagen_Click(sender As Object, e As EventArgs) Handles cargarImagen.Click
@@ -126,13 +124,21 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
-		If editar.Text = "Editar" Then
-			HabilitarCampos()
-			editar.Text = "Terminar Edición"
-		Else
-			DeshabilitarCampos()
-			editar.Text = "Editar"
-		End If
+		HabilitarCampos()
+		terminarEdicion.Visible = True
+		terminarEdicion.Enabled = True
+		editar.Visible = False
+		editar.Enabled = False
+		actualizar.Enabled = False
+	End Sub
+
+	Private Sub TerminarEdicion_Click(sender As Object, e As EventArgs) Handles terminarEdicion.Click
+		DeshabilitarCampos()
+		terminarEdicion.Visible = False
+		terminarEdicion.Enabled = False
+		editar.Visible = True
+		editar.Enabled = True
+		actualizar.Enabled = True
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click

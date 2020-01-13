@@ -30,25 +30,29 @@ Partial Class GestionarAlojamientos
 		'ComboBox1
 		'
 		Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+		Me.ComboBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ComboBox1.FormattingEnabled = True
 		Me.ComboBox1.Location = New System.Drawing.Point(47, 41)
 		Me.ComboBox1.Name = "ComboBox1"
-		Me.ComboBox1.Size = New System.Drawing.Size(163, 21)
+		Me.ComboBox1.Size = New System.Drawing.Size(163, 25)
 		Me.ComboBox1.TabIndex = 0
 		'
 		'ListBox1
 		'
+		Me.ListBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ListBox1.FormattingEnabled = True
+		Me.ListBox1.ItemHeight = 17
 		Me.ListBox1.Location = New System.Drawing.Point(266, 41)
 		Me.ListBox1.Name = "ListBox1"
-		Me.ListBox1.Size = New System.Drawing.Size(229, 368)
+		Me.ListBox1.Size = New System.Drawing.Size(229, 361)
 		Me.ListBox1.TabIndex = 1
 		'
 		'atras
 		'
-		Me.atras.Location = New System.Drawing.Point(47, 386)
+		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.atras.Location = New System.Drawing.Point(47, 372)
 		Me.atras.Name = "atras"
-		Me.atras.Size = New System.Drawing.Size(75, 23)
+		Me.atras.Size = New System.Drawing.Size(75, 30)
 		Me.atras.TabIndex = 3
 		Me.atras.Text = "Atras"
 		Me.atras.UseVisualStyleBackColor = True

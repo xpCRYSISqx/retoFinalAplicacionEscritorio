@@ -29,30 +29,30 @@ Partial Class SelecionarOpcion
 		'
 		'usuarios
 		'
-		Me.usuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.usuarios.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.usuarios.Location = New System.Drawing.Point(91, 76)
 		Me.usuarios.Name = "usuarios"
-		Me.usuarios.Size = New System.Drawing.Size(190, 23)
+		Me.usuarios.Size = New System.Drawing.Size(190, 33)
 		Me.usuarios.TabIndex = 0
 		Me.usuarios.Text = "Gestionar Usuarios"
 		Me.usuarios.UseVisualStyleBackColor = False
 		'
 		'alojamientos
 		'
-		Me.alojamientos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.alojamientos.Location = New System.Drawing.Point(91, 130)
+		Me.alojamientos.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.alojamientos.Location = New System.Drawing.Point(91, 129)
 		Me.alojamientos.Name = "alojamientos"
-		Me.alojamientos.Size = New System.Drawing.Size(190, 23)
+		Me.alojamientos.Size = New System.Drawing.Size(190, 33)
 		Me.alojamientos.TabIndex = 1
 		Me.alojamientos.Text = "Gestionar Alojamientos"
 		Me.alojamientos.UseVisualStyleBackColor = True
 		'
 		'reservas
 		'
-		Me.reservas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.reservas.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.reservas.Location = New System.Drawing.Point(91, 183)
 		Me.reservas.Name = "reservas"
-		Me.reservas.Size = New System.Drawing.Size(190, 23)
+		Me.reservas.Size = New System.Drawing.Size(190, 33)
 		Me.reservas.TabIndex = 2
 		Me.reservas.Text = "Gestionar Reservas"
 		Me.reservas.UseVisualStyleBackColor = True

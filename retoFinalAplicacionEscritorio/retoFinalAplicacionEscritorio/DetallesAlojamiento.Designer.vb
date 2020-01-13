@@ -64,6 +64,7 @@ Partial Class DetallesAlojamiento
 		Me.editar = New System.Windows.Forms.Button()
 		Me.actualizar = New System.Windows.Forms.Button()
 		Me.nombre = New System.Windows.Forms.TextBox()
+		Me.terminarEdicion = New System.Windows.Forms.Button()
 		Me.restaurante.SuspendLayout()
 		Me.tienda.SuspendLayout()
 		Me.autocaravana.SuspendLayout()
@@ -457,17 +458,17 @@ Partial Class DetallesAlojamiento
 		'editar
 		'
 		Me.editar.AutoSize = True
-		Me.editar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 		Me.editar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.editar.Location = New System.Drawing.Point(185, 653)
+		Me.editar.Location = New System.Drawing.Point(201, 653)
 		Me.editar.Name = "editar"
-		Me.editar.Size = New System.Drawing.Size(52, 27)
+		Me.editar.Size = New System.Drawing.Size(52, 32)
 		Me.editar.TabIndex = 45
 		Me.editar.Text = "Editar"
 		Me.editar.UseVisualStyleBackColor = True
 		'
 		'actualizar
 		'
+		Me.actualizar.Enabled = False
 		Me.actualizar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.actualizar.Location = New System.Drawing.Point(354, 653)
 		Me.actualizar.Name = "actualizar"
@@ -484,11 +485,24 @@ Partial Class DetallesAlojamiento
 		Me.nombre.Size = New System.Drawing.Size(161, 23)
 		Me.nombre.TabIndex = 47
 		'
+		'terminarEdicion
+		'
+		Me.terminarEdicion.Enabled = False
+		Me.terminarEdicion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.terminarEdicion.Location = New System.Drawing.Point(168, 653)
+		Me.terminarEdicion.Name = "terminarEdicion"
+		Me.terminarEdicion.Size = New System.Drawing.Size(124, 32)
+		Me.terminarEdicion.TabIndex = 48
+		Me.terminarEdicion.Text = "Terminar edicion"
+		Me.terminarEdicion.UseVisualStyleBackColor = True
+		Me.terminarEdicion.Visible = False
+		'
 		'DetallesAlojamiento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(462, 718)
+		Me.Controls.Add(Me.terminarEdicion)
 		Me.Controls.Add(Me.nombre)
 		Me.Controls.Add(Me.actualizar)
 		Me.Controls.Add(Me.editar)
@@ -586,4 +600,5 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents editar As Button
 	Friend WithEvents actualizar As Button
 	Friend WithEvents nombre As TextBox
+	Friend WithEvents terminarEdicion As Button
 End Class
