@@ -172,7 +172,7 @@ Public Class DetallesAlojamiento
 		conexion.Open()
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
-		GestionarAlojamientos.ActualizarLista()
+		GestionarAlojamientos.Actualizar()
 		GestionarAlojamientos.Show()
 		Me.Hide()
 	End Sub

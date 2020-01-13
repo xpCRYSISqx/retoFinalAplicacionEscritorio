@@ -42,4 +42,10 @@ Public Class GestionarAlojamientos
 	Private Sub ComboBox1_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles ComboBox1.SelectionChangeCommitted
 		ActualizarLista()
 	End Sub
+
+	Public Sub Actualizar()
+		Controls.Clear()
+		InitializeComponent()
+		FormGestionarAlojamientos_Load(Me, Nothing)
+	End Sub
 End Class
