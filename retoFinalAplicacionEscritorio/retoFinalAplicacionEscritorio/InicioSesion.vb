@@ -3,7 +3,7 @@ Imports System.Text
 Imports MySql.Data.MySqlClient
 
 Public Class InicioSesion
-	Public conexion As New MySqlConnection("datasource=188.213.5.150;port=3306;username=ldmj;password=ladamijo")
+	Public conexion As New MySqlConnection("datasource=188.213.5.150;port=3306;username=ldmj;password=ladamijo;CharSet=UTF8")
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
 		Me.Close()
 	End Sub
@@ -51,4 +51,8 @@ Public Class InicioSesion
 
 		Return stringBuilder.ToString
 	End Function
+
+	Private Sub InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+	End Sub
 End Class

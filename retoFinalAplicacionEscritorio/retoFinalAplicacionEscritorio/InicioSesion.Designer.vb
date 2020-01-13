@@ -32,7 +32,7 @@ Partial Class InicioSesion
 		'
 		'email
 		'
-		Me.email.Cursor = System.Windows.Forms.Cursors.No
+		Me.email.Cursor = System.Windows.Forms.Cursors.Arrow
 		Me.email.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.email.Location = New System.Drawing.Point(134, 94)
 		Me.email.Name = "email"
