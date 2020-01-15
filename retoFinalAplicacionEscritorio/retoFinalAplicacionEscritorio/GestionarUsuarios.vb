@@ -23,4 +23,10 @@ Public Class GestionarUsuarios
 		formulario.Show()
 		Me.Hide()
 	End Sub
+
+	Public Sub Actualizar()
+		Controls.Clear()
+		InitializeComponent()
+		GestionarUsuarios_Load(Me, Nothing)
+	End Sub
 End Class

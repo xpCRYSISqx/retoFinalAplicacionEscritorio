@@ -40,7 +40,7 @@ Public Class InicioSesion
 		Return True
 	End Function
 
-	Private Function Encriptar(ByVal input As String)
+	Public Function Encriptar(ByVal input As String)
 		Dim md5 As MD5 = MD5.Create()
 		Dim data() As Byte = md5.ComputeHash(Encoding.Default.GetBytes(input))
 		Dim stringBuilder As New StringBuilder()
@@ -51,8 +51,4 @@ Public Class InicioSesion
 
 		Return stringBuilder.ToString
 	End Function
-
-	Private Sub InicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-	End Sub
 End Class
