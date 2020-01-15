@@ -32,7 +32,7 @@ Partial Class InicioSesion
 		'
 		'email
 		'
-		Me.email.Cursor = System.Windows.Forms.Cursors.Arrow
+		Me.email.Cursor = System.Windows.Forms.Cursors.IBeam
 		Me.email.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.email.Location = New System.Drawing.Point(134, 94)
 		Me.email.Name = "email"
@@ -105,7 +105,7 @@ Partial Class InicioSesion
 		Me.MaximizeBox = False
 		Me.Name = "InicioSesion"
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Iniciar Sesion"
+		Me.Text = "Iniciar sesion"
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 

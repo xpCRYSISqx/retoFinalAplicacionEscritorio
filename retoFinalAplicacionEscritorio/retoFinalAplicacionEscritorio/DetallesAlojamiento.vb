@@ -76,42 +76,76 @@ Public Class DetallesAlojamiento
 
 	Private Sub DeshabilitarCampos()
 		nombre.ReadOnly = True
+		nombre.Cursor = Cursors.No
 		descripcion.ReadOnly = True
+		descripcion.Cursor = Cursors.No
 		tipo.ReadOnly = True
+		tipo.Cursor = Cursors.No
 		direccion.ReadOnly = True
+		direccion.Cursor = Cursors.No
 		telefono.ReadOnly = True
+		telefono.Cursor = Cursors.No
 		mail.ReadOnly = True
+		mail.Cursor = Cursors.No
 		web.ReadOnly = True
+		web.Cursor = Cursors.No
 		localidad.ReadOnly = True
+		localidad.Cursor = Cursors.No
 		provincia.Enabled = False
+		provincia.Cursor = Cursors.No
 		latitud.ReadOnly = True
+		latitud.Cursor = Cursors.No
 		longitud.ReadOnly = True
+		longitud.Cursor = Cursors.No
 		codigoPostal.ReadOnly = True
+		codigoPostal.Cursor = Cursors.No
 		capacidad.ReadOnly = True
+		capacidad.Cursor = Cursors.No
 		restaurante.Enabled = False
+		restaurante.Cursor = Cursors.No
 		tienda.Enabled = False
+		tienda.Cursor = Cursors.No
 		autocaravana.Enabled = False
+		autocaravana.Cursor = Cursors.No
 		cargarImagen.Enabled = False
+		cargarImagen.Cursor = Cursors.No
 	End Sub
 
 	Private Sub HabilitarCampos()
 		nombre.ReadOnly = False
+		nombre.Cursor = Cursors.IBeam
 		descripcion.ReadOnly = False
+		descripcion.Cursor = Cursors.IBeam
 		tipo.ReadOnly = False
+		tipo.Cursor = Cursors.IBeam
 		direccion.ReadOnly = False
+		direccion.Cursor = Cursors.IBeam
 		telefono.ReadOnly = False
+		telefono.Cursor = Cursors.IBeam
 		mail.ReadOnly = False
+		mail.Cursor = Cursors.IBeam
 		web.ReadOnly = False
+		web.Cursor = Cursors.IBeam
 		localidad.ReadOnly = False
+		localidad.Cursor = Cursors.IBeam
 		provincia.Enabled = True
+		provincia.Cursor = Cursors.Default
 		latitud.ReadOnly = False
+		latitud.Cursor = Cursors.IBeam
 		longitud.ReadOnly = False
+		longitud.Cursor = Cursors.IBeam
 		codigoPostal.ReadOnly = False
+		codigoPostal.Cursor = Cursors.IBeam
 		capacidad.ReadOnly = False
+		capacidad.Cursor = Cursors.IBeam
 		restaurante.Enabled = True
+		restaurante.Cursor = Cursors.Default
 		tienda.Enabled = True
+		tienda.Cursor = Cursors.Default
 		autocaravana.Enabled = True
+		autocaravana.Cursor = Cursors.Default
 		cargarImagen.Enabled = True
+		cargarImagen.Cursor = Cursors.Default
 	End Sub
 
 	Private Sub CargarImagen_Click(sender As Object, e As EventArgs) Handles cargarImagen.Click

@@ -49,9 +49,10 @@ Partial Class GestionarUsuarios
 		Me.listaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
 		Me.listaUsuarios.Location = New System.Drawing.Point(48, 37)
 		Me.listaUsuarios.Name = "listaUsuarios"
+		Me.listaUsuarios.ReadOnly = True
 		Me.listaUsuarios.RowHeadersVisible = False
 		Me.listaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.listaUsuarios.Size = New System.Drawing.Size(654, 185)
+		Me.listaUsuarios.Size = New System.Drawing.Size(471, 185)
 		Me.listaUsuarios.TabIndex = 0
 		'
 		'atras
@@ -68,12 +69,13 @@ Partial Class GestionarUsuarios
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(750, 450)
+		Me.ClientSize = New System.Drawing.Size(584, 450)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.listaUsuarios)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.MaximizeBox = False
 		Me.Name = "GestionarUsuarios"
+		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Gestion de usuarios"
 		CType(Me.listaUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)

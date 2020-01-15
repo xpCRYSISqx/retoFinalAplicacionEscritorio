@@ -44,7 +44,6 @@ Partial Class DetallesAlojamiento
 		Me.Label12 = New System.Windows.Forms.Label()
 		Me.longitud = New System.Windows.Forms.TextBox()
 		Me.Label13 = New System.Windows.Forms.Label()
-		Me.codigoPostal = New System.Windows.Forms.TextBox()
 		Me.Label14 = New System.Windows.Forms.Label()
 		Me.capacidad = New System.Windows.Forms.TextBox()
 		Me.restSi = New System.Windows.Forms.RadioButton()
@@ -65,6 +64,7 @@ Partial Class DetallesAlojamiento
 		Me.actualizar = New System.Windows.Forms.Button()
 		Me.nombre = New System.Windows.Forms.TextBox()
 		Me.terminarEdicion = New System.Windows.Forms.Button()
+		Me.codigoPostal = New System.Windows.Forms.MaskedTextBox()
 		Me.restaurante.SuspendLayout()
 		Me.tienda.SuspendLayout()
 		Me.autocaravana.SuspendLayout()
@@ -275,13 +275,6 @@ Partial Class DetallesAlojamiento
 		Me.Label13.Size = New System.Drawing.Size(94, 17)
 		Me.Label13.TabIndex = 25
 		Me.Label13.Text = "Código postal:"
-		'
-		'codigoPostal
-		'
-		Me.codigoPostal.Location = New System.Drawing.Point(331, 376)
-		Me.codigoPostal.Name = "codigoPostal"
-		Me.codigoPostal.Size = New System.Drawing.Size(98, 20)
-		Me.codigoPostal.TabIndex = 26
 		'
 		'Label14
 		'
@@ -497,11 +490,21 @@ Partial Class DetallesAlojamiento
 		Me.terminarEdicion.UseVisualStyleBackColor = True
 		Me.terminarEdicion.Visible = False
 		'
+		'codigoPostal
+		'
+		Me.codigoPostal.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.codigoPostal.Location = New System.Drawing.Point(331, 372)
+		Me.codigoPostal.Mask = "00000"
+		Me.codigoPostal.Name = "codigoPostal"
+		Me.codigoPostal.Size = New System.Drawing.Size(98, 23)
+		Me.codigoPostal.TabIndex = 49
+		'
 		'DetallesAlojamiento
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(462, 718)
+		Me.Controls.Add(Me.codigoPostal)
 		Me.Controls.Add(Me.terminarEdicion)
 		Me.Controls.Add(Me.nombre)
 		Me.Controls.Add(Me.actualizar)
@@ -515,7 +518,6 @@ Partial Class DetallesAlojamiento
 		Me.Controls.Add(Me.restaurante)
 		Me.Controls.Add(Me.capacidad)
 		Me.Controls.Add(Me.Label14)
-		Me.Controls.Add(Me.codigoPostal)
 		Me.Controls.Add(Me.Label13)
 		Me.Controls.Add(Me.longitud)
 		Me.Controls.Add(Me.Label12)
@@ -545,7 +547,7 @@ Partial Class DetallesAlojamiento
 		Me.Name = "DetallesAlojamiento"
 		Me.Padding = New System.Windows.Forms.Padding(30)
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-		Me.Text = "Detalles Alojamiento"
+		Me.Text = "Detalles del alojamiento"
 		Me.restaurante.ResumeLayout(False)
 		Me.restaurante.PerformLayout()
 		Me.tienda.ResumeLayout(False)
@@ -580,7 +582,6 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents Label12 As Label
 	Friend WithEvents longitud As TextBox
 	Friend WithEvents Label13 As Label
-	Friend WithEvents codigoPostal As TextBox
 	Friend WithEvents Label14 As Label
 	Friend WithEvents capacidad As TextBox
 	Friend WithEvents restSi As RadioButton
@@ -601,4 +602,5 @@ Partial Class DetallesAlojamiento
 	Friend WithEvents actualizar As Button
 	Friend WithEvents nombre As TextBox
 	Friend WithEvents terminarEdicion As Button
+	Friend WithEvents codigoPostal As MaskedTextBox
 End Class

@@ -83,6 +83,12 @@
     <Compile Include="DetallesAlojamiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DetallesUsuario.Designer.vb">
+      <DependentUpon>DetallesUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionarAlojamientos.Designer.vb">
       <DependentUpon>GestionarAlojamientos.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DetallesAlojamiento.resx">
       <DependentUpon>DetallesAlojamiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallesUsuario.resx">
+      <DependentUpon>DetallesUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarAlojamientos.resx">
       <DependentUpon>GestionarAlojamientos.vb</DependentUpon>
