@@ -32,8 +32,8 @@ Partial Class DetallesUsuario
 		Me.mail = New System.Windows.Forms.TextBox()
 		Me.telefono = New System.Windows.Forms.MaskedTextBox()
 		Me.admin = New System.Windows.Forms.GroupBox()
-		Me.adminSi = New System.Windows.Forms.RadioButton()
 		Me.adminNo = New System.Windows.Forms.RadioButton()
+		Me.adminSi = New System.Windows.Forms.RadioButton()
 		Me.atras = New System.Windows.Forms.Button()
 		Me.cambiarContrasena = New System.Windows.Forms.Button()
 		Me.editar = New System.Windows.Forms.Button()
@@ -128,17 +128,6 @@ Partial Class DetallesUsuario
 		Me.admin.TabStop = False
 		Me.admin.Text = "Administrador:"
 		'
-		'adminSi
-		'
-		Me.adminSi.AutoSize = True
-		Me.adminSi.Location = New System.Drawing.Point(20, 22)
-		Me.adminSi.Name = "adminSi"
-		Me.adminSi.Size = New System.Drawing.Size(36, 21)
-		Me.adminSi.TabIndex = 13
-		Me.adminSi.TabStop = True
-		Me.adminSi.Text = "Si"
-		Me.adminSi.UseVisualStyleBackColor = True
-		'
 		'adminNo
 		'
 		Me.adminNo.AutoSize = True
@@ -149,6 +138,17 @@ Partial Class DetallesUsuario
 		Me.adminNo.TabStop = True
 		Me.adminNo.Text = "No"
 		Me.adminNo.UseVisualStyleBackColor = True
+		'
+		'adminSi
+		'
+		Me.adminSi.AutoSize = True
+		Me.adminSi.Location = New System.Drawing.Point(20, 22)
+		Me.adminSi.Name = "adminSi"
+		Me.adminSi.Size = New System.Drawing.Size(36, 21)
+		Me.adminSi.TabIndex = 13
+		Me.adminSi.TabStop = True
+		Me.adminSi.Text = "Si"
+		Me.adminSi.UseVisualStyleBackColor = True
 		'
 		'atras
 		'
@@ -227,6 +227,7 @@ Partial Class DetallesUsuario
 		Me.Controls.Add(Me.Label2)
 		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
 		Me.Name = "DetallesUsuario"
 		Me.Padding = New System.Windows.Forms.Padding(40)

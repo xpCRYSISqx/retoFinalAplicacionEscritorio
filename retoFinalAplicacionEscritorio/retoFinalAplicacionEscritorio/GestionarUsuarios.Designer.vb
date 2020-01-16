@@ -22,30 +22,31 @@ Partial Class GestionarUsuarios
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.listaUsuarios = New System.Windows.Forms.DataGridView()
 		Me.atras = New System.Windows.Forms.Button()
+		Me.crearUsuario = New System.Windows.Forms.Button()
 		CType(Me.listaUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'listaUsuarios
 		'
 		Me.listaUsuarios.AllowUserToResizeRows = False
-		DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-		DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.listaUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+		DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+		DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.listaUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
 		Me.listaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
 		Me.listaUsuarios.BackgroundColor = System.Drawing.SystemColors.Control
 		Me.listaUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle2.BackColor = System.Drawing.Color.Violet
-		DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.listaUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+		DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle4.BackColor = System.Drawing.Color.Violet
+		DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.listaUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
 		Me.listaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
 		Me.listaUsuarios.Location = New System.Drawing.Point(48, 37)
 		Me.listaUsuarios.Name = "listaUsuarios"
@@ -65,11 +66,22 @@ Partial Class GestionarUsuarios
 		Me.atras.Text = "Atras"
 		Me.atras.UseVisualStyleBackColor = True
 		'
+		'crearUsuario
+		'
+		Me.crearUsuario.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.crearUsuario.Location = New System.Drawing.Point(419, 369)
+		Me.crearUsuario.Name = "crearUsuario"
+		Me.crearUsuario.Size = New System.Drawing.Size(100, 37)
+		Me.crearUsuario.TabIndex = 2
+		Me.crearUsuario.Text = "Crear usuario"
+		Me.crearUsuario.UseVisualStyleBackColor = True
+		'
 		'GestionarUsuarios
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(584, 450)
+		Me.Controls.Add(Me.crearUsuario)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.listaUsuarios)
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -84,4 +96,5 @@ Partial Class GestionarUsuarios
 
 	Friend WithEvents listaUsuarios As DataGridView
 	Friend WithEvents atras As Button
+	Friend WithEvents crearUsuario As Button
 End Class

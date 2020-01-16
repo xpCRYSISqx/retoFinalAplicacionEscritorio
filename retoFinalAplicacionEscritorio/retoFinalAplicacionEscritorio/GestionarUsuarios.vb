@@ -18,15 +18,21 @@ Public Class GestionarUsuarios
 		Me.Hide()
 	End Sub
 
-	Private Sub ListaUsuarios_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaUsuarios.CellContentClick
+	Public Sub Actualizar()
+		Controls.Clear()
+		InitializeComponent()
+		GestionarUsuarios_Load(Me, Nothing)
+	End Sub
+
+	Private Sub ListaUsuarios_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaUsuarios.CellContentDoubleClick
 		Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value)
 		formulario.Show()
 		Me.Hide()
 	End Sub
 
-	Public Sub Actualizar()
-		Controls.Clear()
-		InitializeComponent()
-		GestionarUsuarios_Load(Me, Nothing)
+	Private Sub CrearUsuario_Click(sender As Object, e As EventArgs) Handles crearUsuario.Click
+		Dim formulario As New CrearUsuario()
+		formulario.Show()
+		Me.Hide()
 	End Sub
 End Class

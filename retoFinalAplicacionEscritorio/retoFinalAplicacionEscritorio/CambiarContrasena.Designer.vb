@@ -109,6 +109,7 @@ Partial Class CambiarContrasena
 		Me.Controls.Add(Me.Label1)
 		Me.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
 		Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
 		Me.MaximizeBox = False
 		Me.Name = "CambiarContrasena"
