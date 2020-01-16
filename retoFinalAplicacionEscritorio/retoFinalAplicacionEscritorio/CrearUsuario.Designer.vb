@@ -84,7 +84,7 @@ Partial Class CrearUsuario
 		Me.apellido.Location = New System.Drawing.Point(45, 181)
 		Me.apellido.Name = "apellido"
 		Me.apellido.Size = New System.Drawing.Size(186, 23)
-		Me.apellido.TabIndex = 4
+		Me.apellido.TabIndex = 3
 		'
 		'Label4
 		'
@@ -101,7 +101,7 @@ Partial Class CrearUsuario
 		Me.mail.Location = New System.Drawing.Point(46, 244)
 		Me.mail.Name = "mail"
 		Me.mail.Size = New System.Drawing.Size(246, 23)
-		Me.mail.TabIndex = 6
+		Me.mail.TabIndex = 4
 		Me.mail.Text = "ejemplo@ejemplo.com"
 		'
 		'Label5
@@ -119,7 +119,7 @@ Partial Class CrearUsuario
 		Me.telefono.Mask = "000000000"
 		Me.telefono.Name = "telefono"
 		Me.telefono.Size = New System.Drawing.Size(104, 23)
-		Me.telefono.TabIndex = 8
+		Me.telefono.TabIndex = 5
 		'
 		'Label6
 		'
@@ -135,7 +135,7 @@ Partial Class CrearUsuario
 		Me.contra1.Location = New System.Drawing.Point(46, 369)
 		Me.contra1.Name = "contra1"
 		Me.contra1.Size = New System.Drawing.Size(185, 23)
-		Me.contra1.TabIndex = 10
+		Me.contra1.TabIndex = 6
 		Me.contra1.UseSystemPasswordChar = True
 		'
 		'Label7
@@ -152,7 +152,7 @@ Partial Class CrearUsuario
 		Me.contra2.Location = New System.Drawing.Point(46, 435)
 		Me.contra2.Name = "contra2"
 		Me.contra2.Size = New System.Drawing.Size(186, 23)
-		Me.contra2.TabIndex = 12
+		Me.contra2.TabIndex = 7
 		Me.contra2.UseSystemPasswordChar = True
 		'
 		'cancelar
@@ -160,7 +160,7 @@ Partial Class CrearUsuario
 		Me.cancelar.Location = New System.Drawing.Point(43, 512)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 33)
-		Me.cancelar.TabIndex = 13
+		Me.cancelar.TabIndex = 10
 		Me.cancelar.Text = "Cancelar"
 		Me.cancelar.UseVisualStyleBackColor = True
 		'
@@ -169,7 +169,7 @@ Partial Class CrearUsuario
 		Me.aceptar.Location = New System.Drawing.Point(268, 512)
 		Me.aceptar.Name = "aceptar"
 		Me.aceptar.Size = New System.Drawing.Size(75, 33)
-		Me.aceptar.TabIndex = 14
+		Me.aceptar.TabIndex = 11
 		Me.aceptar.Text = "Aceptar"
 		Me.aceptar.UseVisualStyleBackColor = True
 		'
@@ -179,7 +179,7 @@ Partial Class CrearUsuario
 		Me.dni.Mask = "00000000L"
 		Me.dni.Name = "dni"
 		Me.dni.Size = New System.Drawing.Size(117, 23)
-		Me.dni.TabIndex = 15
+		Me.dni.TabIndex = 1
 		'
 		'labelError
 		'
@@ -210,7 +210,7 @@ Partial Class CrearUsuario
 		Me.adminNo.Location = New System.Drawing.Point(57, 22)
 		Me.adminNo.Name = "adminNo"
 		Me.adminNo.Size = New System.Drawing.Size(44, 21)
-		Me.adminNo.TabIndex = 18
+		Me.adminNo.TabIndex = 9
 		Me.adminNo.TabStop = True
 		Me.adminNo.Text = "No"
 		Me.adminNo.UseVisualStyleBackColor = True
@@ -221,7 +221,7 @@ Partial Class CrearUsuario
 		Me.adminSi.Location = New System.Drawing.Point(15, 22)
 		Me.adminSi.Name = "adminSi"
 		Me.adminSi.Size = New System.Drawing.Size(36, 21)
-		Me.adminSi.TabIndex = 18
+		Me.adminSi.TabIndex = 8
 		Me.adminSi.Text = "Si"
 		Me.adminSi.UseVisualStyleBackColor = True
 		'
