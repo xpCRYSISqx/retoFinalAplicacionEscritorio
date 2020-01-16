@@ -11,6 +11,9 @@ Public Class CambiarContrasena
 			labelError.Visible = False
 			aceptar.Enabled = True
 		End If
+		If contra1.Text = "" Or contra2.Text = "" Then
+			aceptar.Enabled = False
+		End If
 	End Sub
 
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click

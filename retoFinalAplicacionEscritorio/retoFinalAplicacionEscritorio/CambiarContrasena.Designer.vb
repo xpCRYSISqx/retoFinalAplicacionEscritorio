@@ -72,7 +72,7 @@ Partial Class CambiarContrasena
 		Me.aceptar.Name = "aceptar"
 		Me.aceptar.Size = New System.Drawing.Size(75, 31)
 		Me.aceptar.TabIndex = 4
-		Me.aceptar.Text = "Aceptar"
+		Me.aceptar.Text = "Cambiar"
 		Me.aceptar.UseVisualStyleBackColor = True
 		'
 		'cancelar

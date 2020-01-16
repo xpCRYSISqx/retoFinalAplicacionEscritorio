@@ -32,12 +32,17 @@ Partial Class CrearUsuario
 		Me.Label5 = New System.Windows.Forms.Label()
 		Me.telefono = New System.Windows.Forms.MaskedTextBox()
 		Me.Label6 = New System.Windows.Forms.Label()
-		Me.TextBox1 = New System.Windows.Forms.TextBox()
+		Me.contra1 = New System.Windows.Forms.TextBox()
 		Me.Label7 = New System.Windows.Forms.Label()
-		Me.TextBox2 = New System.Windows.Forms.TextBox()
+		Me.contra2 = New System.Windows.Forms.TextBox()
 		Me.cancelar = New System.Windows.Forms.Button()
 		Me.aceptar = New System.Windows.Forms.Button()
 		Me.dni = New System.Windows.Forms.MaskedTextBox()
+		Me.labelError = New System.Windows.Forms.Label()
+		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.adminNo = New System.Windows.Forms.RadioButton()
+		Me.adminSi = New System.Windows.Forms.RadioButton()
+		Me.GroupBox1.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -92,10 +97,12 @@ Partial Class CrearUsuario
 		'
 		'mail
 		'
+		Me.mail.ForeColor = System.Drawing.Color.Gray
 		Me.mail.Location = New System.Drawing.Point(46, 244)
 		Me.mail.Name = "mail"
 		Me.mail.Size = New System.Drawing.Size(246, 23)
 		Me.mail.TabIndex = 6
+		Me.mail.Text = "ejemplo@ejemplo.com"
 		'
 		'Label5
 		'
@@ -123,13 +130,13 @@ Partial Class CrearUsuario
 		Me.Label6.TabIndex = 9
 		Me.Label6.Text = "Contraseña:"
 		'
-		'TextBox1
+		'contra1
 		'
-		Me.TextBox1.Location = New System.Drawing.Point(46, 369)
-		Me.TextBox1.Name = "TextBox1"
-		Me.TextBox1.Size = New System.Drawing.Size(185, 23)
-		Me.TextBox1.TabIndex = 10
-		Me.TextBox1.UseSystemPasswordChar = True
+		Me.contra1.Location = New System.Drawing.Point(46, 369)
+		Me.contra1.Name = "contra1"
+		Me.contra1.Size = New System.Drawing.Size(185, 23)
+		Me.contra1.TabIndex = 10
+		Me.contra1.UseSystemPasswordChar = True
 		'
 		'Label7
 		'
@@ -140,13 +147,13 @@ Partial Class CrearUsuario
 		Me.Label7.TabIndex = 11
 		Me.Label7.Text = "Repetir contraseña:"
 		'
-		'TextBox2
+		'contra2
 		'
-		Me.TextBox2.Location = New System.Drawing.Point(46, 435)
-		Me.TextBox2.Name = "TextBox2"
-		Me.TextBox2.Size = New System.Drawing.Size(186, 23)
-		Me.TextBox2.TabIndex = 12
-		Me.TextBox2.UseSystemPasswordChar = True
+		Me.contra2.Location = New System.Drawing.Point(46, 435)
+		Me.contra2.Name = "contra2"
+		Me.contra2.Size = New System.Drawing.Size(186, 23)
+		Me.contra2.TabIndex = 12
+		Me.contra2.UseSystemPasswordChar = True
 		'
 		'cancelar
 		'
@@ -174,17 +181,63 @@ Partial Class CrearUsuario
 		Me.dni.Size = New System.Drawing.Size(117, 23)
 		Me.dni.TabIndex = 15
 		'
+		'labelError
+		'
+		Me.labelError.AutoSize = True
+		Me.labelError.ForeColor = System.Drawing.Color.Red
+		Me.labelError.Location = New System.Drawing.Point(102, 474)
+		Me.labelError.Name = "labelError"
+		Me.labelError.Size = New System.Drawing.Size(179, 17)
+		Me.labelError.TabIndex = 16
+		Me.labelError.Text = "Las contraseñas no coinciden"
+		Me.labelError.Visible = False
+		'
+		'GroupBox1
+		'
+		Me.GroupBox1.Controls.Add(Me.adminNo)
+		Me.GroupBox1.Controls.Add(Me.adminSi)
+		Me.GroupBox1.Location = New System.Drawing.Point(238, 413)
+		Me.GroupBox1.Name = "GroupBox1"
+		Me.GroupBox1.Size = New System.Drawing.Size(111, 45)
+		Me.GroupBox1.TabIndex = 17
+		Me.GroupBox1.TabStop = False
+		Me.GroupBox1.Text = "Administrador:"
+		'
+		'adminNo
+		'
+		Me.adminNo.AutoSize = True
+		Me.adminNo.Checked = True
+		Me.adminNo.Location = New System.Drawing.Point(57, 22)
+		Me.adminNo.Name = "adminNo"
+		Me.adminNo.Size = New System.Drawing.Size(44, 21)
+		Me.adminNo.TabIndex = 18
+		Me.adminNo.TabStop = True
+		Me.adminNo.Text = "No"
+		Me.adminNo.UseVisualStyleBackColor = True
+		'
+		'adminSi
+		'
+		Me.adminSi.AutoSize = True
+		Me.adminSi.Location = New System.Drawing.Point(15, 22)
+		Me.adminSi.Name = "adminSi"
+		Me.adminSi.Size = New System.Drawing.Size(36, 21)
+		Me.adminSi.TabIndex = 18
+		Me.adminSi.Text = "Si"
+		Me.adminSi.UseVisualStyleBackColor = True
+		'
 		'CrearUsuario
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(386, 588)
+		Me.Controls.Add(Me.GroupBox1)
+		Me.Controls.Add(Me.labelError)
 		Me.Controls.Add(Me.dni)
 		Me.Controls.Add(Me.aceptar)
 		Me.Controls.Add(Me.cancelar)
-		Me.Controls.Add(Me.TextBox2)
+		Me.Controls.Add(Me.contra2)
 		Me.Controls.Add(Me.Label7)
-		Me.Controls.Add(Me.TextBox1)
+		Me.Controls.Add(Me.contra1)
 		Me.Controls.Add(Me.Label6)
 		Me.Controls.Add(Me.telefono)
 		Me.Controls.Add(Me.Label5)
@@ -203,6 +256,8 @@ Partial Class CrearUsuario
 		Me.Padding = New System.Windows.Forms.Padding(40)
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "CrearUsuario"
+		Me.GroupBox1.ResumeLayout(False)
+		Me.GroupBox1.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -218,10 +273,14 @@ Partial Class CrearUsuario
 	Friend WithEvents Label5 As Label
 	Friend WithEvents telefono As MaskedTextBox
 	Friend WithEvents Label6 As Label
-	Friend WithEvents TextBox1 As TextBox
+	Friend WithEvents contra1 As TextBox
 	Friend WithEvents Label7 As Label
-	Friend WithEvents TextBox2 As TextBox
+	Friend WithEvents contra2 As TextBox
 	Friend WithEvents cancelar As Button
 	Friend WithEvents aceptar As Button
 	Friend WithEvents dni As MaskedTextBox
+	Friend WithEvents labelError As Label
+	Friend WithEvents GroupBox1 As GroupBox
+	Friend WithEvents adminNo As RadioButton
+	Friend WithEvents adminSi As RadioButton
 End Class

@@ -22,8 +22,11 @@ Partial Class GestionarUsuarios
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
+		Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.listaUsuarios = New System.Windows.Forms.DataGridView()
 		Me.atras = New System.Windows.Forms.Button()
 		Me.crearUsuario = New System.Windows.Forms.Button()
@@ -33,27 +36,49 @@ Partial Class GestionarUsuarios
 		'listaUsuarios
 		'
 		Me.listaUsuarios.AllowUserToResizeRows = False
-		DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-		DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.listaUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+		DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+		DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.listaUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
 		Me.listaUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
 		Me.listaUsuarios.BackgroundColor = System.Drawing.SystemColors.Control
+		Me.listaUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
 		Me.listaUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+		DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue
+		DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+		DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepSkyBlue
+		DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText
+		DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.listaUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+		Me.listaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+		DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+		DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+		DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+		DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.listaUsuarios.DefaultCellStyle = DataGridViewCellStyle3
+		Me.listaUsuarios.EnableHeadersVisualStyles = False
+		Me.listaUsuarios.GridColor = System.Drawing.SystemColors.ActiveBorder
+		Me.listaUsuarios.Location = New System.Drawing.Point(48, 37)
+		Me.listaUsuarios.Name = "listaUsuarios"
+		Me.listaUsuarios.ReadOnly = True
 		DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-		DataGridViewCellStyle4.BackColor = System.Drawing.Color.Violet
+		DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
 		DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
 		DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
 		DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
 		DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.listaUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-		Me.listaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-		Me.listaUsuarios.Location = New System.Drawing.Point(48, 37)
-		Me.listaUsuarios.Name = "listaUsuarios"
-		Me.listaUsuarios.ReadOnly = True
+		Me.listaUsuarios.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
 		Me.listaUsuarios.RowHeadersVisible = False
+		DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+		DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.listaUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle5
 		Me.listaUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.listaUsuarios.Size = New System.Drawing.Size(471, 185)
+		Me.listaUsuarios.Size = New System.Drawing.Size(552, 185)
 		Me.listaUsuarios.TabIndex = 0
 		'
 		'atras
@@ -69,7 +94,7 @@ Partial Class GestionarUsuarios
 		'crearUsuario
 		'
 		Me.crearUsuario.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.crearUsuario.Location = New System.Drawing.Point(419, 369)
+		Me.crearUsuario.Location = New System.Drawing.Point(500, 369)
 		Me.crearUsuario.Name = "crearUsuario"
 		Me.crearUsuario.Size = New System.Drawing.Size(100, 37)
 		Me.crearUsuario.TabIndex = 2
@@ -80,7 +105,7 @@ Partial Class GestionarUsuarios
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(584, 450)
+		Me.ClientSize = New System.Drawing.Size(637, 450)
 		Me.Controls.Add(Me.crearUsuario)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.listaUsuarios)

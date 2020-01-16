@@ -2,7 +2,7 @@
 Public Class GestionarUsuarios
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub GestionarUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT dni as 'DNI', nombre as 'Nombre', apellido as 'Apellido', email as 'Correo electrónico', telefono as 'Teléfono' FROM prueba.usuarios", conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT dni as 'DNI', nombre as 'Nombre', apellido as 'Apellido', email as 'Correo electrónico', telefono as 'Teléfono', activo as 'Activado' FROM prueba.usuarios", conexion)
 		Dim tabla As New DataTable()
 		adapter.Fill(tabla)
 
@@ -25,14 +25,15 @@ Public Class GestionarUsuarios
 	End Sub
 
 	Private Sub ListaUsuarios_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaUsuarios.CellContentDoubleClick
-		Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value)
-		formulario.Show()
-		Me.Hide()
+		If e.RowIndex <> -1 Then
+			Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value)
+			formulario.Show()
+			Me.Hide()
+		End If
 	End Sub
 
 	Private Sub CrearUsuario_Click(sender As Object, e As EventArgs) Handles crearUsuario.Click
 		Dim formulario As New CrearUsuario()
 		formulario.Show()
-		Me.Hide()
 	End Sub
 End Class
