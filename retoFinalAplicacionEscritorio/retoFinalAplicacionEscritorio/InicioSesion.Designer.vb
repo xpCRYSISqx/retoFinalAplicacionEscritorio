@@ -34,18 +34,18 @@ Partial Class InicioSesion
 		'
 		Me.email.Cursor = System.Windows.Forms.Cursors.IBeam
 		Me.email.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.email.Location = New System.Drawing.Point(134, 94)
+		Me.email.Location = New System.Drawing.Point(51, 94)
 		Me.email.Name = "email"
-		Me.email.Size = New System.Drawing.Size(193, 25)
+		Me.email.Size = New System.Drawing.Size(276, 25)
 		Me.email.TabIndex = 0
 		'
 		'contrasena
 		'
 		Me.contrasena.AccessibleDescription = ""
 		Me.contrasena.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.contrasena.Location = New System.Drawing.Point(134, 166)
+		Me.contrasena.Location = New System.Drawing.Point(51, 166)
 		Me.contrasena.Name = "contrasena"
-		Me.contrasena.Size = New System.Drawing.Size(193, 25)
+		Me.contrasena.Size = New System.Drawing.Size(276, 25)
 		Me.contrasena.TabIndex = 1
 		Me.contrasena.Tag = ""
 		Me.contrasena.UseSystemPasswordChar = True
@@ -53,8 +53,10 @@ Partial Class InicioSesion
 		'Label1
 		'
 		Me.Label1.AutoSize = True
+		Me.Label1.BackColor = System.Drawing.Color.Transparent
 		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(74, 97)
+		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.Label1.Location = New System.Drawing.Point(47, 72)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(54, 19)
 		Me.Label1.TabIndex = 2
@@ -63,8 +65,10 @@ Partial Class InicioSesion
 		'Label2
 		'
 		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.Location = New System.Drawing.Point(47, 169)
+		Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.Label2.Location = New System.Drawing.Point(47, 144)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(82, 19)
 		Me.Label2.TabIndex = 3
@@ -72,28 +76,31 @@ Partial Class InicioSesion
 		'
 		'iniciarSesion
 		'
+		Me.iniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.iniciarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.iniciarSesion.Location = New System.Drawing.Point(230, 278)
 		Me.iniciarSesion.Name = "iniciarSesion"
 		Me.iniciarSesion.Size = New System.Drawing.Size(97, 31)
 		Me.iniciarSesion.TabIndex = 4
 		Me.iniciarSesion.Text = "Iniciar Sesion"
-		Me.iniciarSesion.UseVisualStyleBackColor = True
+		Me.iniciarSesion.UseVisualStyleBackColor = False
 		'
 		'cancelar
 		'
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.cancelar.Location = New System.Drawing.Point(51, 278)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(97, 31)
 		Me.cancelar.TabIndex = 5
 		Me.cancelar.Text = "Cancelar"
-		Me.cancelar.UseVisualStyleBackColor = True
+		Me.cancelar.UseVisualStyleBackColor = False
 		'
 		'InicioSesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(378, 366)
 		Me.Controls.Add(Me.cancelar)
 		Me.Controls.Add(Me.iniciarSesion)

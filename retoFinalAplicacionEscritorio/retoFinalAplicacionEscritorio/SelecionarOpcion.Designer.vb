@@ -29,8 +29,9 @@ Partial Class SelecionarOpcion
 		'
 		'usuarios
 		'
+		Me.usuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.usuarios.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.usuarios.Location = New System.Drawing.Point(91, 76)
+		Me.usuarios.Location = New System.Drawing.Point(90, 77)
 		Me.usuarios.Name = "usuarios"
 		Me.usuarios.Size = New System.Drawing.Size(190, 33)
 		Me.usuarios.TabIndex = 0
@@ -39,23 +40,25 @@ Partial Class SelecionarOpcion
 		'
 		'alojamientos
 		'
+		Me.alojamientos.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.alojamientos.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.alojamientos.Location = New System.Drawing.Point(91, 129)
 		Me.alojamientos.Name = "alojamientos"
 		Me.alojamientos.Size = New System.Drawing.Size(190, 33)
 		Me.alojamientos.TabIndex = 1
 		Me.alojamientos.Text = "Gestionar Alojamientos"
-		Me.alojamientos.UseVisualStyleBackColor = True
+		Me.alojamientos.UseVisualStyleBackColor = False
 		'
 		'reservas
 		'
+		Me.reservas.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.reservas.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.reservas.Location = New System.Drawing.Point(91, 183)
 		Me.reservas.Name = "reservas"
 		Me.reservas.Size = New System.Drawing.Size(190, 33)
 		Me.reservas.TabIndex = 2
 		Me.reservas.Text = "Gestionar Reservas"
-		Me.reservas.UseVisualStyleBackColor = True
+		Me.reservas.UseVisualStyleBackColor = False
 		'
 		'SelecionarOpcion
 		'

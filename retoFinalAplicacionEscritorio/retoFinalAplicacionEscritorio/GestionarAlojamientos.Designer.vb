@@ -49,18 +49,20 @@ Partial Class GestionarAlojamientos
 		'
 		'atras
 		'
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.atras.Location = New System.Drawing.Point(47, 372)
 		Me.atras.Name = "atras"
 		Me.atras.Size = New System.Drawing.Size(75, 30)
 		Me.atras.TabIndex = 3
 		Me.atras.Text = "Atras"
-		Me.atras.UseVisualStyleBackColor = True
+		Me.atras.UseVisualStyleBackColor = False
 		'
 		'GestionarAlojamientos
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(561, 450)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.ListBox1)

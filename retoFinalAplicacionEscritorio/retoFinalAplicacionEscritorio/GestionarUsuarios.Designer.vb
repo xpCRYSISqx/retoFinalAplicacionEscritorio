@@ -83,23 +83,25 @@ Partial Class GestionarUsuarios
 		'
 		'atras
 		'
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.atras.Location = New System.Drawing.Point(48, 369)
 		Me.atras.Name = "atras"
 		Me.atras.Size = New System.Drawing.Size(75, 37)
 		Me.atras.TabIndex = 1
 		Me.atras.Text = "Atras"
-		Me.atras.UseVisualStyleBackColor = True
+		Me.atras.UseVisualStyleBackColor = False
 		'
 		'crearUsuario
 		'
+		Me.crearUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.crearUsuario.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.crearUsuario.Location = New System.Drawing.Point(500, 369)
 		Me.crearUsuario.Name = "crearUsuario"
 		Me.crearUsuario.Size = New System.Drawing.Size(100, 37)
 		Me.crearUsuario.TabIndex = 2
 		Me.crearUsuario.Text = "Crear usuario"
-		Me.crearUsuario.UseVisualStyleBackColor = True
+		Me.crearUsuario.UseVisualStyleBackColor = False
 		'
 		'GestionarUsuarios
 		'

@@ -157,21 +157,23 @@ Partial Class CrearUsuario
 		'
 		'cancelar
 		'
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cancelar.Location = New System.Drawing.Point(43, 512)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 33)
 		Me.cancelar.TabIndex = 10
 		Me.cancelar.Text = "Cancelar"
-		Me.cancelar.UseVisualStyleBackColor = True
+		Me.cancelar.UseVisualStyleBackColor = False
 		'
 		'aceptar
 		'
+		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.aceptar.Location = New System.Drawing.Point(268, 512)
 		Me.aceptar.Name = "aceptar"
 		Me.aceptar.Size = New System.Drawing.Size(75, 33)
 		Me.aceptar.TabIndex = 11
 		Me.aceptar.Text = "Aceptar"
-		Me.aceptar.UseVisualStyleBackColor = True
+		Me.aceptar.UseVisualStyleBackColor = False
 		'
 		'dni
 		'

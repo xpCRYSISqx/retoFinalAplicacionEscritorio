@@ -4,7 +4,7 @@ Public Class CrearUsuario
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub Aceptar_Click(sender As Object, e As EventArgs) Handles aceptar.Click
 		If Comprobar() Then
-			Dim comando As New MySqlCommand("INSERT INTO prueba.usuarios (`dni`, `nombre`, `apellido`, `contrasena`, `telefono`, `email`, `administrador`) VALUES (@dni,@nombre,@apellido,@contrasena,@telefono,@email,@administrador)", conexion)
+			Dim comando As New MySqlCommand("INSERT INTO alojamientos_fac.usuarios (`dni`, `nombre`, `apellido`, `contrasena`, `telefono`, `email`, `administrador`, `activo`) VALUES (@dni,@nombre,@apellido,@contrasena,@telefono,@email,@administrador,@activo)", conexion)
 			comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = dni.Text.ToUpper
 			comando.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = nombre.Text
 			comando.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = apellido.Text
@@ -16,6 +16,7 @@ Public Class CrearUsuario
 			Else
 				comando.Parameters.Add("@administrador", MySqlDbType.Int16).Value = 0
 			End If
+			comando.Parameters.Add("@activo", MySqlDbType.VarChar).Value = "activo"
 			Try
 				conexion.Open()
 				comando.ExecuteNonQuery()
@@ -24,6 +25,7 @@ Public Class CrearUsuario
 				MessageBox.Show("Error al insertar los datos en la base de datos")
 			End Try
 			GestionarUsuarios.Actualizar()
+			GestionarUsuarios.Show()
 			Me.Close()
 		End If
 	End Sub
@@ -79,7 +81,7 @@ Public Class CrearUsuario
 	End Function
 
 	Private Function ComprobarDNIBaseDatos() As Boolean
-		Dim comando As New MySqlCommand("SELECT * FROM prueba.usuarios WHERE dni = @dni", conexion)
+		Dim comando As New MySqlCommand("SELECT * FROM alojamientos_fac.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = dni.Text
 
 		Dim adapter As New MySqlDataAdapter(comando)

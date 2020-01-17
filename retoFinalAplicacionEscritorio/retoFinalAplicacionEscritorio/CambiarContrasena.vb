@@ -22,7 +22,7 @@ Public Class CambiarContrasena
 	End Sub
 
 	Private Sub Aceptar_Click(sender As Object, e As EventArgs) Handles aceptar.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.usuarios SET contrasena = @contrasena WHERE dni = @dni", conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET contrasena = @contrasena WHERE dni = @dni", conexion)
 		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = dni.ToString
 
 		actualizacion.Parameters.AddWithValue("@contrasena", InicioSesion.Encriptar(contra1.Text))

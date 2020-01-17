@@ -13,7 +13,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim comando As New MySqlCommand("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura = @id", conexion)
+		Dim comando As New MySqlCommand("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM alojamientos_fac.alojamientos WHERE signatura = @id", conexion)
 		comando.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
 
 		Dim adapter As New MySqlDataAdapter(comando)
@@ -21,7 +21,7 @@ Public Class DetallesAlojamiento
 
 		adapter.Fill(tabla)
 
-		Dim adapter2 As New MySqlDataAdapter("SELECT `id`, `nombre` FROM prueba.provincias", conexion)
+		Dim adapter2 As New MySqlDataAdapter("SELECT `id`, `nombre` FROM alojamientos_fac.provincias", conexion)
 		Dim tabla2 As New DataTable()
 
 		adapter2.Fill(tabla2)
@@ -179,7 +179,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura = @id", conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura = @id", conexion)
 		actualizacion.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
 		Dim ms As New MemoryStream
 		imagen.Image.Save(ms, imagen.Image.RawFormat)

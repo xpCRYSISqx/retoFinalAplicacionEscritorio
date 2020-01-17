@@ -3,7 +3,7 @@ Public Class DetallesUsuario
 	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM prueba.usuarios WHERE dni = @dni", conexion)
+		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM alojamientos_fac.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod
 
 		Dim adapter As New MySqlDataAdapter(comando)
@@ -58,7 +58,7 @@ Public Class DetallesUsuario
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualiza.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
 		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod.ToString
 
 		actualizacion.Parameters.AddWithValue("@nombre", nombre.Text)

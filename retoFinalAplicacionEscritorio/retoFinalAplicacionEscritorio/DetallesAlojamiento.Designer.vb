@@ -73,18 +73,21 @@ Partial Class DetallesAlojamiento
 		'
 		'cancelar
 		'
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.cancelar.Location = New System.Drawing.Point(33, 653)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 32)
 		Me.cancelar.TabIndex = 0
 		Me.cancelar.Text = "Cancelar"
-		Me.cancelar.UseVisualStyleBackColor = True
+		Me.cancelar.UseVisualStyleBackColor = False
 		'
 		'Label1
 		'
 		Me.Label1.AutoSize = True
+		Me.Label1.BackColor = System.Drawing.Color.Transparent
 		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label1.Location = New System.Drawing.Point(33, 30)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(60, 17)
@@ -94,7 +97,9 @@ Partial Class DetallesAlojamiento
 		'Label2
 		'
 		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
 		Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label2.Location = New System.Drawing.Point(265, 30)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(54, 17)
@@ -104,7 +109,9 @@ Partial Class DetallesAlojamiento
 		'labelCodigo
 		'
 		Me.labelCodigo.AutoSize = True
+		Me.labelCodigo.BackColor = System.Drawing.Color.Transparent
 		Me.labelCodigo.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.labelCodigo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.labelCodigo.Location = New System.Drawing.Point(325, 30)
 		Me.labelCodigo.Name = "labelCodigo"
 		Me.labelCodigo.Size = New System.Drawing.Size(0, 17)
@@ -113,7 +120,9 @@ Partial Class DetallesAlojamiento
 		'Label3
 		'
 		Me.Label3.AutoSize = True
+		Me.Label3.BackColor = System.Drawing.Color.Transparent
 		Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label3.Location = New System.Drawing.Point(33, 65)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(79, 17)
@@ -132,7 +141,9 @@ Partial Class DetallesAlojamiento
 		'Label4
 		'
 		Me.Label4.AutoSize = True
+		Me.Label4.BackColor = System.Drawing.Color.Transparent
 		Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label4.Location = New System.Drawing.Point(33, 119)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(37, 17)
@@ -150,7 +161,9 @@ Partial Class DetallesAlojamiento
 		'Label5
 		'
 		Me.Label5.AutoSize = True
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
 		Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label5.Location = New System.Drawing.Point(33, 375)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(65, 17)
@@ -168,7 +181,9 @@ Partial Class DetallesAlojamiento
 		'Label6
 		'
 		Me.Label6.AutoSize = True
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
 		Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label6.Location = New System.Drawing.Point(33, 175)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(62, 17)
@@ -178,7 +193,9 @@ Partial Class DetallesAlojamiento
 		'Label7
 		'
 		Me.Label7.AutoSize = True
+		Me.Label7.BackColor = System.Drawing.Color.Transparent
 		Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label7.Location = New System.Drawing.Point(35, 211)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(47, 17)
@@ -197,7 +214,9 @@ Partial Class DetallesAlojamiento
 		'Label8
 		'
 		Me.Label8.AutoSize = True
+		Me.Label8.BackColor = System.Drawing.Color.Transparent
 		Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label8.Location = New System.Drawing.Point(35, 246)
 		Me.Label8.Name = "Label8"
 		Me.Label8.Size = New System.Drawing.Size(38, 17)
@@ -223,7 +242,9 @@ Partial Class DetallesAlojamiento
 		'Label10
 		'
 		Me.Label10.AutoSize = True
+		Me.Label10.BackColor = System.Drawing.Color.Transparent
 		Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label10.Location = New System.Drawing.Point(33, 309)
 		Me.Label10.Name = "Label10"
 		Me.Label10.Size = New System.Drawing.Size(63, 17)
@@ -233,7 +254,9 @@ Partial Class DetallesAlojamiento
 		'Label11
 		'
 		Me.Label11.AutoSize = True
+		Me.Label11.BackColor = System.Drawing.Color.Transparent
 		Me.Label11.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label11.Location = New System.Drawing.Point(33, 408)
 		Me.Label11.Name = "Label11"
 		Me.Label11.Size = New System.Drawing.Size(50, 17)
@@ -251,7 +274,9 @@ Partial Class DetallesAlojamiento
 		'Label12
 		'
 		Me.Label12.AutoSize = True
+		Me.Label12.BackColor = System.Drawing.Color.Transparent
 		Me.Label12.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label12.Location = New System.Drawing.Point(198, 410)
 		Me.Label12.Name = "Label12"
 		Me.Label12.Size = New System.Drawing.Size(62, 17)
@@ -269,7 +294,9 @@ Partial Class DetallesAlojamiento
 		'Label13
 		'
 		Me.Label13.AutoSize = True
+		Me.Label13.BackColor = System.Drawing.Color.Transparent
 		Me.Label13.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label13.Location = New System.Drawing.Point(231, 375)
 		Me.Label13.Name = "Label13"
 		Me.Label13.Size = New System.Drawing.Size(94, 17)
@@ -279,7 +306,9 @@ Partial Class DetallesAlojamiento
 		'Label14
 		'
 		Me.Label14.AutoSize = True
+		Me.Label14.BackColor = System.Drawing.Color.Transparent
 		Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label14.Location = New System.Drawing.Point(33, 471)
 		Me.Label14.Name = "Label14"
 		Me.Label14.Size = New System.Drawing.Size(73, 17)
@@ -368,7 +397,9 @@ Partial Class DetallesAlojamiento
 		'Label9
 		'
 		Me.Label9.AutoSize = True
+		Me.Label9.BackColor = System.Drawing.Color.Transparent
 		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.Label9.Location = New System.Drawing.Point(33, 343)
 		Me.Label9.Name = "Label9"
 		Me.Label9.Size = New System.Drawing.Size(67, 17)
@@ -377,9 +408,11 @@ Partial Class DetallesAlojamiento
 		'
 		'restaurante
 		'
+		Me.restaurante.BackColor = System.Drawing.Color.Transparent
 		Me.restaurante.Controls.Add(Me.restNo)
 		Me.restaurante.Controls.Add(Me.restSi)
 		Me.restaurante.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.restaurante.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.restaurante.Location = New System.Drawing.Point(33, 496)
 		Me.restaurante.Name = "restaurante"
 		Me.restaurante.Size = New System.Drawing.Size(108, 39)
@@ -389,9 +422,11 @@ Partial Class DetallesAlojamiento
 		'
 		'tienda
 		'
+		Me.tienda.BackColor = System.Drawing.Color.Transparent
 		Me.tienda.Controls.Add(Me.tiendaNo)
 		Me.tienda.Controls.Add(Me.tiendaSi)
 		Me.tienda.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.tienda.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.tienda.Location = New System.Drawing.Point(33, 540)
 		Me.tienda.Name = "tienda"
 		Me.tienda.Size = New System.Drawing.Size(108, 40)
@@ -401,12 +436,14 @@ Partial Class DetallesAlojamiento
 		'
 		'autocaravana
 		'
+		Me.autocaravana.BackColor = System.Drawing.Color.Transparent
 		Me.autocaravana.Controls.Add(Me.autoSi)
 		Me.autocaravana.Controls.Add(Me.autoNo)
 		Me.autocaravana.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.autocaravana.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
 		Me.autocaravana.Location = New System.Drawing.Point(33, 586)
 		Me.autocaravana.Name = "autocaravana"
-		Me.autocaravana.Size = New System.Drawing.Size(108, 39)
+		Me.autocaravana.Size = New System.Drawing.Size(108, 43)
 		Me.autocaravana.TabIndex = 40
 		Me.autocaravana.TabStop = False
 		Me.autocaravana.Text = "Autocaravana:"
@@ -440,13 +477,14 @@ Partial Class DetallesAlojamiento
 		'
 		'cargarImagen
 		'
+		Me.cargarImagen.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cargarImagen.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.cargarImagen.Location = New System.Drawing.Point(201, 602)
 		Me.cargarImagen.Name = "cargarImagen"
 		Me.cargarImagen.Size = New System.Drawing.Size(228, 27)
 		Me.cargarImagen.TabIndex = 44
 		Me.cargarImagen.Text = "Seleccionar imagen"
-		Me.cargarImagen.UseVisualStyleBackColor = True
+		Me.cargarImagen.UseVisualStyleBackColor = False
 		'
 		'editar
 		'
@@ -461,6 +499,7 @@ Partial Class DetallesAlojamiento
 		'
 		'actualizar
 		'
+		Me.actualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.actualizar.Enabled = False
 		Me.actualizar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.actualizar.Location = New System.Drawing.Point(354, 653)
@@ -468,7 +507,7 @@ Partial Class DetallesAlojamiento
 		Me.actualizar.Size = New System.Drawing.Size(75, 32)
 		Me.actualizar.TabIndex = 46
 		Me.actualizar.Text = "Actualizar"
-		Me.actualizar.UseVisualStyleBackColor = True
+		Me.actualizar.UseVisualStyleBackColor = False
 		'
 		'nombre
 		'
@@ -480,6 +519,7 @@ Partial Class DetallesAlojamiento
 		'
 		'terminarEdicion
 		'
+		Me.terminarEdicion.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.terminarEdicion.Enabled = False
 		Me.terminarEdicion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.terminarEdicion.Location = New System.Drawing.Point(168, 653)
@@ -487,7 +527,7 @@ Partial Class DetallesAlojamiento
 		Me.terminarEdicion.Size = New System.Drawing.Size(124, 32)
 		Me.terminarEdicion.TabIndex = 48
 		Me.terminarEdicion.Text = "Terminar edicion"
-		Me.terminarEdicion.UseVisualStyleBackColor = True
+		Me.terminarEdicion.UseVisualStyleBackColor = False
 		Me.terminarEdicion.Visible = False
 		'
 		'codigoPostal

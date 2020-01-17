@@ -67,22 +67,24 @@ Partial Class CambiarContrasena
 		'
 		'aceptar
 		'
+		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.aceptar.Enabled = False
 		Me.aceptar.Location = New System.Drawing.Point(263, 194)
 		Me.aceptar.Name = "aceptar"
 		Me.aceptar.Size = New System.Drawing.Size(75, 31)
 		Me.aceptar.TabIndex = 4
 		Me.aceptar.Text = "Cambiar"
-		Me.aceptar.UseVisualStyleBackColor = True
+		Me.aceptar.UseVisualStyleBackColor = False
 		'
 		'cancelar
 		'
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cancelar.Location = New System.Drawing.Point(34, 194)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 31)
 		Me.cancelar.TabIndex = 5
 		Me.cancelar.Text = "Cancelar"
-		Me.cancelar.UseVisualStyleBackColor = True
+		Me.cancelar.UseVisualStyleBackColor = False
 		'
 		'labelError
 		'

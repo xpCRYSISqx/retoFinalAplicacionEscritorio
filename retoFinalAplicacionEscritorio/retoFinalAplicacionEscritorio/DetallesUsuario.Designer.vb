@@ -41,8 +41,8 @@ Partial Class DetallesUsuario
 		Me.terminar = New System.Windows.Forms.Button()
 		Me.dni = New System.Windows.Forms.Label()
 		Me.activo = New System.Windows.Forms.GroupBox()
-		Me.actSi = New System.Windows.Forms.RadioButton()
 		Me.actNo = New System.Windows.Forms.RadioButton()
+		Me.actSi = New System.Windows.Forms.RadioButton()
 		Me.admin.SuspendLayout()
 		Me.activo.SuspendLayout()
 		Me.SuspendLayout()
@@ -50,6 +50,8 @@ Partial Class DetallesUsuario
 		'Label1
 		'
 		Me.Label1.AutoSize = True
+		Me.Label1.BackColor = System.Drawing.Color.Transparent
+		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.Label1.Location = New System.Drawing.Point(43, 40)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(34, 17)
@@ -59,6 +61,8 @@ Partial Class DetallesUsuario
 		'Label2
 		'
 		Me.Label2.AutoSize = True
+		Me.Label2.BackColor = System.Drawing.Color.Transparent
+		Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.Label2.Location = New System.Drawing.Point(43, 71)
 		Me.Label2.Name = "Label2"
 		Me.Label2.Size = New System.Drawing.Size(60, 17)
@@ -68,6 +72,8 @@ Partial Class DetallesUsuario
 		'Label3
 		'
 		Me.Label3.AutoSize = True
+		Me.Label3.BackColor = System.Drawing.Color.Transparent
+		Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.Label3.Location = New System.Drawing.Point(43, 106)
 		Me.Label3.Name = "Label3"
 		Me.Label3.Size = New System.Drawing.Size(59, 17)
@@ -77,6 +83,8 @@ Partial Class DetallesUsuario
 		'Label5
 		'
 		Me.Label5.AutoSize = True
+		Me.Label5.BackColor = System.Drawing.Color.Transparent
+		Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.Label5.Location = New System.Drawing.Point(43, 145)
 		Me.Label5.Name = "Label5"
 		Me.Label5.Size = New System.Drawing.Size(120, 17)
@@ -86,6 +94,8 @@ Partial Class DetallesUsuario
 		'Label6
 		'
 		Me.Label6.AutoSize = True
+		Me.Label6.BackColor = System.Drawing.Color.Transparent
+		Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.Label6.Location = New System.Drawing.Point(43, 181)
 		Me.Label6.Name = "Label6"
 		Me.Label6.Size = New System.Drawing.Size(62, 17)
@@ -123,8 +133,10 @@ Partial Class DetallesUsuario
 		'
 		'admin
 		'
+		Me.admin.BackColor = System.Drawing.Color.Transparent
 		Me.admin.Controls.Add(Me.adminNo)
 		Me.admin.Controls.Add(Me.adminSi)
+		Me.admin.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.admin.Location = New System.Drawing.Point(46, 223)
 		Me.admin.Name = "admin"
 		Me.admin.Size = New System.Drawing.Size(117, 52)
@@ -156,21 +168,23 @@ Partial Class DetallesUsuario
 		'
 		'atras
 		'
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.atras.Location = New System.Drawing.Point(43, 307)
 		Me.atras.Name = "atras"
 		Me.atras.Size = New System.Drawing.Size(75, 30)
 		Me.atras.TabIndex = 13
 		Me.atras.Text = "Atras"
-		Me.atras.UseVisualStyleBackColor = True
+		Me.atras.UseVisualStyleBackColor = False
 		'
 		'cambiarContrasena
 		'
+		Me.cambiarContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.cambiarContrasena.Location = New System.Drawing.Point(268, 238)
 		Me.cambiarContrasena.Name = "cambiarContrasena"
 		Me.cambiarContrasena.Size = New System.Drawing.Size(143, 34)
 		Me.cambiarContrasena.TabIndex = 14
 		Me.cambiarContrasena.Text = "Cambiar contraseña"
-		Me.cambiarContrasena.UseVisualStyleBackColor = True
+		Me.cambiarContrasena.UseVisualStyleBackColor = False
 		'
 		'editar
 		'
@@ -183,27 +197,31 @@ Partial Class DetallesUsuario
 		'
 		'actualiza
 		'
+		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.actualiza.Enabled = False
 		Me.actualiza.Location = New System.Drawing.Point(336, 307)
 		Me.actualiza.Name = "actualiza"
 		Me.actualiza.Size = New System.Drawing.Size(75, 30)
 		Me.actualiza.TabIndex = 16
 		Me.actualiza.Text = "Actualizar"
-		Me.actualiza.UseVisualStyleBackColor = True
+		Me.actualiza.UseVisualStyleBackColor = False
 		'
 		'terminar
 		'
+		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.terminar.Location = New System.Drawing.Point(169, 307)
 		Me.terminar.Name = "terminar"
 		Me.terminar.Size = New System.Drawing.Size(116, 30)
 		Me.terminar.TabIndex = 17
 		Me.terminar.Text = "Terminar edición"
-		Me.terminar.UseVisualStyleBackColor = True
+		Me.terminar.UseVisualStyleBackColor = False
 		Me.terminar.Visible = False
 		'
 		'dni
 		'
 		Me.dni.AutoSize = True
+		Me.dni.BackColor = System.Drawing.Color.Transparent
+		Me.dni.ForeColor = System.Drawing.SystemColors.Control
 		Me.dni.Location = New System.Drawing.Point(83, 40)
 		Me.dni.Name = "dni"
 		Me.dni.Size = New System.Drawing.Size(0, 17)
@@ -211,25 +229,16 @@ Partial Class DetallesUsuario
 		'
 		'activo
 		'
+		Me.activo.BackColor = System.Drawing.Color.Transparent
 		Me.activo.Controls.Add(Me.actNo)
 		Me.activo.Controls.Add(Me.actSi)
+		Me.activo.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.activo.Location = New System.Drawing.Point(169, 223)
 		Me.activo.Name = "activo"
 		Me.activo.Size = New System.Drawing.Size(92, 52)
 		Me.activo.TabIndex = 19
 		Me.activo.TabStop = False
 		Me.activo.Text = "Activo:"
-		'
-		'actSi
-		'
-		Me.actSi.AutoSize = True
-		Me.actSi.Location = New System.Drawing.Point(6, 22)
-		Me.actSi.Name = "actSi"
-		Me.actSi.Size = New System.Drawing.Size(36, 21)
-		Me.actSi.TabIndex = 20
-		Me.actSi.TabStop = True
-		Me.actSi.Text = "Si"
-		Me.actSi.UseVisualStyleBackColor = True
 		'
 		'actNo
 		'
@@ -241,6 +250,17 @@ Partial Class DetallesUsuario
 		Me.actNo.TabStop = True
 		Me.actNo.Text = "No"
 		Me.actNo.UseVisualStyleBackColor = True
+		'
+		'actSi
+		'
+		Me.actSi.AutoSize = True
+		Me.actSi.Location = New System.Drawing.Point(6, 22)
+		Me.actSi.Name = "actSi"
+		Me.actSi.Size = New System.Drawing.Size(36, 21)
+		Me.actSi.TabIndex = 20
+		Me.actSi.TabStop = True
+		Me.actSi.Text = "Si"
+		Me.actSi.UseVisualStyleBackColor = True
 		'
 		'DetallesUsuario
 		'

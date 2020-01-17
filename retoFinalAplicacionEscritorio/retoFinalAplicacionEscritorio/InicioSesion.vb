@@ -19,7 +19,7 @@ Public Class InicioSesion
 	End Sub
 
 	Private Function ComprobarDatos()
-		Dim comando As New MySqlCommand("SELECT `contrasena`, `administrador`, `activo` FROM prueba.usuarios WHERE email = @email", conexion)
+		Dim comando As New MySqlCommand("SELECT `contrasena`, `administrador`, `activo` FROM alojamientos_fac.usuarios WHERE email = @email", conexion)
 		comando.Parameters.Add("@email", MySqlDbType.VarChar).Value = email.Text
 
 		Try

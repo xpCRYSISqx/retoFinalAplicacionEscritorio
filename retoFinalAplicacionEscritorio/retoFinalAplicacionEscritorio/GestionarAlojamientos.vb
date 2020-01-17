@@ -2,7 +2,7 @@
 Public Class GestionarAlojamientos
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub FormGestionarAlojamientos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT `id`, `nombre` FROM prueba.provincias", conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `id`, `nombre` FROM alojamientos_fac.provincias", conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
@@ -30,7 +30,7 @@ Public Class GestionarAlojamientos
 	End Sub
 
 	Public Sub ActualizarLista()
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM prueba.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM alojamientos_fac.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
