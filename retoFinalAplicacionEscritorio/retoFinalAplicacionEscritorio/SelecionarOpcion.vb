@@ -14,4 +14,11 @@
 		formulario.Show()
 		Me.Hide()
 	End Sub
+
+	Private Sub CorrarSesion_Click(sender As Object, e As EventArgs) Handles corrarSesion.Click
+		InicioSesion.Actualizar()
+		InicioSesion.Show()
+		Me.Hide()
+		MessageBox.Show("Se ha cerrado la sesión")
+	End Sub
 End Class

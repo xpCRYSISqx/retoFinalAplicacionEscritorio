@@ -59,4 +59,9 @@ Public Class InicioSesion
 
 		Return stringBuilder.ToString
 	End Function
+
+	Public Sub Actualizar()
+		Controls.Clear()
+		InitializeComponent()
+	End Sub
 End Class

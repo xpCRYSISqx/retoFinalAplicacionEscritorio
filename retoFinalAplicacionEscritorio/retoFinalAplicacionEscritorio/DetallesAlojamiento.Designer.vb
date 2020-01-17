@@ -489,13 +489,14 @@ Partial Class DetallesAlojamiento
 		'editar
 		'
 		Me.editar.AutoSize = True
+		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.editar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.editar.Location = New System.Drawing.Point(201, 653)
 		Me.editar.Name = "editar"
 		Me.editar.Size = New System.Drawing.Size(52, 32)
 		Me.editar.TabIndex = 45
 		Me.editar.Text = "Editar"
-		Me.editar.UseVisualStyleBackColor = True
+		Me.editar.UseVisualStyleBackColor = False
 		'
 		'actualizar
 		'

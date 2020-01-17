@@ -48,4 +48,11 @@ Public Class GestionarAlojamientos
 		InitializeComponent()
 		FormGestionarAlojamientos_Load(Me, Nothing)
 	End Sub
+
+	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles cerrarSesion.Click
+		InicioSesion.Actualizar()
+		InicioSesion.Show()
+		Me.Hide()
+		MessageBox.Show("Se ha cerrado la sesión")
+	End Sub
 End Class

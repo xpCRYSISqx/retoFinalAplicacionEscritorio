@@ -188,12 +188,13 @@ Partial Class DetallesUsuario
 		'
 		'editar
 		'
+		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
 		Me.editar.Location = New System.Drawing.Point(192, 307)
 		Me.editar.Name = "editar"
 		Me.editar.Size = New System.Drawing.Size(75, 30)
 		Me.editar.TabIndex = 15
 		Me.editar.Text = "Editar"
-		Me.editar.UseVisualStyleBackColor = True
+		Me.editar.UseVisualStyleBackColor = False
 		'
 		'actualiza
 		'

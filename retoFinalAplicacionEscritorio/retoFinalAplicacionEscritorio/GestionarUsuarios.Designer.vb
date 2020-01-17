@@ -30,6 +30,7 @@ Partial Class GestionarUsuarios
 		Me.listaUsuarios = New System.Windows.Forms.DataGridView()
 		Me.atras = New System.Windows.Forms.Button()
 		Me.crearUsuario = New System.Windows.Forms.Button()
+		Me.cerrarSesion = New System.Windows.Forms.Button()
 		CType(Me.listaUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
@@ -62,7 +63,7 @@ Partial Class GestionarUsuarios
 		Me.listaUsuarios.DefaultCellStyle = DataGridViewCellStyle3
 		Me.listaUsuarios.EnableHeadersVisualStyles = False
 		Me.listaUsuarios.GridColor = System.Drawing.SystemColors.ActiveBorder
-		Me.listaUsuarios.Location = New System.Drawing.Point(48, 37)
+		Me.listaUsuarios.Location = New System.Drawing.Point(48, 76)
 		Me.listaUsuarios.Name = "listaUsuarios"
 		Me.listaUsuarios.ReadOnly = True
 		DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -103,11 +104,23 @@ Partial Class GestionarUsuarios
 		Me.crearUsuario.Text = "Crear usuario"
 		Me.crearUsuario.UseVisualStyleBackColor = False
 		'
+		'cerrarSesion
+		'
+		Me.cerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.cerrarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.cerrarSesion.Location = New System.Drawing.Point(515, 21)
+		Me.cerrarSesion.Name = "cerrarSesion"
+		Me.cerrarSesion.Size = New System.Drawing.Size(94, 30)
+		Me.cerrarSesion.TabIndex = 3
+		Me.cerrarSesion.Text = "Cerrar sesión"
+		Me.cerrarSesion.UseVisualStyleBackColor = False
+		'
 		'GestionarUsuarios
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(637, 450)
+		Me.Controls.Add(Me.cerrarSesion)
 		Me.Controls.Add(Me.crearUsuario)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.listaUsuarios)
@@ -124,4 +137,5 @@ Partial Class GestionarUsuarios
 	Friend WithEvents listaUsuarios As DataGridView
 	Friend WithEvents atras As Button
 	Friend WithEvents crearUsuario As Button
+	Friend WithEvents cerrarSesion As Button
 End Class

@@ -25,6 +25,7 @@ Partial Class SelecionarOpcion
 		Me.usuarios = New System.Windows.Forms.Button()
 		Me.alojamientos = New System.Windows.Forms.Button()
 		Me.reservas = New System.Windows.Forms.Button()
+		Me.corrarSesion = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'usuarios
@@ -60,11 +61,23 @@ Partial Class SelecionarOpcion
 		Me.reservas.Text = "Gestionar Reservas"
 		Me.reservas.UseVisualStyleBackColor = False
 		'
+		'corrarSesion
+		'
+		Me.corrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.corrarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.corrarSesion.Location = New System.Drawing.Point(258, 12)
+		Me.corrarSesion.Name = "corrarSesion"
+		Me.corrarSesion.Size = New System.Drawing.Size(108, 28)
+		Me.corrarSesion.TabIndex = 3
+		Me.corrarSesion.Text = "Cerrar sesión"
+		Me.corrarSesion.UseVisualStyleBackColor = False
+		'
 		'SelecionarOpcion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(378, 299)
+		Me.Controls.Add(Me.corrarSesion)
 		Me.Controls.Add(Me.reservas)
 		Me.Controls.Add(Me.alojamientos)
 		Me.Controls.Add(Me.usuarios)
@@ -80,4 +93,5 @@ Partial Class SelecionarOpcion
 	Friend WithEvents usuarios As Button
 	Friend WithEvents alojamientos As Button
 	Friend WithEvents reservas As Button
+	Friend WithEvents corrarSesion As Button
 End Class
