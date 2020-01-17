@@ -3,7 +3,7 @@ Public Class DetallesUsuario
 	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador` FROM prueba.usuarios WHERE dni = @dni", conexion)
+		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM prueba.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod
 
 		Dim adapter As New MySqlDataAdapter(comando)
@@ -20,6 +20,11 @@ Public Class DetallesUsuario
 			adminSi.Checked = True
 		Else
 			adminNo.Checked = True
+		End If
+		If tabla(0)(6) = "activo" Then
+			actSi.Checked = True
+		Else
+			actNo.Checked = True
 		End If
 
 		DeshabilitarCampos()
@@ -53,7 +58,7 @@ Public Class DetallesUsuario
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualiza.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin WHERE dni = @dni", conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE prueba.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
 		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod.ToString
 
 		actualizacion.Parameters.AddWithValue("@nombre", nombre.Text)
@@ -64,6 +69,11 @@ Public Class DetallesUsuario
 			actualizacion.Parameters.AddWithValue("@admin", 1)
 		Else
 			actualizacion.Parameters.AddWithValue("@admin", 0)
+		End If
+		If actSi.Checked = True Then
+			actualizacion.Parameters.AddWithValue("@activo", "activo")
+		Else
+			actualizacion.Parameters.AddWithValue("@activo", "inactivo")
 		End If
 
 		conexion.Open()
@@ -94,6 +104,8 @@ Public Class DetallesUsuario
 		telefono.Cursor = Cursors.IBeam
 		admin.Enabled = True
 		admin.Cursor = Cursors.Default
+		activo.Enabled = True
+		activo.Cursor = Cursors.Default
 	End Sub
 
 	Private Sub DeshabilitarCampos()
@@ -107,6 +119,8 @@ Public Class DetallesUsuario
 		telefono.Cursor = Cursors.No
 		admin.Enabled = False
 		admin.Cursor = Cursors.No
+		activo.Enabled = False
+		activo.Cursor = Cursors.No
 	End Sub
 
 	Private Sub CambiarContraseña_Click(sender As Object, e As EventArgs) Handles cambiarContrasena.Click

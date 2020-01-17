@@ -54,11 +54,11 @@ Partial Class InicioSesion
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(69, 97)
+		Me.Label1.Location = New System.Drawing.Point(74, 97)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(59, 19)
+		Me.Label1.Size = New System.Drawing.Size(54, 19)
 		Me.Label1.TabIndex = 2
-		Me.Label1.Text = "Usuario:"
+		Me.Label1.Text = "Correo:"
 		'
 		'Label2
 		'

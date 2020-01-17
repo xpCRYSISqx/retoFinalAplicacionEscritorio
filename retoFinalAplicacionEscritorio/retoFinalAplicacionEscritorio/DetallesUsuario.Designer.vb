@@ -40,7 +40,11 @@ Partial Class DetallesUsuario
 		Me.actualiza = New System.Windows.Forms.Button()
 		Me.terminar = New System.Windows.Forms.Button()
 		Me.dni = New System.Windows.Forms.Label()
+		Me.activo = New System.Windows.Forms.GroupBox()
+		Me.actSi = New System.Windows.Forms.RadioButton()
+		Me.actNo = New System.Windows.Forms.RadioButton()
 		Me.admin.SuspendLayout()
+		Me.activo.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -205,11 +209,45 @@ Partial Class DetallesUsuario
 		Me.dni.Size = New System.Drawing.Size(0, 17)
 		Me.dni.TabIndex = 18
 		'
+		'activo
+		'
+		Me.activo.Controls.Add(Me.actNo)
+		Me.activo.Controls.Add(Me.actSi)
+		Me.activo.Location = New System.Drawing.Point(169, 223)
+		Me.activo.Name = "activo"
+		Me.activo.Size = New System.Drawing.Size(92, 52)
+		Me.activo.TabIndex = 19
+		Me.activo.TabStop = False
+		Me.activo.Text = "Activo:"
+		'
+		'actSi
+		'
+		Me.actSi.AutoSize = True
+		Me.actSi.Location = New System.Drawing.Point(6, 22)
+		Me.actSi.Name = "actSi"
+		Me.actSi.Size = New System.Drawing.Size(36, 21)
+		Me.actSi.TabIndex = 20
+		Me.actSi.TabStop = True
+		Me.actSi.Text = "Si"
+		Me.actSi.UseVisualStyleBackColor = True
+		'
+		'actNo
+		'
+		Me.actNo.AutoSize = True
+		Me.actNo.Location = New System.Drawing.Point(48, 22)
+		Me.actNo.Name = "actNo"
+		Me.actNo.Size = New System.Drawing.Size(44, 21)
+		Me.actNo.TabIndex = 20
+		Me.actNo.TabStop = True
+		Me.actNo.Text = "No"
+		Me.actNo.UseVisualStyleBackColor = True
+		'
 		'DetallesUsuario
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(454, 378)
+		Me.Controls.Add(Me.activo)
 		Me.Controls.Add(Me.dni)
 		Me.Controls.Add(Me.terminar)
 		Me.Controls.Add(Me.actualiza)
@@ -235,6 +273,8 @@ Partial Class DetallesUsuario
 		Me.Text = "Detalles del usuario"
 		Me.admin.ResumeLayout(False)
 		Me.admin.PerformLayout()
+		Me.activo.ResumeLayout(False)
+		Me.activo.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -258,4 +298,7 @@ Partial Class DetallesUsuario
 	Friend WithEvents actualiza As Button
 	Friend WithEvents terminar As Button
 	Friend WithEvents dni As Label
+	Friend WithEvents activo As GroupBox
+	Friend WithEvents actNo As RadioButton
+	Friend WithEvents actSi As RadioButton
 End Class

@@ -24,7 +24,7 @@ Public Class GestionarAlojamientos
 	End Sub
 
 	Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
-		Dim formulario As New DetallesAlojamiento(Integer.Parse(ListBox1.SelectedValue))
+		Dim formulario As New DetallesAlojamiento(ListBox1.SelectedValue)
 		formulario.Show()
 		Me.Hide()
 	End Sub

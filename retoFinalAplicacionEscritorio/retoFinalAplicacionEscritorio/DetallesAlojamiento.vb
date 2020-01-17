@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports MySql.Data.MySqlClient
 Public Class DetallesAlojamiento
-	Dim cod As Integer
+	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
 		GestionarAlojamientos.Show()
@@ -13,7 +13,10 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura=" & cod, conexion)
+		Dim comando As New MySqlCommand("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM prueba.alojamientos WHERE signatura = @id", conexion)
+		comando.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
+
+		Dim adapter As New MySqlDataAdapter(comando)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)
@@ -65,7 +68,7 @@ Public Class DetallesAlojamiento
 		DeshabilitarCampos()
 	End Sub
 
-	Public Sub New(ByVal codigo As Integer)
+	Public Sub New(ByVal codigo As String)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -176,7 +179,8 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
-		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura=" & cod, conexion)
+		Dim actualizacion As New MySqlCommand("UPDATE prueba.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura = @id", conexion)
+		actualizacion.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
 		Dim ms As New MemoryStream
 		imagen.Image.Save(ms, imagen.Image.RawFormat)
 
@@ -209,11 +213,16 @@ Public Class DetallesAlojamiento
 			actualizacion.Parameters.AddWithValue("@autocaravana", 0)
 		End If
 		actualizacion.Parameters.AddWithValue("@imagen", ms.ToArray())
-		conexion.Open()
-		actualizacion.ExecuteNonQuery()
-		conexion.Close()
-		GestionarAlojamientos.Actualizar()
-		GestionarAlojamientos.Show()
-		Me.Hide()
+		Try
+			conexion.Open()
+			actualizacion.ExecuteNonQuery()
+			conexion.Close()
+		Catch ex As Exception
+			MessageBox.Show("Error al actualizar la base de datos")
+		Finally
+			GestionarAlojamientos.Actualizar()
+			GestionarAlojamientos.Show()
+			Me.Hide()
+		End Try
 	End Sub
 End Class

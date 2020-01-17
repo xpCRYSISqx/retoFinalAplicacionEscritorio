@@ -19,25 +19,33 @@ Public Class InicioSesion
 	End Sub
 
 	Private Function ComprobarDatos()
-		Dim comando As New MySqlCommand("SELECT `contrasena`, `administrador` FROM prueba.usuarios WHERE email = @email", conexion)
+		Dim comando As New MySqlCommand("SELECT `contrasena`, `administrador`, `activo` FROM prueba.usuarios WHERE email = @email", conexion)
 		comando.Parameters.Add("@email", MySqlDbType.VarChar).Value = email.Text
 
-		Dim adapter As New MySqlDataAdapter(comando)
-		Dim tabla As New DataTable()
+		Try
+			Dim adapter As New MySqlDataAdapter(comando)
+			Dim tabla As New DataTable()
 
-		adapter.Fill(tabla)
+			adapter.Fill(tabla)
 
-		If tabla.Rows.Count = 0 Then
-			MsgBox("Datos de inicio de sesion incorrectos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
-			Return False
-		ElseIf tabla(0)(0) <> Encriptar(contrasena.Text) Then
-			MsgBox("Datos de inicio de sesion incorrectos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
-			Return False
-		ElseIf tabla(0)(1) <> 1 Then
-			MsgBox("Este usuario no tiene derechos de administrador", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
-			Return False
-		End If
-		Return True
+			If tabla.Rows.Count = 0 Then
+				MsgBox("Datos de inicio de sesion incorrectos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+				Return False
+			ElseIf tabla(0)(0) <> Encriptar(contrasena.Text) Then
+				MsgBox("Datos de inicio de sesion incorrectos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+				Return False
+			ElseIf tabla(0)(1) <> 1 Then
+				MsgBox("Este usuario no tiene derechos de administrador", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+				Return False
+			ElseIf tabla(0)(2) = "inactivo" Then
+				MsgBox("Este usuario esta desactivado", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+				Return False
+			End If
+			Return True
+		Catch e As MySqlException
+			MessageBox.Show("Error al conectarse a la base de datos")
+		End Try
+		Return False
 	End Function
 
 	Public Function Encriptar(ByVal input As String)
