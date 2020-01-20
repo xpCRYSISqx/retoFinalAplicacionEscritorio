@@ -9,11 +9,7 @@ Public Class GestionarUsuarios
 		listaUsuarios.DataSource = tabla
 	End Sub
 
-	Private Sub GestionarUsuarios_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-		InicioSesion.Close()
-	End Sub
-
-	Private Sub Atras_Click(sender As Object, e As EventArgs) Handles atras.Click
+	Private Sub Atras_Click(sender As Object, e As EventArgs)
 		SelecionarOpcion.Show()
 		Me.Hide()
 	End Sub
@@ -28,7 +24,6 @@ Public Class GestionarUsuarios
 		If e.RowIndex <> -1 Then
 			Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value)
 			formulario.Show()
-			Me.Hide()
 		End If
 	End Sub
 
@@ -38,7 +33,7 @@ Public Class GestionarUsuarios
 		Me.Hide()
 	End Sub
 
-	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles cerrarSesion.Click
+	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs)
 		InicioSesion.Actualizar()
 		InicioSesion.Show()
 		Me.Hide()

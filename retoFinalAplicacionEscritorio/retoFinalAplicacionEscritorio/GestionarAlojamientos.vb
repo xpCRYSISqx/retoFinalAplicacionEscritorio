@@ -14,7 +14,7 @@ Public Class GestionarAlojamientos
 		ActualizarLista()
 	End Sub
 
-	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles atras.Click
+	Private Sub Button2_Click(sender As Object, e As EventArgs)
 		SelecionarOpcion.Show()
 		Me.Hide()
 	End Sub
@@ -49,10 +49,23 @@ Public Class GestionarAlojamientos
 		FormGestionarAlojamientos_Load(Me, Nothing)
 	End Sub
 
-	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles cerrarSesion.Click
+	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs)
 		InicioSesion.Actualizar()
 		InicioSesion.Show()
 		Me.Hide()
 		MessageBox.Show("Se ha cerrado la sesión")
+	End Sub
+
+	Dim HiLiteBrush As New SolidBrush(Color.FromArgb(77, 77, 77))
+
+	Private Sub ListBox1_DrawItem(ByVal sender As Object, ByVal e As System.Windows.Forms.DrawItemEventArgs) Handles ListBox1.DrawItem
+		e.DrawBackground()
+		If (e.State And DrawItemState.Selected) = DrawItemState.Selected Then
+			e.Graphics.FillRectangle(HiLiteBrush, e.Bounds)
+		End If
+		Using b As New SolidBrush(e.ForeColor)
+			e.Graphics.DrawString(ListBox1.GetItemText(ListBox1.Items(e.Index)), e.Font, b, e.Bounds)
+		End Using
+		e.DrawFocusRectangle()
 	End Sub
 End Class

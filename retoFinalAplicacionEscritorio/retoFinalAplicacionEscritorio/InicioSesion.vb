@@ -1,4 +1,5 @@
-﻿Imports System.Security.Cryptography
+﻿Imports System.Runtime.InteropServices
+Imports System.Security.Cryptography
 Imports System.Text
 Imports MySql.Data.MySqlClient
 
@@ -9,7 +10,7 @@ Public Class InicioSesion
 	End Sub
 
 	Private Sub IniciarSesion_Click(sender As Object, e As EventArgs) Handles iniciarSesion.Click
-		Dim formulario As New SelecionarOpcion
+		Dim formulario As New Interfaz
 		If ComprobarDatos() Then
 			formulario.Show()
 			Me.Hide()
@@ -63,5 +64,41 @@ Public Class InicioSesion
 	Public Sub Actualizar()
 		Controls.Clear()
 		InitializeComponent()
+	End Sub
+
+	Private Sub Cerrar_Click(sender As Object, e As EventArgs) Handles Cerrar.Click
+		Application.Exit()
+	End Sub
+
+	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
+		WindowState = FormWindowState.Minimized
+	End Sub
+
+	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+	Private Shared Sub ReleaseCapture()
+	End Sub
+	<DllImport("user32.DLL", EntryPoint:="SendMessage")>
+	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+	End Sub
+
+	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
+		ReleaseCapture()
+		SendMessage(Me.Handle, &H112&, &HF012&, 0)
+	End Sub
+
+	Private Sub Cerrar_MouseEnter(sender As Object, e As EventArgs) Handles Cerrar.MouseEnter
+		Cerrar.BackColor = Color.FromArgb(217, 30, 24)
+	End Sub
+
+	Private Sub Cerrar_MouseLeave(sender As Object, e As EventArgs) Handles Cerrar.MouseLeave
+		Cerrar.BackColor = Color.FromArgb(85, 174, 175)
+	End Sub
+
+	Private Sub Minimizar_MouseEnter(sender As Object, e As EventArgs) Handles Minimizar.MouseEnter
+		Minimizar.BackColor = Color.FromArgb(141, 195, 232)
+	End Sub
+
+	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
+		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
 	End Sub
 End Class

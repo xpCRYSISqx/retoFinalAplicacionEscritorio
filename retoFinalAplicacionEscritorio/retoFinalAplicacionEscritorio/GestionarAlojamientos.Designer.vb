@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GestionarAlojamientos
 	Inherits System.Windows.Forms.Form
 
 	'Form reemplaza a Dispose para limpiar la lista de componentes.
-	<System.Diagnostics.DebuggerNonUserCode()> _
+	<System.Diagnostics.DebuggerNonUserCode()>
 	Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 		Try
 			If disposing AndAlso components IsNot Nothing Then
@@ -20,69 +20,48 @@ Partial Class GestionarAlojamientos
 	'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 	'Se puede modificar usando el Diseñador de Windows Forms.  
 	'No lo modifique con el editor de código.
-	<System.Diagnostics.DebuggerStepThrough()> _
+	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
 		Me.ComboBox1 = New System.Windows.Forms.ComboBox()
 		Me.ListBox1 = New System.Windows.Forms.ListBox()
-		Me.atras = New System.Windows.Forms.Button()
-		Me.cerrarSesion = New System.Windows.Forms.Button()
 		Me.SuspendLayout()
 		'
 		'ComboBox1
 		'
+		Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
 		Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.ComboBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ComboBox1.FormattingEnabled = True
-		Me.ComboBox1.Location = New System.Drawing.Point(47, 58)
+		Me.ComboBox1.Location = New System.Drawing.Point(138, 73)
 		Me.ComboBox1.Name = "ComboBox1"
 		Me.ComboBox1.Size = New System.Drawing.Size(163, 25)
 		Me.ComboBox1.TabIndex = 0
 		'
 		'ListBox1
 		'
+		Me.ListBox1.BackColor = System.Drawing.SystemColors.Control
+		Me.ListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.ListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
 		Me.ListBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ListBox1.FormattingEnabled = True
 		Me.ListBox1.ItemHeight = 17
-		Me.ListBox1.Location = New System.Drawing.Point(266, 58)
+		Me.ListBox1.Location = New System.Drawing.Point(569, 73)
 		Me.ListBox1.Name = "ListBox1"
-		Me.ListBox1.Size = New System.Drawing.Size(229, 344)
+		Me.ListBox1.Size = New System.Drawing.Size(229, 461)
 		Me.ListBox1.TabIndex = 1
-		'
-		'atras
-		'
-		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
-		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.atras.Location = New System.Drawing.Point(47, 372)
-		Me.atras.Name = "atras"
-		Me.atras.Size = New System.Drawing.Size(75, 30)
-		Me.atras.TabIndex = 3
-		Me.atras.Text = "Atras"
-		Me.atras.UseVisualStyleBackColor = False
-		'
-		'cerrarSesion
-		'
-		Me.cerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
-		Me.cerrarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.cerrarSesion.Location = New System.Drawing.Point(454, 12)
-		Me.cerrarSesion.Name = "cerrarSesion"
-		Me.cerrarSesion.Size = New System.Drawing.Size(95, 28)
-		Me.cerrarSesion.TabIndex = 4
-		Me.cerrarSesion.Text = "Cerrar sesión"
-		Me.cerrarSesion.UseVisualStyleBackColor = False
 		'
 		'GestionarAlojamientos
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.BackColor = System.Drawing.SystemColors.Control
-		Me.ClientSize = New System.Drawing.Size(561, 450)
-		Me.Controls.Add(Me.cerrarSesion)
-		Me.Controls.Add(Me.atras)
+		Me.ClientSize = New System.Drawing.Size(950, 625)
 		Me.Controls.Add(Me.ListBox1)
 		Me.Controls.Add(Me.ComboBox1)
-		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.MaximizeBox = False
 		Me.Name = "GestionarAlojamientos"
+		Me.Padding = New System.Windows.Forms.Padding(70)
 		Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
 		Me.Text = "Gestion de alojamientos"
 		Me.ResumeLayout(False)
@@ -91,6 +70,4 @@ Partial Class GestionarAlojamientos
 
 	Friend WithEvents ComboBox1 As ComboBox
 	Friend WithEvents ListBox1 As ListBox
-	Friend WithEvents atras As Button
-	Friend WithEvents cerrarSesion As Button
 End Class

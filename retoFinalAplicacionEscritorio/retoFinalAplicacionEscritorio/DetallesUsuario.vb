@@ -30,10 +30,6 @@ Public Class DetallesUsuario
 		DeshabilitarCampos()
 	End Sub
 
-	Private Sub DetallesUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-		InicioSesion.Close()
-	End Sub
-
 	Public Sub New(ByVal dniGestion As String)
 
 		' Esta llamada es exigida por el diseñador.
@@ -80,8 +76,8 @@ Public Class DetallesUsuario
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
 		GestionarUsuarios.Actualizar()
-		GestionarUsuarios.Show()
-		Me.Hide()
+		Interfaz.AbrirFormulario(New GestionarUsuarios)
+		Me.Close()
 	End Sub
 
 	Private Sub Terminar_Click(sender As Object, e As EventArgs) Handles terminar.Click
@@ -131,5 +127,29 @@ Public Class DetallesUsuario
 
 	Public Sub ActualizarContra()
 		cambiarContrasena.Enabled = True
+	End Sub
+
+	Private Sub Cerrar_MouseEnter(sender As Object, e As EventArgs) Handles Cerrar.MouseEnter
+		Cerrar.BackColor = Color.FromArgb(217, 30, 24)
+	End Sub
+
+	Private Sub Cerrar_MouseLeave(sender As Object, e As EventArgs) Handles Cerrar.MouseLeave
+		Cerrar.BackColor = Color.FromArgb(85, 174, 175)
+	End Sub
+
+	Private Sub Minimizar_MouseEnter(sender As Object, e As EventArgs) Handles Minimizar.MouseEnter
+		Minimizar.BackColor = Color.FromArgb(141, 195, 232)
+	End Sub
+
+	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
+		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
+	End Sub
+
+	Private Sub Cerrar_Click(sender As Object, e As EventArgs) Handles Cerrar.Click
+		Application.Exit()
+	End Sub
+
+	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
+		WindowState = FormWindowState.Minimized
 	End Sub
 End Class
