@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.InteropServices
+Imports MySql.Data.MySqlClient
 Public Class CambiarContrasena
 	Dim dni As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
@@ -42,5 +43,29 @@ Public Class CambiarContrasena
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		dni = dniPas
 		detalles = detallesUsu
+	End Sub
+
+	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
+		WindowState = FormWindowState.Minimized
+	End Sub
+
+	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+	Private Shared Sub ReleaseCapture()
+	End Sub
+	<DllImport("user32.DLL", EntryPoint:="SendMessage")>
+	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+	End Sub
+
+	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
+		ReleaseCapture()
+		SendMessage(Me.Handle, &H112&, &HF012&, 0)
+	End Sub
+
+	Private Sub Minimizar_MouseEnter(sender As Object, e As EventArgs) Handles Minimizar.MouseEnter
+		Minimizar.BackColor = Color.FromArgb(141, 195, 232)
+	End Sub
+
+	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
+		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
 	End Sub
 End Class

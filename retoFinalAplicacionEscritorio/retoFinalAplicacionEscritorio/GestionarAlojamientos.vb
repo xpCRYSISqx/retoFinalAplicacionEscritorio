@@ -14,11 +14,6 @@ Public Class GestionarAlojamientos
 		ActualizarLista()
 	End Sub
 
-	Private Sub Button2_Click(sender As Object, e As EventArgs)
-		SelecionarOpcion.Show()
-		Me.Hide()
-	End Sub
-
 	Private Sub GestionarAlojamientos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
 		InicioSesion.Close()
 	End Sub

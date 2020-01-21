@@ -125,12 +125,6 @@
     <Compile Include="Interfaz.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelecionarOpcion.Designer.vb">
-      <DependentUpon>SelecionarOpcion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="SelecionarOpcion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="InicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -178,9 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz.resx">
       <DependentUpon>Interfaz.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelecionarOpcion.resx">
-      <DependentUpon>SelecionarOpcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.vb</DependentUpon>

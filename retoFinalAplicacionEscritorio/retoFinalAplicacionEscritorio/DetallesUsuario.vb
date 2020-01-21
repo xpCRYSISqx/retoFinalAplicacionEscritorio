@@ -1,7 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Runtime.InteropServices
+Imports MySql.Data.MySqlClient
 Public Class DetallesUsuario
 	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
+	'Dim inter As Interfaz
+	Dim gest As GestionarUsuarios
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM alojamientos_fac.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod
@@ -26,22 +29,22 @@ Public Class DetallesUsuario
 		Else
 			actNo.Checked = True
 		End If
-
 		DeshabilitarCampos()
 	End Sub
 
-	Public Sub New(ByVal dniGestion As String)
+	Public Sub New(ByVal dniGestion As String, ByRef gestionarUsuarios As GestionarUsuarios)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		cod = dniGestion
+		gest = gestionarUsuarios
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles atras.Click
-		GestionarUsuarios.Show()
-		Me.Hide()
+		gest.inter.Show()
+		Me.Close()
 	End Sub
 
 	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
@@ -75,8 +78,8 @@ Public Class DetallesUsuario
 		conexion.Open()
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
-		GestionarUsuarios.Actualizar()
-		Interfaz.AbrirFormulario(New GestionarUsuarios)
+		gest.Cargar()
+		gest.inter.Show()
 		Me.Close()
 	End Sub
 
@@ -120,14 +123,49 @@ Public Class DetallesUsuario
 	End Sub
 
 	Private Sub CambiarContraseña_Click(sender As Object, e As EventArgs) Handles cambiarContrasena.Click
-		Dim formulario As New CambiarContrasena(cod, Me)
-		formulario.Show()
+		PanelContrasena.Visible = True
+		PanelContrasena.Enabled = True
 		cambiarContrasena.Enabled = False
+		cambiarContrasena.Visible = False
 	End Sub
 
 	Public Sub ActualizarContra()
+		PanelContrasena.Visible = False
+		PanelContrasena.Enabled = False
 		cambiarContrasena.Enabled = True
+		cambiarContrasena.Visible = True
 	End Sub
+
+	Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles contra2.TextChanged, contra1.TextChanged
+		If contra1.Text <> contra2.Text Then
+			labelError.Visible = True
+			aceptar.Enabled = False
+		Else
+			labelError.Visible = False
+			aceptar.Enabled = True
+		End If
+		If contra1.Text = "" Or contra2.Text = "" Then
+			aceptar.Enabled = False
+		End If
+	End Sub
+
+	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
+		ActualizarContra()
+	End Sub
+
+	Private Sub Aceptar_Click(sender As Object, e As EventArgs) Handles aceptar.Click
+		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET contrasena = @contrasena WHERE dni = @dni", conexion)
+		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = dni.Text
+
+		actualizacion.Parameters.AddWithValue("@contrasena", InicioSesion.Encriptar(contra1.Text))
+		conexion.Open()
+		actualizacion.ExecuteNonQuery()
+		conexion.Close()
+		ActualizarContra()
+		MsgBox("Contraseña cambiada correctamente.", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cambio correcto")
+	End Sub
+
+	'Controles de la cabecera
 
 	Private Sub Cerrar_MouseEnter(sender As Object, e As EventArgs) Handles Cerrar.MouseEnter
 		Cerrar.BackColor = Color.FromArgb(217, 30, 24)
@@ -151,5 +189,17 @@ Public Class DetallesUsuario
 
 	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
 		WindowState = FormWindowState.Minimized
+	End Sub
+
+	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
+	Private Shared Sub ReleaseCapture()
+	End Sub
+	<DllImport("user32.DLL", EntryPoint:="SendMessage")>
+	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+	End Sub
+
+	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
+		ReleaseCapture()
+		SendMessage(Me.Handle, &H112&, &HF012&, 0)
 	End Sub
 End Class

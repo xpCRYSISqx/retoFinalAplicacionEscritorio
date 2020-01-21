@@ -48,12 +48,21 @@ Partial Class DetallesUsuario
 		Me.Cabecera = New System.Windows.Forms.Panel()
 		Me.Minimizar = New System.Windows.Forms.PictureBox()
 		Me.Cerrar = New System.Windows.Forms.PictureBox()
+		Me.PanelContrasena = New System.Windows.Forms.Panel()
+		Me.labelError = New System.Windows.Forms.Label()
+		Me.cancelar = New System.Windows.Forms.Button()
+		Me.aceptar = New System.Windows.Forms.Button()
+		Me.contra2 = New System.Windows.Forms.TextBox()
+		Me.contra1 = New System.Windows.Forms.TextBox()
+		Me.Label4 = New System.Windows.Forms.Label()
+		Me.Label7 = New System.Windows.Forms.Label()
 		Me.admin.SuspendLayout()
 		Me.activo.SuspendLayout()
 		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.Cabecera.SuspendLayout()
 		CType(Me.Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.PanelContrasena.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -177,7 +186,9 @@ Partial Class DetallesUsuario
 		'
 		'atras
 		'
-		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.atras.FlatAppearance.BorderSize = 0
+		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.atras.Location = New System.Drawing.Point(83, 473)
 		Me.atras.Name = "atras"
 		Me.atras.Size = New System.Drawing.Size(75, 30)
@@ -187,7 +198,9 @@ Partial Class DetallesUsuario
 		'
 		'cambiarContrasena
 		'
-		Me.cambiarContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.cambiarContrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cambiarContrasena.FlatAppearance.BorderSize = 0
+		Me.cambiarContrasena.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cambiarContrasena.Location = New System.Drawing.Point(708, 418)
 		Me.cambiarContrasena.Name = "cambiarContrasena"
 		Me.cambiarContrasena.Size = New System.Drawing.Size(143, 34)
@@ -197,7 +210,9 @@ Partial Class DetallesUsuario
 		'
 		'editar
 		'
-		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.editar.FlatAppearance.BorderSize = 0
+		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.editar.Location = New System.Drawing.Point(450, 473)
 		Me.editar.Name = "editar"
 		Me.editar.Size = New System.Drawing.Size(75, 30)
@@ -207,8 +222,10 @@ Partial Class DetallesUsuario
 		'
 		'actualiza
 		'
-		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
 		Me.actualiza.Enabled = False
+		Me.actualiza.FlatAppearance.BorderSize = 0
+		Me.actualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.actualiza.Location = New System.Drawing.Point(776, 473)
 		Me.actualiza.Name = "actualiza"
 		Me.actualiza.Size = New System.Drawing.Size(75, 30)
@@ -218,7 +235,9 @@ Partial Class DetallesUsuario
 		'
 		'terminar
 		'
-		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(227, Byte), Integer))
+		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.terminar.FlatAppearance.BorderSize = 0
+		Me.terminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.terminar.Location = New System.Drawing.Point(432, 473)
 		Me.terminar.Name = "terminar"
 		Me.terminar.Size = New System.Drawing.Size(116, 30)
@@ -234,9 +253,8 @@ Partial Class DetallesUsuario
 		Me.dni.ForeColor = System.Drawing.SystemColors.ControlText
 		Me.dni.Location = New System.Drawing.Point(154, 117)
 		Me.dni.Name = "dni"
-		Me.dni.Size = New System.Drawing.Size(43, 17)
+		Me.dni.Size = New System.Drawing.Size(0, 17)
 		Me.dni.TabIndex = 18
-		Me.dni.Text = "klabel"
 		'
 		'activo
 		'
@@ -319,11 +337,99 @@ Partial Class DetallesUsuario
 		Me.Cerrar.TabIndex = 4
 		Me.Cerrar.TabStop = False
 		'
+		'PanelContrasena
+		'
+		Me.PanelContrasena.Controls.Add(Me.labelError)
+		Me.PanelContrasena.Controls.Add(Me.cancelar)
+		Me.PanelContrasena.Controls.Add(Me.aceptar)
+		Me.PanelContrasena.Controls.Add(Me.contra2)
+		Me.PanelContrasena.Controls.Add(Me.contra1)
+		Me.PanelContrasena.Controls.Add(Me.Label4)
+		Me.PanelContrasena.Controls.Add(Me.Label7)
+		Me.PanelContrasena.Enabled = False
+		Me.PanelContrasena.Location = New System.Drawing.Point(610, 256)
+		Me.PanelContrasena.Name = "PanelContrasena"
+		Me.PanelContrasena.Size = New System.Drawing.Size(328, 196)
+		Me.PanelContrasena.TabIndex = 8
+		Me.PanelContrasena.Visible = False
+		'
+		'labelError
+		'
+		Me.labelError.AutoSize = True
+		Me.labelError.ForeColor = System.Drawing.Color.Red
+		Me.labelError.Location = New System.Drawing.Point(74, 131)
+		Me.labelError.Name = "labelError"
+		Me.labelError.Size = New System.Drawing.Size(179, 17)
+		Me.labelError.TabIndex = 13
+		Me.labelError.Text = "Las contraseñas no coinciden"
+		Me.labelError.Visible = False
+		'
+		'cancelar
+		'
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cancelar.FlatAppearance.BorderSize = 0
+		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.cancelar.Location = New System.Drawing.Point(14, 160)
+		Me.cancelar.Name = "cancelar"
+		Me.cancelar.Size = New System.Drawing.Size(75, 31)
+		Me.cancelar.TabIndex = 12
+		Me.cancelar.Text = "Cancelar"
+		Me.cancelar.UseVisualStyleBackColor = False
+		'
+		'aceptar
+		'
+		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.aceptar.Enabled = False
+		Me.aceptar.FlatAppearance.BorderSize = 0
+		Me.aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.aceptar.Location = New System.Drawing.Point(243, 160)
+		Me.aceptar.Name = "aceptar"
+		Me.aceptar.Size = New System.Drawing.Size(75, 31)
+		Me.aceptar.TabIndex = 11
+		Me.aceptar.Text = "Cambiar"
+		Me.aceptar.UseVisualStyleBackColor = False
+		'
+		'contra2
+		'
+		Me.contra2.Location = New System.Drawing.Point(14, 89)
+		Me.contra2.Name = "contra2"
+		Me.contra2.Size = New System.Drawing.Size(304, 23)
+		Me.contra2.TabIndex = 10
+		Me.contra2.UseSystemPasswordChar = True
+		'
+		'contra1
+		'
+		Me.contra1.Location = New System.Drawing.Point(14, 26)
+		Me.contra1.Name = "contra1"
+		Me.contra1.Size = New System.Drawing.Size(304, 23)
+		Me.contra1.TabIndex = 9
+		Me.contra1.UseSystemPasswordChar = True
+		'
+		'Label4
+		'
+		Me.Label4.AutoSize = True
+		Me.Label4.Location = New System.Drawing.Point(11, 69)
+		Me.Label4.Name = "Label4"
+		Me.Label4.Size = New System.Drawing.Size(202, 17)
+		Me.Label4.TabIndex = 8
+		Me.Label4.Text = "Vuelve a introducir la contraseña:"
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Location = New System.Drawing.Point(11, 6)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(187, 17)
+		Me.Label7.TabIndex = 7
+		Me.Label7.Text = "Introduce la nueva contraseña:"
+		'
 		'DetallesUsuario
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(950, 625)
+		Me.Controls.Add(Me.PanelContrasena)
 		Me.Controls.Add(Me.Cabecera)
 		Me.Controls.Add(Me.activo)
 		Me.Controls.Add(Me.dni)
@@ -356,6 +462,8 @@ Partial Class DetallesUsuario
 		Me.Cabecera.ResumeLayout(False)
 		CType(Me.Minimizar, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.Cerrar, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.PanelContrasena.ResumeLayout(False)
+		Me.PanelContrasena.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -386,4 +494,12 @@ Partial Class DetallesUsuario
 	Friend WithEvents Cabecera As Panel
 	Friend WithEvents Minimizar As PictureBox
 	Friend WithEvents Cerrar As PictureBox
+	Friend WithEvents PanelContrasena As Panel
+	Friend WithEvents labelError As Label
+	Friend WithEvents cancelar As Button
+	Friend WithEvents aceptar As Button
+	Friend WithEvents contra2 As TextBox
+	Friend WithEvents contra1 As TextBox
+	Friend WithEvents Label4 As Label
+	Friend WithEvents Label7 As Label
 End Class

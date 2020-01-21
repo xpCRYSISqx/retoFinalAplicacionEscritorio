@@ -24,8 +24,8 @@ Public Class CrearUsuario
 			Catch ex As Exception
 				MessageBox.Show("Error al insertar los datos en la base de datos")
 			End Try
-			GestionarUsuarios.Actualizar()
-			GestionarUsuarios.Show()
+			'GestionarUsuarios.Actualizar()
+			'GestionarUsuarios.Show()
 			Me.Close()
 		End If
 	End Sub

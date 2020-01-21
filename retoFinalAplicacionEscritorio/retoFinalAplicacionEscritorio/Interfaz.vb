@@ -4,12 +4,18 @@ Public Class Interfaz
 	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
 	Private Shared Sub ReleaseCapture()
 	End Sub
+
 	<DllImport("user32.DLL", EntryPoint:="SendMessage")>
 	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
 	End Sub
 
+	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
+		ReleaseCapture()
+		SendMessage(Me.Handle, &H112&, &HF012&, 0)
+	End Sub
+
 	Private Sub Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-		AbrirFormulario(New GestionarUsuarios)
+		AbrirFormulario(New GestionarUsuarios(Me))
 	End Sub
 
 	Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles DesplegarMenu.Click
@@ -20,21 +26,12 @@ Public Class Interfaz
 		End If
 	End Sub
 
-	Private Sub Interfaz_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-		InicioSesion.Close()
-	End Sub
-
 	Private Sub Cerrar_Click(sender As Object, e As EventArgs) Handles Cerrar.Click
 		Application.Exit()
 	End Sub
 
 	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
 		WindowState = FormWindowState.Minimized
-	End Sub
-
-	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
-		ReleaseCapture()
-		SendMessage(Me.Handle, &H112&, &HF012&, 0)
 	End Sub
 
 	Public Sub AbrirFormulario(form As Object)
@@ -65,7 +62,7 @@ Public Class Interfaz
 	End Sub
 
 	Private Sub Usuarios_Click(sender As Object, e As EventArgs) Handles Usuarios.Click
-		AbrirFormulario(New GestionarUsuarios)
+		AbrirFormulario(New GestionarUsuarios(Me))
 	End Sub
 
 	Private Sub Alojamientos_Click(sender As Object, e As EventArgs) Handles Alojamientos.Click
@@ -93,5 +90,9 @@ Public Class Interfaz
 
 	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
 		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
+	End Sub
+
+	Public Sub ActualizarUsuarios()
+		AbrirFormulario(New GestionarAlojamientos)
 	End Sub
 End Class

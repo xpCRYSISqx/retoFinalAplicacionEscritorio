@@ -1,7 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class GestionarUsuarios
+
 	Dim conexion As MySqlConnection = InicioSesion.conexion
+	Public inter As Interfaz
+
 	Private Sub GestionarUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+		Cargar()
+	End Sub
+
+	Public Sub Cargar()
 		Dim adapter As New MySqlDataAdapter("SELECT dni as 'DNI', nombre as 'Nombre', apellido as 'Apellido', email as 'Correo electrónico', telefono as 'Teléfono', activo as 'Activado' FROM alojamientos_fac.usuarios", conexion)
 		Dim tabla As New DataTable()
 		adapter.Fill(tabla)
@@ -9,20 +16,10 @@ Public Class GestionarUsuarios
 		listaUsuarios.DataSource = tabla
 	End Sub
 
-	Private Sub Atras_Click(sender As Object, e As EventArgs)
-		SelecionarOpcion.Show()
-		Me.Hide()
-	End Sub
-
-	Public Sub Actualizar()
-		Controls.Clear()
-		InitializeComponent()
-		GestionarUsuarios_Load(Me, Nothing)
-	End Sub
-
 	Private Sub ListaUsuarios_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaUsuarios.CellContentDoubleClick
 		If e.RowIndex <> -1 Then
-			Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value)
+			inter.Hide()
+			Dim formulario As New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value, Me)
 			formulario.Show()
 		End If
 	End Sub
@@ -33,10 +30,18 @@ Public Class GestionarUsuarios
 		Me.Hide()
 	End Sub
 
-	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs)
-		InicioSesion.Actualizar()
-		InicioSesion.Show()
-		Me.Hide()
-		MessageBox.Show("Se ha cerrado la sesión")
+	Public Sub Actualizar()
+		Controls.Clear()
+		InitializeComponent()
+		GestionarUsuarios_Load(Me, Nothing)
+	End Sub
+
+	Public Sub New(ByRef form As Interfaz)
+
+		' Esta llamada es exigida por el diseñador.
+		InitializeComponent()
+
+		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+		inter = form
 	End Sub
 End Class

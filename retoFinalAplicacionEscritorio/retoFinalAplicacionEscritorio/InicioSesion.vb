@@ -10,7 +10,7 @@ Public Class InicioSesion
 	End Sub
 
 	Private Sub IniciarSesion_Click(sender As Object, e As EventArgs) Handles iniciarSesion.Click
-		Dim formulario As New Interfaz
+		Dim formulario As New Interfaz()
 		If ComprobarDatos() Then
 			formulario.Show()
 			Me.Hide()
