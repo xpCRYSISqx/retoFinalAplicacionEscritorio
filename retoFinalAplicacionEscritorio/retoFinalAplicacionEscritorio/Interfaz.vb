@@ -46,7 +46,7 @@ Public Class Interfaz
 		Me.Contenedor.Controls.Add(formHijo)
 		Me.Contenedor.Tag = formHijo
 		formHijo.Show()
-		If TypeOf formHijo Is GestionarUsuarios Then
+		If TypeOf formHijo Is GestionarUsuarios Or TypeOf formHijo Is CrearUsuario Or TypeOf formHijo Is DetallesUsuario Then
 			Usuarios.BackColor = Color.FromArgb(60, 179, 113)
 			Alojamientos.BackColor = Color.FromArgb(0, 134, 136)
 			Reservas.BackColor = Color.FromArgb(0, 134, 136)

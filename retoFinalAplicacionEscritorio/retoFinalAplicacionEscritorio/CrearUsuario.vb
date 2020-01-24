@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 Public Class CrearUsuario
 	Dim conexion As MySqlConnection = InicioSesion.conexion
+	Dim inter As Interfaz
 	Private Sub Aceptar_Click(sender As Object, e As EventArgs) Handles aceptar.Click
 		If Comprobar() Then
 			Dim comando As New MySqlCommand("INSERT INTO alojamientos_fac.usuarios (`dni`, `nombre`, `apellido`, `contrasena`, `telefono`, `email`, `administrador`, `activo`) VALUES (@dni,@nombre,@apellido,@contrasena,@telefono,@email,@administrador,@activo)", conexion)
@@ -24,8 +25,7 @@ Public Class CrearUsuario
 			Catch ex As Exception
 				MessageBox.Show("Error al insertar los datos en la base de datos")
 			End Try
-			'GestionarUsuarios.Actualizar()
-			'GestionarUsuarios.Show()
+			inter.AbrirFormulario(New GestionarUsuarios(inter))
 			Me.Close()
 		End If
 	End Sub
@@ -121,6 +121,16 @@ Public Class CrearUsuario
 	End Sub
 
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
+		inter.AbrirFormulario(New GestionarUsuarios(inter))
 		Me.Close()
+	End Sub
+
+	Public Sub New(ByRef form As Interfaz)
+
+		' Esta llamada es exigida por el diseñador.
+		InitializeComponent()
+
+		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+		inter = form
 	End Sub
 End Class

@@ -24,9 +24,8 @@ Public Class GestionarUsuarios
 	End Sub
 
 	Private Sub CrearUsuario_Click(sender As Object, e As EventArgs) Handles crearUsuario.Click
-		Dim formulario As New CrearUsuario()
-		formulario.Show()
-		Me.Hide()
+		inter.AbrirFormulario(New CrearUsuario(inter))
+		Me.Close()
 	End Sub
 
 	Public Sub New(ByRef form As Interfaz)

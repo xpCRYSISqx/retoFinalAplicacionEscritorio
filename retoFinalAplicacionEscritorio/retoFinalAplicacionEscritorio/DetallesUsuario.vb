@@ -73,10 +73,13 @@ Public Class DetallesUsuario
 		Else
 			actualizacion.Parameters.AddWithValue("@activo", "inactivo")
 		End If
-
-		conexion.Open()
-		actualizacion.ExecuteNonQuery()
-		conexion.Close()
+		Try
+			conexion.Open()
+			actualizacion.ExecuteNonQuery()
+			conexion.Close()
+		Catch ex As MySqlException
+			MessageBox.Show("Error al cargar los datos actualizados en la base de datos")
+		End Try
 		inter.AbrirFormulario(New GestionarUsuarios(inter))
 		Me.Close()
 	End Sub
