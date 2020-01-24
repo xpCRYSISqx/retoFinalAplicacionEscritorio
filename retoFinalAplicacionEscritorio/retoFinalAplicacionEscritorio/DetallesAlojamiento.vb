@@ -1,14 +1,17 @@
 ﻿Imports System.IO
 Imports MySql.Data.MySqlClient
 Public Class DetallesAlojamiento
-	Dim cod As String
-	Dim conexion As MySqlConnection = InicioSesion.conexion
-	Dim inter As Interfaz
+	Dim cod As String 'Codigo del alojamiento
+	Dim conexion As MySqlConnection = InicioSesion.conexion 'Instancia de la conexión
+	Dim inter As Interfaz 'Instancia de la interfaz
+
+	'Listener del boton cancelar, cierra el formulario y vuelve a abrir el formulario de gestion de alojamientos
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
 		inter.AbrirFormulario(New GestionarAlojamientos(inter))
 		Me.Close()
 	End Sub
 
+	'Realiza las consultas necesarias para recuperar los datos de alojamiento y mostrarla
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		Dim comando As New MySqlCommand("SELECT `signatura`, `documentname`, `turismdescription`, `lodgingtype`, `address`, `phone`, `tourismemail`, `web`, `municipality`, `territory`, `latwgs84`, `lonwgs84`, `postalcode`, `capacity`, `restaurant`, `store`, `autocaravana`, `imagen` FROM alojamientos_fac.alojamientos WHERE signatura = @id", conexion)
 		comando.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
@@ -73,6 +76,7 @@ Public Class DetallesAlojamiento
 
 	End Sub
 
+	'Constructor del formulario
 	Public Sub New(ByVal codigo As String, ByRef form As Interfaz)
 
 		' Esta llamada es exigida por el diseñador.
@@ -83,6 +87,7 @@ Public Class DetallesAlojamiento
 		inter = form
 	End Sub
 
+	'Deshabilita los campos cuando el formulario no es editable
 	Private Sub DeshabilitarCampos()
 		nombre.ReadOnly = True
 		nombre.Cursor = Cursors.No
@@ -120,6 +125,7 @@ Public Class DetallesAlojamiento
 		cargarImagen.Cursor = Cursors.No
 	End Sub
 
+	'Habilita todos los datos cuando se activa la edición
 	Private Sub HabilitarCampos()
 		nombre.ReadOnly = False
 		nombre.Cursor = Cursors.IBeam
@@ -157,6 +163,7 @@ Public Class DetallesAlojamiento
 		cargarImagen.Cursor = Cursors.Default
 	End Sub
 
+	'Habre un menu para seleccionar imagenes del ordenador
 	Private Sub CargarImagen_Click(sender As Object, e As EventArgs) Handles cargarImagen.Click
 		Dim dialogo As New OpenFileDialog
 		dialogo.Filter = "Elige una imagen(*.JPG;*.PNG)|*.jpg;*.png"
@@ -166,6 +173,7 @@ Public Class DetallesAlojamiento
 		End If
 	End Sub
 
+	'Habilita la edicion de los campos
 	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
 		HabilitarCampos()
 		terminarEdicion.Visible = True
@@ -175,6 +183,7 @@ Public Class DetallesAlojamiento
 		actualizar.Enabled = False
 	End Sub
 
+	'Deshabilita la edicion de los campos
 	Private Sub TerminarEdicion_Click(sender As Object, e As EventArgs) Handles terminarEdicion.Click
 		DeshabilitarCampos()
 		terminarEdicion.Visible = False
@@ -184,6 +193,7 @@ Public Class DetallesAlojamiento
 		actualizar.Enabled = True
 	End Sub
 
+	'Actuliza los datos de la base de datos con los campos modificados del alojamiento seleccionado
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualizar.Click
 		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.alojamientos SET documentname = @nombre, turismdescription = @descripcion, lodgingtype = @tipo, address = @direccion, phone = @telefono, tourismemail = @mail, web = web, municipality = @region, territory = @provincia, latwgs84 = @latitud, lonwgs84 = @longitud, postalcode = @codigoPostal, capacity = @capacidad, restaurant = @restaurante, store = @tienda, autocaravana = @autocaravana, imagen = @imagen WHERE signatura = @id", conexion)
 		actualizacion.Parameters.Add("@id", MySqlDbType.VarChar).Value = cod
