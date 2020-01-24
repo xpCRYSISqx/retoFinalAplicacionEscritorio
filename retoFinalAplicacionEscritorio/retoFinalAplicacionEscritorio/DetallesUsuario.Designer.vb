@@ -22,7 +22,6 @@ Partial Class DetallesUsuario
 	'No lo modifique con el editor de código.
 	<System.Diagnostics.DebuggerStepThrough()>
 	Private Sub InitializeComponent()
-		Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetallesUsuario))
 		Me.Label1 = New System.Windows.Forms.Label()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.Label3 = New System.Windows.Forms.Label()
@@ -44,10 +43,6 @@ Partial Class DetallesUsuario
 		Me.activo = New System.Windows.Forms.GroupBox()
 		Me.actNo = New System.Windows.Forms.RadioButton()
 		Me.actSi = New System.Windows.Forms.RadioButton()
-		Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-		Me.Cabecera = New System.Windows.Forms.Panel()
-		Me.Minimizar = New System.Windows.Forms.PictureBox()
-		Me.Cerrar = New System.Windows.Forms.PictureBox()
 		Me.PanelContrasena = New System.Windows.Forms.Panel()
 		Me.labelError = New System.Windows.Forms.Label()
 		Me.cancelar = New System.Windows.Forms.Button()
@@ -58,10 +53,6 @@ Partial Class DetallesUsuario
 		Me.Label7 = New System.Windows.Forms.Label()
 		Me.admin.SuspendLayout()
 		Me.activo.SuspendLayout()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.Cabecera.SuspendLayout()
-		CType(Me.Minimizar, System.ComponentModel.ISupportInitialize).BeginInit()
-		CType(Me.Cerrar, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.PanelContrasena.SuspendLayout()
 		Me.SuspendLayout()
 		'
@@ -296,52 +287,6 @@ Partial Class DetallesUsuario
 		Me.actSi.Text = "Si"
 		Me.actSi.UseVisualStyleBackColor = True
 		'
-		'PictureBox1
-		'
-		Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-		Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
-		Me.PictureBox1.Name = "PictureBox1"
-		Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
-		Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.PictureBox1.TabIndex = 7
-		Me.PictureBox1.TabStop = False
-		'
-		'Cabecera
-		'
-		Me.Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(175, Byte), Integer))
-		Me.Cabecera.Controls.Add(Me.PictureBox1)
-		Me.Cabecera.Controls.Add(Me.Minimizar)
-		Me.Cabecera.Controls.Add(Me.Cerrar)
-		Me.Cabecera.Dock = System.Windows.Forms.DockStyle.Top
-		Me.Cabecera.Location = New System.Drawing.Point(0, 0)
-		Me.Cabecera.Name = "Cabecera"
-		Me.Cabecera.Size = New System.Drawing.Size(950, 50)
-		Me.Cabecera.TabIndex = 20
-		'
-		'Minimizar
-		'
-		Me.Minimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Minimizar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.Minimizar.Image = CType(resources.GetObject("Minimizar.Image"), System.Drawing.Image)
-		Me.Minimizar.Location = New System.Drawing.Point(901, 3)
-		Me.Minimizar.Name = "Minimizar"
-		Me.Minimizar.Size = New System.Drawing.Size(20, 20)
-		Me.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.Minimizar.TabIndex = 3
-		Me.Minimizar.TabStop = False
-		'
-		'Cerrar
-		'
-		Me.Cerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-		Me.Cerrar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.Cerrar.Image = CType(resources.GetObject("Cerrar.Image"), System.Drawing.Image)
-		Me.Cerrar.Location = New System.Drawing.Point(927, 3)
-		Me.Cerrar.Name = "Cerrar"
-		Me.Cerrar.Size = New System.Drawing.Size(20, 20)
-		Me.Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-		Me.Cerrar.TabIndex = 4
-		Me.Cerrar.TabStop = False
-		'
 		'PanelContrasena
 		'
 		Me.PanelContrasena.Controls.Add(Me.labelError)
@@ -352,9 +297,9 @@ Partial Class DetallesUsuario
 		Me.PanelContrasena.Controls.Add(Me.Label4)
 		Me.PanelContrasena.Controls.Add(Me.Label7)
 		Me.PanelContrasena.Enabled = False
-		Me.PanelContrasena.Location = New System.Drawing.Point(330, 308)
+		Me.PanelContrasena.Location = New System.Drawing.Point(157, 302)
 		Me.PanelContrasena.Name = "PanelContrasena"
-		Me.PanelContrasena.Size = New System.Drawing.Size(328, 196)
+		Me.PanelContrasena.Size = New System.Drawing.Size(636, 202)
 		Me.PanelContrasena.TabIndex = 8
 		Me.PanelContrasena.Visible = False
 		'
@@ -362,7 +307,7 @@ Partial Class DetallesUsuario
 		'
 		Me.labelError.AutoSize = True
 		Me.labelError.ForeColor = System.Drawing.Color.Red
-		Me.labelError.Location = New System.Drawing.Point(74, 131)
+		Me.labelError.Location = New System.Drawing.Point(228, 120)
 		Me.labelError.Name = "labelError"
 		Me.labelError.Size = New System.Drawing.Size(179, 17)
 		Me.labelError.TabIndex = 13
@@ -375,7 +320,7 @@ Partial Class DetallesUsuario
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.cancelar.FlatAppearance.BorderSize = 0
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.cancelar.Location = New System.Drawing.Point(14, 160)
+		Me.cancelar.Location = New System.Drawing.Point(154, 160)
 		Me.cancelar.Name = "cancelar"
 		Me.cancelar.Size = New System.Drawing.Size(75, 31)
 		Me.cancelar.TabIndex = 12
@@ -389,7 +334,7 @@ Partial Class DetallesUsuario
 		Me.aceptar.Enabled = False
 		Me.aceptar.FlatAppearance.BorderSize = 0
 		Me.aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.aceptar.Location = New System.Drawing.Point(243, 160)
+		Me.aceptar.Location = New System.Drawing.Point(430, 160)
 		Me.aceptar.Name = "aceptar"
 		Me.aceptar.Size = New System.Drawing.Size(75, 31)
 		Me.aceptar.TabIndex = 11
@@ -398,7 +343,7 @@ Partial Class DetallesUsuario
 		'
 		'contra2
 		'
-		Me.contra2.Location = New System.Drawing.Point(14, 89)
+		Me.contra2.Location = New System.Drawing.Point(322, 72)
 		Me.contra2.Name = "contra2"
 		Me.contra2.Size = New System.Drawing.Size(304, 23)
 		Me.contra2.TabIndex = 10
@@ -406,7 +351,7 @@ Partial Class DetallesUsuario
 		'
 		'contra1
 		'
-		Me.contra1.Location = New System.Drawing.Point(14, 26)
+		Me.contra1.Location = New System.Drawing.Point(6, 72)
 		Me.contra1.Name = "contra1"
 		Me.contra1.Size = New System.Drawing.Size(304, 23)
 		Me.contra1.TabIndex = 9
@@ -415,7 +360,7 @@ Partial Class DetallesUsuario
 		'Label4
 		'
 		Me.Label4.AutoSize = True
-		Me.Label4.Location = New System.Drawing.Point(11, 69)
+		Me.Label4.Location = New System.Drawing.Point(319, 52)
 		Me.Label4.Name = "Label4"
 		Me.Label4.Size = New System.Drawing.Size(202, 17)
 		Me.Label4.TabIndex = 8
@@ -424,7 +369,7 @@ Partial Class DetallesUsuario
 		'Label7
 		'
 		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(11, 6)
+		Me.Label7.Location = New System.Drawing.Point(3, 52)
 		Me.Label7.Name = "Label7"
 		Me.Label7.Size = New System.Drawing.Size(187, 17)
 		Me.Label7.TabIndex = 7
@@ -437,7 +382,6 @@ Partial Class DetallesUsuario
 		Me.BackColor = System.Drawing.SystemColors.Control
 		Me.ClientSize = New System.Drawing.Size(950, 625)
 		Me.Controls.Add(Me.PanelContrasena)
-		Me.Controls.Add(Me.Cabecera)
 		Me.Controls.Add(Me.activo)
 		Me.Controls.Add(Me.dni)
 		Me.Controls.Add(Me.terminar)
@@ -465,10 +409,6 @@ Partial Class DetallesUsuario
 		Me.admin.PerformLayout()
 		Me.activo.ResumeLayout(False)
 		Me.activo.PerformLayout()
-		CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.Cabecera.ResumeLayout(False)
-		CType(Me.Minimizar, System.ComponentModel.ISupportInitialize).EndInit()
-		CType(Me.Cerrar, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.PanelContrasena.ResumeLayout(False)
 		Me.PanelContrasena.PerformLayout()
 		Me.ResumeLayout(False)
@@ -497,10 +437,6 @@ Partial Class DetallesUsuario
 	Friend WithEvents activo As GroupBox
 	Friend WithEvents actNo As RadioButton
 	Friend WithEvents actSi As RadioButton
-	Friend WithEvents PictureBox1 As PictureBox
-	Friend WithEvents Cabecera As Panel
-	Friend WithEvents Minimizar As PictureBox
-	Friend WithEvents Cerrar As PictureBox
 	Friend WithEvents PanelContrasena As Panel
 	Friend WithEvents labelError As Label
 	Friend WithEvents cancelar As Button
