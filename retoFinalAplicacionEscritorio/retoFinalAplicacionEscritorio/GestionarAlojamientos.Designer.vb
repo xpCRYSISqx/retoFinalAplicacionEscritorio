@@ -29,6 +29,7 @@ Partial Class GestionarAlojamientos
 		'ComboBox1
 		'
 		Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(77, Byte), Integer))
+		Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.ComboBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
 		Me.ComboBox1.FormattingEnabled = True

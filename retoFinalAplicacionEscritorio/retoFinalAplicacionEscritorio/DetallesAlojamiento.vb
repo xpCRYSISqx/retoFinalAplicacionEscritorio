@@ -3,13 +3,10 @@ Imports MySql.Data.MySqlClient
 Public Class DetallesAlojamiento
 	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
+	Dim inter As Interfaz
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
-		GestionarAlojamientos.Show()
-		Me.Hide()
-	End Sub
-
-	Private Sub DetallesAlojamiento_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-		InicioSesion.Close()
+		inter.AbrirFormulario(New GestionarAlojamientos(inter))
+		Me.Close()
 	End Sub
 
 	Private Sub DetallesAlojamiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,62 +16,71 @@ Public Class DetallesAlojamiento
 		Dim adapter As New MySqlDataAdapter(comando)
 		Dim tabla As New DataTable()
 
-		adapter.Fill(tabla)
-
 		Dim adapter2 As New MySqlDataAdapter("SELECT `id`, `nombre` FROM alojamientos_fac.provincias", conexion)
 		Dim tabla2 As New DataTable()
+		Try
+			adapter.Fill(tabla)
+			Try
+				adapter2.Fill(tabla2)
+				provincia.DataSource = tabla2
+				provincia.ValueMember = "id"
+				provincia.DisplayMember = "nombre"
+				Try
+					labelCodigo.Text = tabla(0)(0)
+					nombre.Text = tabla(0)(1)
+					descripcion.Text = tabla(0)(2)
+					tipo.Text = tabla(0)(3)
+					direccion.Text = tabla(0)(4)
+					telefono.Text = tabla(0)(5)
+					mail.Text = tabla(0)(6)
+					web.Text = tabla(0)(7)
+					localidad.Text = tabla(0)(8)
+					provincia.SelectedValue = tabla(0)(9)
+					latitud.Text = tabla(0)(10)
+					longitud.Text = tabla(0)(11)
+					codigoPostal.Text = tabla(0)(12)
+					capacidad.Text = tabla(0)(13)
+					If tabla(0)(14) = 1 Then
+						restSi.Checked = True
+					Else
+						restNo.Checked = True
+					End If
+					If tabla(0)(15) = 1 Then
+						tiendaSi.Checked = True
+					Else
+						tiendaNo.Checked = True
+					End If
+					If tabla(0)(16) = 1 Then
+						autoSi.Checked = True
+					Else
+						autoNo.Checked = True
+					End If
 
-		adapter2.Fill(tabla2)
+					Dim imagenByte() As Byte
+					imagenByte = tabla(0)(17)
+					Dim ms As New MemoryStream(imagenByte)
+					imagen.Image = Image.FromStream(ms)
+					DeshabilitarCampos()
+				Catch ex As Exception
+					MessageBox.Show("Error al mostrar los datos")
+				End Try
+			Catch ex As Exception
+				MessageBox.Show("Error al cargar las provincias")
+			End Try
+		Catch ex As Exception
+			MessageBox.Show("Error al cargar los detalles del alojamiento")
+		End Try
 
-		provincia.DataSource = tabla2
-		provincia.ValueMember = "id"
-		provincia.DisplayMember = "nombre"
-
-		labelCodigo.Text = tabla(0)(0)
-		nombre.Text = tabla(0)(1)
-		descripcion.Text = tabla(0)(2)
-		tipo.Text = tabla(0)(3)
-		direccion.Text = tabla(0)(4)
-		telefono.Text = tabla(0)(5)
-		mail.Text = tabla(0)(6)
-		web.Text = tabla(0)(7)
-		localidad.Text = tabla(0)(8)
-		provincia.SelectedValue = tabla(0)(9)
-		latitud.Text = tabla(0)(10)
-		longitud.Text = tabla(0)(11)
-		codigoPostal.Text = tabla(0)(12)
-		capacidad.Text = tabla(0)(13)
-		If tabla(0)(14) = 1 Then
-			restSi.Checked = True
-		Else
-			restNo.Checked = True
-		End If
-		If tabla(0)(15) = 1 Then
-			tiendaSi.Checked = True
-		Else
-			tiendaNo.Checked = True
-		End If
-		If tabla(0)(16) = 1 Then
-			autoSi.Checked = True
-		Else
-			autoNo.Checked = True
-		End If
-
-		Dim imagenByte() As Byte
-		imagenByte = tabla(0)(17)
-		Dim ms As New MemoryStream(imagenByte)
-		imagen.Image = Image.FromStream(ms)
-
-		DeshabilitarCampos()
 	End Sub
 
-	Public Sub New(ByVal codigo As String)
+	Public Sub New(ByVal codigo As String, ByRef form As Interfaz)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		cod = codigo
+		inter = form
 	End Sub
 
 	Private Sub DeshabilitarCampos()
@@ -220,9 +226,8 @@ Public Class DetallesAlojamiento
 		Catch ex As Exception
 			MessageBox.Show("Error al actualizar la base de datos")
 		Finally
-			GestionarAlojamientos.Actualizar()
-			GestionarAlojamientos.Show()
-			Me.Hide()
+			inter.AbrirFormulario(New GestionarAlojamientos(inter))
+			Me.Close()
 		End Try
 	End Sub
 End Class

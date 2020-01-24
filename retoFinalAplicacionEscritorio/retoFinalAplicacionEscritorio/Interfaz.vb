@@ -66,7 +66,7 @@ Public Class Interfaz
 	End Sub
 
 	Private Sub Alojamientos_Click(sender As Object, e As EventArgs) Handles Alojamientos.Click
-		AbrirFormulario(New GestionarAlojamientos)
+		AbrirFormulario(New GestionarAlojamientos(Me))
 	End Sub
 
 	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles CerrarSesion.Click
@@ -90,9 +90,5 @@ Public Class Interfaz
 
 	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
 		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
-	End Sub
-
-	Public Sub ActualizarUsuarios()
-		AbrirFormulario(New GestionarAlojamientos)
 	End Sub
 End Class
