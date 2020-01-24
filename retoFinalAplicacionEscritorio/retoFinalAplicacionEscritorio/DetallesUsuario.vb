@@ -1,9 +1,11 @@
 ﻿Imports System.Runtime.InteropServices
 Imports MySql.Data.MySqlClient
 Public Class DetallesUsuario
-	Dim cod As String
-	Dim conexion As MySqlConnection = InicioSesion.conexion
-	Dim inter As Interfaz
+	Dim cod As String 'Codigo del usuario
+	Dim conexion As MySqlConnection = InicioSesion.conexion 'Instancia de la conexion
+	Dim inter As Interfaz 'Instancia de la interfaz principal
+
+	'Muestra los detalles del usuario seleccionado en el formulario de gestion de usuarios al cargar el formulario de detalles
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM alojamientos_fac.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod
@@ -31,6 +33,7 @@ Public Class DetallesUsuario
 		DeshabilitarCampos()
 	End Sub
 
+	'Contructor del formulario
 	Public Sub New(ByVal dniGestion As String, ByRef form As Interfaz)
 
 		' Esta llamada es exigida por el diseñador.
@@ -41,11 +44,13 @@ Public Class DetallesUsuario
 		inter = form
 	End Sub
 
+	'Listener del boton de atras
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles atras.Click
 		inter.AbrirFormulario(New GestionarUsuarios(inter))
 		Me.Close()
 	End Sub
 
+	'listener del boton de edtiar, el cual habilita la edición de los diferentes campos del usuario
 	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
 		HabilitarCampos()
 		terminar.Enabled = True
@@ -55,6 +60,7 @@ Public Class DetallesUsuario
 		actualiza.Enabled = False
 	End Sub
 
+	'Listener del boton actualizar, actualiza la informacion del usuario en la base de datos una vez terminada la edición
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualiza.Click
 		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
 		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod.ToString
@@ -84,6 +90,7 @@ Public Class DetallesUsuario
 		Me.Close()
 	End Sub
 
+	'Listener del boton terminar edición, vuelve a desabilitar los campos del usuario y habilita la posibilidad de actualizar la base de datos con los nuevos detalles
 	Private Sub Terminar_Click(sender As Object, e As EventArgs) Handles terminar.Click
 		DeshabilitarCampos()
 		terminar.Enabled = False
@@ -93,6 +100,7 @@ Public Class DetallesUsuario
 		actualiza.Enabled = True
 	End Sub
 
+	'Habilita los distintos campos del formulario
 	Private Sub HabilitarCampos()
 		nombre.ReadOnly = False
 		nombre.Cursor = Cursors.IBeam
@@ -108,6 +116,7 @@ Public Class DetallesUsuario
 		activo.Cursor = Cursors.Default
 	End Sub
 
+	'Deshabilita los distintos campos del formulario
 	Private Sub DeshabilitarCampos()
 		nombre.ReadOnly = True
 		nombre.Cursor = Cursors.No
@@ -123,6 +132,7 @@ Public Class DetallesUsuario
 		activo.Cursor = Cursors.No
 	End Sub
 
+	'Habilita el panel para cambiar la contraseña
 	Private Sub CambiarContraseña_Click(sender As Object, e As EventArgs) Handles cambiarContrasena.Click
 		PanelContrasena.Visible = True
 		PanelContrasena.Enabled = True
@@ -130,13 +140,15 @@ Public Class DetallesUsuario
 		cambiarContrasena.Visible = False
 	End Sub
 
-	Public Sub ActualizarContra()
+	'Esconde el panel de contraseña despues de actualizarla o al cancelar la actualización
+	Public Sub EsconderContra()
 		PanelContrasena.Visible = False
 		PanelContrasena.Enabled = False
 		cambiarContrasena.Enabled = True
 		cambiarContrasena.Visible = True
 	End Sub
 
+	'Comprueba si las contraseñas son iguales
 	Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles contra2.TextChanged, contra1.TextChanged
 		If contra1.Text <> contra2.Text Then
 			labelError.Visible = True
@@ -150,19 +162,25 @@ Public Class DetallesUsuario
 		End If
 	End Sub
 
+	'Listener del boton de calncelar al cambio de contraseña
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
-		ActualizarContra()
+		EsconderContra()
 	End Sub
 
+	'Actualiza la información de la contraseña del usuario en la base de datos
 	Private Sub Aceptar_Click(sender As Object, e As EventArgs) Handles aceptar.Click
 		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET contrasena = @contrasena WHERE dni = @dni", conexion)
 		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = dni.Text
 
 		actualizacion.Parameters.AddWithValue("@contrasena", InicioSesion.Encriptar(contra1.Text))
-		conexion.Open()
-		actualizacion.ExecuteNonQuery()
-		conexion.Close()
-		ActualizarContra()
+		Try
+			conexion.Open()
+			actualizacion.ExecuteNonQuery()
+			conexion.Close()
+		Catch ex As Exception
+			MessageBox.Show("Error al actualizar la contraseña en la base de datos")
+		End Try
+		EsconderContra()
 		MsgBox("Contraseña cambiada correctamente.", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cambio correcto")
 	End Sub
 End Class

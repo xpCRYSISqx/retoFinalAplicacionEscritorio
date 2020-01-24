@@ -1,6 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class Interfaz
 
+	'Imports necesarios para hacer que se pueda arrastrar la ventana la mantener el click izquierdo en la cabecera
 	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
 	Private Shared Sub ReleaseCapture()
 	End Sub
@@ -9,15 +10,18 @@ Public Class Interfaz
 	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
 	End Sub
 
+	'Metodo que captura la acción de hacer click izquierdo en la cabecera y sigue su movimiento para mover el formulario
 	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
 		ReleaseCapture()
 		SendMessage(Me.Handle, &H112&, &HF012&, 0)
 	End Sub
 
+	'Al cargar por primera vez la pagina, ponemos como pagina de inicio la ventada de gestion de usuarios
 	Private Sub Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		AbrirFormulario(New GestionarUsuarios(Me))
 	End Sub
 
+	'Metodo para plegar y desplegar el menu lateral
 	Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles DesplegarMenu.Click
 		If MenuVertical.Width = 250 Then
 			MenuVertical.Width = 95
@@ -26,14 +30,18 @@ Public Class Interfaz
 		End If
 	End Sub
 
+	'Metodo que hace que la aplicación se cierre al darle a la x
 	Private Sub Cerrar_Click(sender As Object, e As EventArgs) Handles Cerrar.Click
 		Application.Exit()
 	End Sub
 
+	'Metodo que hace que la aplicacion se minimice al darle a -
 	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
 		WindowState = FormWindowState.Minimized
 	End Sub
 
+	'Metodo que hace que los nuevos formularios se abran en el contenedor principal de la interfaz. tambien controla el color que tomaran los botones laterales al
+	'entrar y salir de los distintos formularios
 	Public Sub AbrirFormulario(form As Object)
 		If Me.Contenedor.Controls.Count > 0 Then
 			Me.Contenedor.Controls.RemoveAt(0)
@@ -61,21 +69,25 @@ Public Class Interfaz
 		End If
 	End Sub
 
+	'Listener del boton de usuarios
 	Private Sub Usuarios_Click(sender As Object, e As EventArgs) Handles Usuarios.Click
 		AbrirFormulario(New GestionarUsuarios(Me))
 	End Sub
 
+	'Listener del boton de alojamientos
 	Private Sub Alojamientos_Click(sender As Object, e As EventArgs) Handles Alojamientos.Click
 		AbrirFormulario(New GestionarAlojamientos(Me))
 	End Sub
 
+	'Listener del boton de cerrar sesion, el cual cierra la ventasna actual y devuelve al formulario de inicio de sesión
 	Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles CerrarSesion.Click
 		InicioSesion.Actualizar()
 		InicioSesion.Show()
-		Me.Hide()
+		Me.Close()
 		MessageBox.Show("Se ha cerrado la sesión")
 	End Sub
 
+	'Metodos que controlan los colores de los botones de cerrar y minimizar al pasar el cursor por encima
 	Private Sub Cerrar_MouseEnter(sender As Object, e As EventArgs) Handles Cerrar.MouseEnter
 		Cerrar.BackColor = Color.FromArgb(217, 30, 24)
 	End Sub
