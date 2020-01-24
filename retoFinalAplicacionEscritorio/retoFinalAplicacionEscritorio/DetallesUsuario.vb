@@ -3,8 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class DetallesUsuario
 	Dim cod As String
 	Dim conexion As MySqlConnection = InicioSesion.conexion
-	'Dim inter As Interfaz
-	Dim gest As GestionarUsuarios
+	Dim inter As Interfaz
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 		Dim comando As New MySqlCommand("SELECT `dni`, `nombre`, `apellido`, `email`, `telefono`, `administrador`, `activo` FROM alojamientos_fac.usuarios WHERE dni = @dni", conexion)
 		comando.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod
@@ -32,18 +31,18 @@ Public Class DetallesUsuario
 		DeshabilitarCampos()
 	End Sub
 
-	Public Sub New(ByVal dniGestion As String, ByRef gestionarUsuarios As GestionarUsuarios)
+	Public Sub New(ByVal dniGestion As String, ByRef form As Interfaz)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
 
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		cod = dniGestion
-		gest = gestionarUsuarios
+		inter = form
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles atras.Click
-		gest.inter.Show()
+		inter.AbrirFormulario(New GestionarUsuarios(inter))
 		Me.Close()
 	End Sub
 
@@ -78,8 +77,7 @@ Public Class DetallesUsuario
 		conexion.Open()
 		actualizacion.ExecuteNonQuery()
 		conexion.Close()
-		gest.Cargar()
-		gest.inter.Show()
+		inter.AbrirFormulario(New GestionarUsuarios(inter))
 		Me.Close()
 	End Sub
 
@@ -163,43 +161,5 @@ Public Class DetallesUsuario
 		conexion.Close()
 		ActualizarContra()
 		MsgBox("Contraseña cambiada correctamente.", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, "Cambio correcto")
-	End Sub
-
-	'Controles de la cabecera
-
-	Private Sub Cerrar_MouseEnter(sender As Object, e As EventArgs) Handles Cerrar.MouseEnter
-		Cerrar.BackColor = Color.FromArgb(217, 30, 24)
-	End Sub
-
-	Private Sub Cerrar_MouseLeave(sender As Object, e As EventArgs) Handles Cerrar.MouseLeave
-		Cerrar.BackColor = Color.FromArgb(85, 174, 175)
-	End Sub
-
-	Private Sub Minimizar_MouseEnter(sender As Object, e As EventArgs) Handles Minimizar.MouseEnter
-		Minimizar.BackColor = Color.FromArgb(141, 195, 232)
-	End Sub
-
-	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
-		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
-	End Sub
-
-	Private Sub Cerrar_Click(sender As Object, e As EventArgs) Handles Cerrar.Click
-		Application.Exit()
-	End Sub
-
-	Private Sub Minimizar_Click(sender As Object, e As EventArgs) Handles Minimizar.Click
-		WindowState = FormWindowState.Minimized
-	End Sub
-
-	<DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
-	Private Shared Sub ReleaseCapture()
-	End Sub
-	<DllImport("user32.DLL", EntryPoint:="SendMessage")>
-	Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
-	End Sub
-
-	Private Sub Panel2_MouseDown(sender As Object, e As MouseEventArgs) Handles Cabecera.MouseDown
-		ReleaseCapture()
-		SendMessage(Me.Handle, &H112&, &HF012&, 0)
 	End Sub
 End Class
