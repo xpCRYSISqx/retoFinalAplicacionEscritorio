@@ -35,7 +35,6 @@ Partial Class DetallesReserva
 		Me.datosAlojamiento = New System.Windows.Forms.GroupBox()
 		Me.detallesAlojamiento = New System.Windows.Forms.Button()
 		Me.capacidadAloj = New System.Windows.Forms.Label()
-		Me.Label7 = New System.Windows.Forms.Label()
 		Me.codigoAloj = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.nombreAloj = New System.Windows.Forms.ComboBox()
@@ -50,9 +49,14 @@ Partial Class DetallesReserva
 		Me.atras = New System.Windows.Forms.Button()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.numeroPersonas = New System.Windows.Forms.NumericUpDown()
+		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.Label7 = New System.Windows.Forms.Label()
+		Me.Label11 = New System.Windows.Forms.Label()
+		Me.capacidadDisponible = New System.Windows.Forms.Label()
 		Me.datosUsuario.SuspendLayout()
 		Me.datosAlojamiento.SuspendLayout()
 		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
+		Me.GroupBox1.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -156,9 +160,8 @@ Partial Class DetallesReserva
 		'
 		'datosAlojamiento
 		'
+		Me.datosAlojamiento.Controls.Add(Me.GroupBox1)
 		Me.datosAlojamiento.Controls.Add(Me.detallesAlojamiento)
-		Me.datosAlojamiento.Controls.Add(Me.capacidadAloj)
-		Me.datosAlojamiento.Controls.Add(Me.Label7)
 		Me.datosAlojamiento.Controls.Add(Me.codigoAloj)
 		Me.datosAlojamiento.Controls.Add(Me.Label6)
 		Me.datosAlojamiento.Controls.Add(Me.nombreAloj)
@@ -186,19 +189,10 @@ Partial Class DetallesReserva
 		'capacidadAloj
 		'
 		Me.capacidadAloj.AutoSize = True
-		Me.capacidadAloj.Location = New System.Drawing.Point(100, 127)
+		Me.capacidadAloj.Location = New System.Drawing.Point(52, 19)
 		Me.capacidadAloj.Name = "capacidadAloj"
 		Me.capacidadAloj.Size = New System.Drawing.Size(0, 17)
 		Me.capacidadAloj.TabIndex = 5
-		'
-		'Label7
-		'
-		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(21, 127)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(73, 17)
-		Me.Label7.TabIndex = 4
-		Me.Label7.Text = "Capacidad:"
 		'
 		'codigoAloj
 		'
@@ -346,6 +340,45 @@ Partial Class DetallesReserva
 		Me.numeroPersonas.Size = New System.Drawing.Size(58, 23)
 		Me.numeroPersonas.TabIndex = 23
 		'
+		'GroupBox1
+		'
+		Me.GroupBox1.Controls.Add(Me.capacidadDisponible)
+		Me.GroupBox1.Controls.Add(Me.Label11)
+		Me.GroupBox1.Controls.Add(Me.Label7)
+		Me.GroupBox1.Controls.Add(Me.capacidadAloj)
+		Me.GroupBox1.Location = New System.Drawing.Point(24, 120)
+		Me.GroupBox1.Name = "GroupBox1"
+		Me.GroupBox1.Size = New System.Drawing.Size(256, 46)
+		Me.GroupBox1.TabIndex = 7
+		Me.GroupBox1.TabStop = False
+		Me.GroupBox1.Text = "Capacidad:"
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Location = New System.Drawing.Point(6, 19)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(40, 17)
+		Me.Label7.TabIndex = 0
+		Me.Label7.Text = "Total:"
+		'
+		'Label11
+		'
+		Me.Label11.AutoSize = True
+		Me.Label11.Location = New System.Drawing.Point(116, 19)
+		Me.Label11.Name = "Label11"
+		Me.Label11.Size = New System.Drawing.Size(73, 17)
+		Me.Label11.TabIndex = 24
+		Me.Label11.Text = "Disponible:"
+		'
+		'capacidadDisponible
+		'
+		Me.capacidadDisponible.AutoSize = True
+		Me.capacidadDisponible.Location = New System.Drawing.Point(195, 19)
+		Me.capacidadDisponible.Name = "capacidadDisponible"
+		Me.capacidadDisponible.Size = New System.Drawing.Size(0, 17)
+		Me.capacidadDisponible.TabIndex = 24
+		'
 		'DetallesReserva
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -376,6 +409,8 @@ Partial Class DetallesReserva
 		Me.datosAlojamiento.ResumeLayout(False)
 		Me.datosAlojamiento.PerformLayout()
 		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).EndInit()
+		Me.GroupBox1.ResumeLayout(False)
+		Me.GroupBox1.PerformLayout()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -394,7 +429,6 @@ Partial Class DetallesReserva
 	Friend WithEvents datosAlojamiento As GroupBox
 	Friend WithEvents detallesAlojamiento As Button
 	Friend WithEvents capacidadAloj As Label
-	Friend WithEvents Label7 As Label
 	Friend WithEvents codigoAloj As Label
 	Friend WithEvents Label6 As Label
 	Friend WithEvents nombreAloj As ComboBox
@@ -409,4 +443,8 @@ Partial Class DetallesReserva
 	Friend WithEvents atras As Button
 	Friend WithEvents Label10 As Label
 	Friend WithEvents numeroPersonas As NumericUpDown
+	Friend WithEvents GroupBox1 As GroupBox
+	Friend WithEvents capacidadDisponible As Label
+	Friend WithEvents Label11 As Label
+	Friend WithEvents Label7 As Label
 End Class

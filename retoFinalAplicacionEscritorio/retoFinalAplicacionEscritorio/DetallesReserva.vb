@@ -7,6 +7,7 @@ Public Class DetallesReserva
 	Dim conexion As MySqlConnection = InicioSesion.conexion
 	Dim dni As String
 	Dim codigo As String
+	Dim tipo As String
 
 	Public Sub New(ByVal codigo As Integer, ByRef form As Interfaz)
 
@@ -69,7 +70,7 @@ Public Class DetallesReserva
 	End Sub
 
 	Private Sub CargarAlojamiento()
-		Dim comando As New MySqlCommand("SELECT `signatura`, `capacity` FROM alojamientos_fac.alojamientos WHERE signatura = @signatura", conexion)
+		Dim comando As New MySqlCommand("SELECT `signatura`, `capacity`, `lodgingtype` FROM alojamientos_fac.alojamientos WHERE signatura = @signatura", conexion)
 		comando.Parameters.Add("@signatura", MySqlDbType.VarChar).Value = nombreAloj.SelectedValue
 
 		Dim adapter As New MySqlDataAdapter(comando)
@@ -78,6 +79,7 @@ Public Class DetallesReserva
 		adapter.Fill(tabla)
 		codigoAloj.Text = tabla(0)(0)
 		capacidadAloj.Text = tabla(0)(1)
+		tipo = tabla(0)(2)
 	End Sub
 
 	Private Sub DniUsu_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles dniUsu.SelectionChangeCommitted
@@ -133,5 +135,33 @@ Public Class DetallesReserva
 	Private Sub Atras_Click(sender As Object, e As EventArgs) Handles atras.Click
 		inter.AbrirFormulario(New GestionarReservas(inter))
 		Me.Close()
+	End Sub
+
+	Private Sub Actualiza_Click(sender As Object, e As EventArgs) Handles actualiza.Click
+		If numeroPersonas.Value > Integer.Parse(capacidadAloj.Text) Then
+			MsgBox("El numero de personas excede la capacidad del alojamiento", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+		Else
+			Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.reservas SET dni = @dni, fecha_entrada = @entrada, fecha_salida = @salida, alojamiento = @alojamiento, personas = @personas WHERE id = @id", conexion)
+			actualizacion.Parameters.Add("@id", MySqlDbType.Int16).Value = Integer.Parse(codigoRes.Text)
+
+			actualizacion.Parameters.AddWithValue("@dni", dniUsu.SelectedValue)
+			actualizacion.Parameters.AddWithValue("@entrada", fechaEntrada.Value.ToString("yyyy-MM-dd"))
+			actualizacion.Parameters.AddWithValue("@salida", fechaSalida.Value.ToString("yyyy-MM-dd"))
+			actualizacion.Parameters.AddWithValue("@alojamiento", codigoAloj.Text)
+			If tipo = "Casas Rurales" Then
+				actualizacion.Parameters.AddWithValue("@personas", Integer.Parse(capacidadAloj.Text))
+			Else
+				actualizacion.Parameters.AddWithValue("@personas", numeroPersonas.Value)
+			End If
+			Try
+				conexion.Open()
+				actualizacion.ExecuteNonQuery()
+				conexion.Close()
+			Catch ex As MySqlException
+				MsgBox("Error al cargar los datos actualizados en la base de datos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+			End Try
+			inter.AbrirFormulario(New GestionarReservas(inter))
+			Me.Close()
+		End If
 	End Sub
 End Class
