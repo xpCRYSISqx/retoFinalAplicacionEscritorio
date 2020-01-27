@@ -16,7 +16,7 @@ Public Class GestionarAlojamientos
 	End Sub
 
 	Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
-		inter.AbrirFormulario(New DetallesAlojamiento(ListBox1.SelectedValue, inter))
+		inter.AbrirFormulario(New DetallesAlojamiento(ListBox1.SelectedValue, inter, Nothing))
 		Me.Close()
 	End Sub
 

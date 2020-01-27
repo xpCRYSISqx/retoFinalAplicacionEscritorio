@@ -4,10 +4,15 @@ Public Class DetallesAlojamiento
 	Dim cod As String 'Codigo del alojamiento
 	Dim conexion As MySqlConnection = InicioSesion.conexion 'Instancia de la conexión
 	Dim inter As Interfaz 'Instancia de la interfaz
+	Dim reserva 'instancia del formulario de detalles de la reserva
 
 	'Listener del boton cancelar, cierra el formulario y vuelve a abrir el formulario de gestion de alojamientos
 	Private Sub Cancelar_Click(sender As Object, e As EventArgs) Handles cancelar.Click
-		inter.AbrirFormulario(New GestionarAlojamientos(inter))
+		If TypeOf reserva Is DetallesReserva Then
+			inter.AbrirFormulario(reserva)
+		Else
+			inter.AbrirFormulario(New GestionarAlojamientos(inter))
+		End If
 		Me.Close()
 	End Sub
 
@@ -77,7 +82,7 @@ Public Class DetallesAlojamiento
 	End Sub
 
 	'Constructor del formulario
-	Public Sub New(ByVal codigo As String, ByRef form As Interfaz)
+	Public Sub New(ByVal codigo As String, ByRef form As Interfaz, ByRef form2 As DetallesReserva)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -85,6 +90,7 @@ Public Class DetallesAlojamiento
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		cod = codigo
 		inter = form
+		reserva = form2
 	End Sub
 
 	'Deshabilita los campos cuando el formulario no es editable

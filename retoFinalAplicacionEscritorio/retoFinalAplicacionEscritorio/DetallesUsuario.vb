@@ -4,6 +4,7 @@ Public Class DetallesUsuario
 	Dim cod As String 'Codigo del usuario
 	Dim conexion As MySqlConnection = InicioSesion.conexion 'Instancia de la conexion
 	Dim inter As Interfaz 'Instancia de la interfaz principal
+	Dim reserva As DetallesReserva 'Intancia del formulario de detalles de la reserva
 
 	'Muestra los detalles del usuario seleccionado en el formulario de gestion de usuarios al cargar el formulario de detalles
 	Private Sub DetallesUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,7 +35,7 @@ Public Class DetallesUsuario
 	End Sub
 
 	'Contructor del formulario
-	Public Sub New(ByVal dniGestion As String, ByRef form As Interfaz)
+	Public Sub New(ByVal dniGestion As String, ByRef form As Interfaz, ByRef form2 As DetallesReserva)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -42,11 +43,16 @@ Public Class DetallesUsuario
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		cod = dniGestion
 		inter = form
+		reserva = form2
 	End Sub
 
 	'Listener del boton de atras
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles atras.Click
-		inter.AbrirFormulario(New GestionarUsuarios(inter))
+		If TypeOf reserva Is DetallesReserva Then
+			inter.AbrirFormulario(reserva)
+		Else
+			inter.AbrirFormulario(New GestionarUsuarios(inter))
+		End If
 		Me.Close()
 	End Sub
 

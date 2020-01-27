@@ -18,7 +18,7 @@ Public Class GestionarUsuarios
 
 	Private Sub ListaUsuarios_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaUsuarios.CellContentDoubleClick
 		If e.RowIndex <> -1 Then
-			inter.AbrirFormulario(New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value, inter))
+			inter.AbrirFormulario(New DetallesUsuario(listaUsuarios.Rows(e.RowIndex).Cells(0).Value, inter, Nothing))
 			Me.Close()
 		End If
 	End Sub

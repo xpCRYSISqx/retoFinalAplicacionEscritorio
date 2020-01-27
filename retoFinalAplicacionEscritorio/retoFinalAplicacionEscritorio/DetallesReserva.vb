@@ -40,6 +40,7 @@ Public Class DetallesReserva
 
 		CargarCliente()
 		CargarAlojamiento()
+		DeshabilitarCampos()
 	End Sub
 
 	Private Sub CargarReserva()
@@ -48,8 +49,11 @@ Public Class DetallesReserva
 
 		adapter.Fill(tabla)
 		dni = tabla(0)(1)
+		fechaEntrada.Value = tabla(0)(2)
+		fechaSalida.Value = tabla(0)(3)
 		codigo = tabla(0)(4)
 		codigoRes.Text = cod
+		numeroPersonas.Value = tabla(0)(5)
 	End Sub
 
 	Private Sub CargarCliente()
@@ -85,10 +89,49 @@ Public Class DetallesReserva
 	End Sub
 
 	Private Sub DetallesCliente_Click(sender As Object, e As EventArgs) Handles detallesCliente.Click
-		inter.AbrirFormulario(New DetallesUsuario(dniUsu.SelectedValue, inter))
+		inter.AbrirFormulario(New DetallesUsuario(dniUsu.SelectedValue, inter, Me))
 	End Sub
 
 	Private Sub DetallesAlojamiento_Click(sender As Object, e As EventArgs) Handles detallesAlojamiento.Click
-		inter.AbrirFormulario(New DetallesAlojamiento(nombreAloj.SelectedValue, inter))
+		inter.AbrirFormulario(New DetallesAlojamiento(nombreAloj.SelectedValue, inter, Me))
+	End Sub
+
+	Private Sub DeshabilitarCampos()
+		numeroPersonas.Enabled = False
+		dniUsu.Enabled = False
+		nombreAloj.Enabled = False
+		fechaEntrada.Enabled = False
+		fechaSalida.Enabled = False
+	End Sub
+
+	Private Sub HabilitarCampos()
+		numeroPersonas.Enabled = True
+		dniUsu.Enabled = True
+		nombreAloj.Enabled = True
+		fechaEntrada.Enabled = True
+		fechaSalida.Enabled = True
+	End Sub
+
+	Private Sub Terminar_Click(sender As Object, e As EventArgs) Handles terminar.Click
+		DeshabilitarCampos()
+		terminar.Enabled = False
+		terminar.Visible = False
+		editar.Enabled = True
+		editar.Visible = True
+		actualiza.Enabled = True
+	End Sub
+
+	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
+		HabilitarCampos()
+		editar.Enabled = False
+		editar.Visible = False
+		terminar.Enabled = True
+		terminar.Visible = True
+		actualiza.Enabled = False
+	End Sub
+
+	Private Sub Atras_Click(sender As Object, e As EventArgs) Handles atras.Click
+		inter.AbrirFormulario(New GestionarReservas(inter))
+		Me.Close()
 	End Sub
 End Class

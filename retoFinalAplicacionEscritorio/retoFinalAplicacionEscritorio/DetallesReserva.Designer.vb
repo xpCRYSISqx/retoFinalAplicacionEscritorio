@@ -40,15 +40,26 @@ Partial Class DetallesReserva
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.nombreAloj = New System.Windows.Forms.ComboBox()
 		Me.Label3 = New System.Windows.Forms.Label()
+		Me.fechaEntrada = New System.Windows.Forms.DateTimePicker()
+		Me.Label8 = New System.Windows.Forms.Label()
+		Me.Label9 = New System.Windows.Forms.Label()
+		Me.fechaSalida = New System.Windows.Forms.DateTimePicker()
+		Me.terminar = New System.Windows.Forms.Button()
+		Me.actualiza = New System.Windows.Forms.Button()
+		Me.editar = New System.Windows.Forms.Button()
+		Me.atras = New System.Windows.Forms.Button()
+		Me.Label10 = New System.Windows.Forms.Label()
+		Me.numeroPersonas = New System.Windows.Forms.NumericUpDown()
 		Me.datosUsuario.SuspendLayout()
 		Me.datosAlojamiento.SuspendLayout()
+		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Label1
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(123, 70)
+		Me.Label1.Location = New System.Drawing.Point(123, 100)
 		Me.Label1.Name = "Label1"
 		Me.Label1.Size = New System.Drawing.Size(163, 20)
 		Me.Label1.TabIndex = 0
@@ -58,7 +69,7 @@ Partial Class DetallesReserva
 		'
 		Me.codigoRes.AutoSize = True
 		Me.codigoRes.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
-		Me.codigoRes.Location = New System.Drawing.Point(292, 70)
+		Me.codigoRes.Location = New System.Drawing.Point(292, 100)
 		Me.codigoRes.Name = "codigoRes"
 		Me.codigoRes.Size = New System.Drawing.Size(0, 20)
 		Me.codigoRes.TabIndex = 1
@@ -72,7 +83,7 @@ Partial Class DetallesReserva
 		Me.datosUsuario.Controls.Add(Me.Label4)
 		Me.datosUsuario.Controls.Add(Me.dniUsu)
 		Me.datosUsuario.Controls.Add(Me.Label2)
-		Me.datosUsuario.Location = New System.Drawing.Point(127, 117)
+		Me.datosUsuario.Location = New System.Drawing.Point(127, 140)
 		Me.datosUsuario.Name = "datosUsuario"
 		Me.datosUsuario.Size = New System.Drawing.Size(302, 230)
 		Me.datosUsuario.TabIndex = 2
@@ -152,7 +163,7 @@ Partial Class DetallesReserva
 		Me.datosAlojamiento.Controls.Add(Me.Label6)
 		Me.datosAlojamiento.Controls.Add(Me.nombreAloj)
 		Me.datosAlojamiento.Controls.Add(Me.Label3)
-		Me.datosAlojamiento.Location = New System.Drawing.Point(525, 117)
+		Me.datosAlojamiento.Location = New System.Drawing.Point(525, 140)
 		Me.datosAlojamiento.Name = "datosAlojamiento"
 		Me.datosAlojamiento.Size = New System.Drawing.Size(302, 230)
 		Me.datosAlojamiento.TabIndex = 3
@@ -223,11 +234,133 @@ Partial Class DetallesReserva
 		Me.Label3.TabIndex = 0
 		Me.Label3.Text = "Nombre:"
 		'
+		'fechaEntrada
+		'
+		Me.fechaEntrada.Cursor = System.Windows.Forms.Cursors.Default
+		Me.fechaEntrada.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+		Me.fechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+		Me.fechaEntrada.Location = New System.Drawing.Point(187, 406)
+		Me.fechaEntrada.Name = "fechaEntrada"
+		Me.fechaEntrada.Size = New System.Drawing.Size(192, 23)
+		Me.fechaEntrada.TabIndex = 4
+		'
+		'Label8
+		'
+		Me.Label8.AutoSize = True
+		Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+		Me.Label8.Location = New System.Drawing.Point(213, 383)
+		Me.Label8.Name = "Label8"
+		Me.Label8.Size = New System.Drawing.Size(138, 20)
+		Me.Label8.TabIndex = 5
+		Me.Label8.Text = "Fecha de entrada:"
+		'
+		'Label9
+		'
+		Me.Label9.AutoSize = True
+		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+		Me.Label9.Location = New System.Drawing.Point(615, 383)
+		Me.Label9.Name = "Label9"
+		Me.Label9.Size = New System.Drawing.Size(123, 20)
+		Me.Label9.TabIndex = 6
+		Me.Label9.Text = "Fecha de salida:"
+		'
+		'fechaSalida
+		'
+		Me.fechaSalida.Cursor = System.Windows.Forms.Cursors.Default
+		Me.fechaSalida.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+		Me.fechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+		Me.fechaSalida.Location = New System.Drawing.Point(580, 406)
+		Me.fechaSalida.Name = "fechaSalida"
+		Me.fechaSalida.Size = New System.Drawing.Size(192, 23)
+		Me.fechaSalida.TabIndex = 7
+		'
+		'terminar
+		'
+		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.terminar.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.terminar.FlatAppearance.BorderSize = 0
+		Me.terminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.terminar.Location = New System.Drawing.Point(418, 532)
+		Me.terminar.Name = "terminar"
+		Me.terminar.Size = New System.Drawing.Size(116, 30)
+		Me.terminar.TabIndex = 21
+		Me.terminar.Text = "Terminar edición"
+		Me.terminar.UseVisualStyleBackColor = False
+		Me.terminar.Visible = False
+		'
+		'actualiza
+		'
+		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.actualiza.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.actualiza.Enabled = False
+		Me.actualiza.FlatAppearance.BorderSize = 0
+		Me.actualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.actualiza.Location = New System.Drawing.Point(812, 532)
+		Me.actualiza.Name = "actualiza"
+		Me.actualiza.Size = New System.Drawing.Size(75, 30)
+		Me.actualiza.TabIndex = 20
+		Me.actualiza.Text = "Actualizar"
+		Me.actualiza.UseVisualStyleBackColor = False
+		'
+		'editar
+		'
+		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.editar.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.editar.FlatAppearance.BorderSize = 0
+		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.editar.Location = New System.Drawing.Point(436, 532)
+		Me.editar.Name = "editar"
+		Me.editar.Size = New System.Drawing.Size(75, 30)
+		Me.editar.TabIndex = 19
+		Me.editar.Text = "Editar"
+		Me.editar.UseVisualStyleBackColor = False
+		'
+		'atras
+		'
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.atras.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.atras.FlatAppearance.BorderSize = 0
+		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.atras.Location = New System.Drawing.Point(63, 532)
+		Me.atras.Name = "atras"
+		Me.atras.Size = New System.Drawing.Size(75, 30)
+		Me.atras.TabIndex = 18
+		Me.atras.Text = "Atras"
+		Me.atras.UseVisualStyleBackColor = False
+		'
+		'Label10
+		'
+		Me.Label10.AutoSize = True
+		Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+		Me.Label10.Location = New System.Drawing.Point(521, 100)
+		Me.Label10.Name = "Label10"
+		Me.Label10.Size = New System.Drawing.Size(78, 20)
+		Me.Label10.TabIndex = 22
+		Me.Label10.Text = "Personas:"
+		'
+		'numeroPersonas
+		'
+		Me.numeroPersonas.Location = New System.Drawing.Point(605, 101)
+		Me.numeroPersonas.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+		Me.numeroPersonas.Name = "numeroPersonas"
+		Me.numeroPersonas.Size = New System.Drawing.Size(58, 23)
+		Me.numeroPersonas.TabIndex = 23
+		'
 		'DetallesReserva
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
 		Me.ClientSize = New System.Drawing.Size(950, 625)
+		Me.Controls.Add(Me.numeroPersonas)
+		Me.Controls.Add(Me.Label10)
+		Me.Controls.Add(Me.terminar)
+		Me.Controls.Add(Me.actualiza)
+		Me.Controls.Add(Me.editar)
+		Me.Controls.Add(Me.atras)
+		Me.Controls.Add(Me.fechaSalida)
+		Me.Controls.Add(Me.Label9)
+		Me.Controls.Add(Me.Label8)
+		Me.Controls.Add(Me.fechaEntrada)
 		Me.Controls.Add(Me.datosAlojamiento)
 		Me.Controls.Add(Me.datosUsuario)
 		Me.Controls.Add(Me.codigoRes)
@@ -236,12 +369,13 @@ Partial Class DetallesReserva
 		Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
 		Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
 		Me.Name = "DetallesReserva"
-		Me.Padding = New System.Windows.Forms.Padding(120, 70, 120, 70)
+		Me.Padding = New System.Windows.Forms.Padding(60)
 		Me.Text = "DetallesReserva"
 		Me.datosUsuario.ResumeLayout(False)
 		Me.datosUsuario.PerformLayout()
 		Me.datosAlojamiento.ResumeLayout(False)
 		Me.datosAlojamiento.PerformLayout()
+		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
@@ -265,4 +399,14 @@ Partial Class DetallesReserva
 	Friend WithEvents Label6 As Label
 	Friend WithEvents nombreAloj As ComboBox
 	Friend WithEvents Label3 As Label
+	Friend WithEvents fechaEntrada As DateTimePicker
+	Friend WithEvents Label8 As Label
+	Friend WithEvents Label9 As Label
+	Friend WithEvents fechaSalida As DateTimePicker
+	Friend WithEvents terminar As Button
+	Friend WithEvents actualiza As Button
+	Friend WithEvents editar As Button
+	Friend WithEvents atras As Button
+	Friend WithEvents Label10 As Label
+	Friend WithEvents numeroPersonas As NumericUpDown
 End Class
