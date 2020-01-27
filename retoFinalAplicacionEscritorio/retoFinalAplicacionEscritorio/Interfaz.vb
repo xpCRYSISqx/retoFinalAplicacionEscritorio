@@ -58,7 +58,7 @@ Public Class Interfaz
 			Usuarios.BackColor = Color.FromArgb(60, 179, 113)
 			Alojamientos.BackColor = Color.FromArgb(0, 134, 136)
 			Reservas.BackColor = Color.FromArgb(0, 134, 136)
-		ElseIf TypeOf formHijo Is GestionarReservas Then
+		ElseIf TypeOf formHijo Is GestionarReservas Or TypeOf formHijo Is DetallesReserva Then
 			Reservas.BackColor = Color.FromArgb(60, 179, 113)
 			Alojamientos.BackColor = Color.FromArgb(0, 134, 136)
 			Usuarios.BackColor = Color.FromArgb(0, 134, 136)
@@ -72,6 +72,11 @@ Public Class Interfaz
 	'Listener del boton de usuarios
 	Private Sub Usuarios_Click(sender As Object, e As EventArgs) Handles Usuarios.Click
 		AbrirFormulario(New GestionarUsuarios(Me))
+	End Sub
+
+	'Listener del boton de reservas
+	Private Sub Reservas_Click(sender As Object, e As EventArgs) Handles Reservas.Click
+		AbrirFormulario(New GestionarReservas(Me))
 	End Sub
 
 	'Listener del boton de alojamientos

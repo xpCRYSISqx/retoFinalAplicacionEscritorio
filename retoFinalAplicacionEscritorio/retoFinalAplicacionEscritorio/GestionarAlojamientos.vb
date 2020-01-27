@@ -21,7 +21,7 @@ Public Class GestionarAlojamientos
 	End Sub
 
 	Public Sub ActualizarLista()
-		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM alojamientos_fac.alojamientos WHERE territory=" & ComboBox1.SelectedValue, conexion)
+		Dim adapter As New MySqlDataAdapter("SELECT `signatura`, `documentname` FROM alojamientos_fac.alojamientos WHERE territory=" & ComboBox1.SelectedValue & " ORDER BY `documentname` ASC", conexion)
 		Dim tabla As New DataTable()
 
 		adapter.Fill(tabla)

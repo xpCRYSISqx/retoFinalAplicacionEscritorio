@@ -466,7 +466,7 @@ Partial Class DetallesAlojamiento
 		Me.imagen.Location = New System.Drawing.Point(502, 267)
 		Me.imagen.Name = "imagen"
 		Me.imagen.Size = New System.Drawing.Size(385, 212)
-		Me.imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+		Me.imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.imagen.TabIndex = 42
 		Me.imagen.TabStop = False
 		'
