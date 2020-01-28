@@ -91,6 +91,7 @@ Public Class DetallesReserva
 
 	Private Sub NombreAloj_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles nombreAloj.SelectionChangeCommitted
 		CargarAlojamiento()
+		ComprobarOcupacion()
 	End Sub
 
 	Private Sub DetallesCliente_Click(sender As Object, e As EventArgs) Handles detallesCliente.Click
@@ -151,7 +152,7 @@ Public Class DetallesReserva
 			actualizacion.Parameters.AddWithValue("@entrada", fechaEntrada.Value.ToString("yyyy-MM-dd"))
 			actualizacion.Parameters.AddWithValue("@salida", fechaSalida.Value.ToString("yyyy-MM-dd"))
 			actualizacion.Parameters.AddWithValue("@alojamiento", codigoAloj.Text)
-			If tipo = "Casas Rurales" Then
+			If tipo = "Casas Rurales" Or tipo = "Agroturismos" Then
 				actualizacion.Parameters.AddWithValue("@personas", Integer.Parse(capacidadAloj.Text))
 			Else
 				actualizacion.Parameters.AddWithValue("@personas", numeroPersonas.Value)
