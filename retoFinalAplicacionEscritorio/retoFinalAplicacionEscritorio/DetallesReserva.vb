@@ -41,7 +41,10 @@ Public Class DetallesReserva
 
 		CargarCliente()
 		CargarAlojamiento()
+		ComprobarOcupacion()
 		DeshabilitarCampos()
+		AddHandler fechaEntrada.ValueChanged, AddressOf ComprobarOcupacion
+		AddHandler fechaSalida.ValueChanged, AddressOf ComprobarOcupacion
 	End Sub
 
 	Private Sub CargarReserva()
@@ -138,7 +141,7 @@ Public Class DetallesReserva
 	End Sub
 
 	Private Sub Actualiza_Click(sender As Object, e As EventArgs) Handles actualiza.Click
-		If numeroPersonas.Value > Integer.Parse(capacidadAloj.Text) Then
+		If numeroPersonas.Value > Integer.Parse(capacidadDisponible.Text) Then
 			MsgBox("El numero de personas excede la capacidad del alojamiento", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
 		Else
 			Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.reservas SET dni = @dni, fecha_entrada = @entrada, fecha_salida = @salida, alojamiento = @alojamiento, personas = @personas WHERE id = @id", conexion)
@@ -163,5 +166,25 @@ Public Class DetallesReserva
 			inter.AbrirFormulario(New GestionarReservas(inter))
 			Me.Close()
 		End If
+	End Sub
+
+	Private Sub ComprobarOcupacion()
+		Dim comando As New MySqlCommand("SELECT SUM(`personas`) FROM alojamientos_fac.reservas WHERE alojamiento = @alojamiento AND ((fecha_entrada BETWEEN @fechaEntrada AND @fechaSalida) OR (fecha_salida BETWEEN @fechaEntrada AND @fechaSalida) OR (@fechaEntrada BETWEEN fecha_entrada AND fecha_salida) OR (@fechaSalida BETWEEN fecha_entrada AND fecha_salida))", conexion)
+		comando.Parameters.Add("@alojamiento", MySqlDbType.VarChar).Value = codigoAloj.Text
+		comando.Parameters.Add("@fechaEntrada", MySqlDbType.Date).Value = fechaEntrada.Value.ToString("yyyy-MM-dd")
+		comando.Parameters.Add("@fechaSalida", MySqlDbType.Date).Value = fechaSalida.Value.ToString("yyyy-MM-dd")
+
+		Dim adapter As New MySqlDataAdapter(comando)
+		Dim tabla As New DataTable()
+
+		adapter.Fill(tabla)
+		Try
+			capacidadDisponible.Text = Integer.Parse(capacidadAloj.Text) - Integer.Parse(tabla(0)(0)) + numeroPersonas.Value
+			If Integer.Parse(capacidadDisponible.Text) < 0 Then
+				capacidadDisponible.Text = 0
+			End If
+		Catch
+			capacidadDisponible.Text = Integer.Parse(capacidadAloj.Text)
+		End Try
 	End Sub
 End Class

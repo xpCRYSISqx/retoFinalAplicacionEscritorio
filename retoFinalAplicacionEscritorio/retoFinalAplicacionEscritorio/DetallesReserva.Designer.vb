@@ -33,8 +33,12 @@ Partial Class DetallesReserva
 		Me.dniUsu = New System.Windows.Forms.ComboBox()
 		Me.Label2 = New System.Windows.Forms.Label()
 		Me.datosAlojamiento = New System.Windows.Forms.GroupBox()
-		Me.detallesAlojamiento = New System.Windows.Forms.Button()
+		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+		Me.capacidadDisponible = New System.Windows.Forms.Label()
+		Me.Label11 = New System.Windows.Forms.Label()
+		Me.Label7 = New System.Windows.Forms.Label()
 		Me.capacidadAloj = New System.Windows.Forms.Label()
+		Me.detallesAlojamiento = New System.Windows.Forms.Button()
 		Me.codigoAloj = New System.Windows.Forms.Label()
 		Me.Label6 = New System.Windows.Forms.Label()
 		Me.nombreAloj = New System.Windows.Forms.ComboBox()
@@ -49,14 +53,10 @@ Partial Class DetallesReserva
 		Me.atras = New System.Windows.Forms.Button()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.numeroPersonas = New System.Windows.Forms.NumericUpDown()
-		Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-		Me.Label7 = New System.Windows.Forms.Label()
-		Me.Label11 = New System.Windows.Forms.Label()
-		Me.capacidadDisponible = New System.Windows.Forms.Label()
 		Me.datosUsuario.SuspendLayout()
 		Me.datosAlojamiento.SuspendLayout()
-		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.GroupBox1.SuspendLayout()
+		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).BeginInit()
 		Me.SuspendLayout()
 		'
 		'Label1
@@ -173,6 +173,53 @@ Partial Class DetallesReserva
 		Me.datosAlojamiento.TabStop = False
 		Me.datosAlojamiento.Text = "Datos del alojamiento:"
 		'
+		'GroupBox1
+		'
+		Me.GroupBox1.Controls.Add(Me.capacidadDisponible)
+		Me.GroupBox1.Controls.Add(Me.Label11)
+		Me.GroupBox1.Controls.Add(Me.Label7)
+		Me.GroupBox1.Controls.Add(Me.capacidadAloj)
+		Me.GroupBox1.Location = New System.Drawing.Point(24, 120)
+		Me.GroupBox1.Name = "GroupBox1"
+		Me.GroupBox1.Size = New System.Drawing.Size(256, 46)
+		Me.GroupBox1.TabIndex = 7
+		Me.GroupBox1.TabStop = False
+		Me.GroupBox1.Text = "Capacidad:"
+		'
+		'capacidadDisponible
+		'
+		Me.capacidadDisponible.AutoSize = True
+		Me.capacidadDisponible.Location = New System.Drawing.Point(195, 19)
+		Me.capacidadDisponible.Name = "capacidadDisponible"
+		Me.capacidadDisponible.Size = New System.Drawing.Size(0, 17)
+		Me.capacidadDisponible.TabIndex = 24
+		'
+		'Label11
+		'
+		Me.Label11.AutoSize = True
+		Me.Label11.Location = New System.Drawing.Point(116, 19)
+		Me.Label11.Name = "Label11"
+		Me.Label11.Size = New System.Drawing.Size(73, 17)
+		Me.Label11.TabIndex = 24
+		Me.Label11.Text = "Disponible:"
+		'
+		'Label7
+		'
+		Me.Label7.AutoSize = True
+		Me.Label7.Location = New System.Drawing.Point(6, 19)
+		Me.Label7.Name = "Label7"
+		Me.Label7.Size = New System.Drawing.Size(40, 17)
+		Me.Label7.TabIndex = 0
+		Me.Label7.Text = "Total:"
+		'
+		'capacidadAloj
+		'
+		Me.capacidadAloj.AutoSize = True
+		Me.capacidadAloj.Location = New System.Drawing.Point(52, 19)
+		Me.capacidadAloj.Name = "capacidadAloj"
+		Me.capacidadAloj.Size = New System.Drawing.Size(0, 17)
+		Me.capacidadAloj.TabIndex = 5
+		'
 		'detallesAlojamiento
 		'
 		Me.detallesAlojamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
@@ -185,14 +232,6 @@ Partial Class DetallesReserva
 		Me.detallesAlojamiento.TabIndex = 6
 		Me.detallesAlojamiento.Text = "Detalles del alojamiento"
 		Me.detallesAlojamiento.UseVisualStyleBackColor = False
-		'
-		'capacidadAloj
-		'
-		Me.capacidadAloj.AutoSize = True
-		Me.capacidadAloj.Location = New System.Drawing.Point(52, 19)
-		Me.capacidadAloj.Name = "capacidadAloj"
-		Me.capacidadAloj.Size = New System.Drawing.Size(0, 17)
-		Me.capacidadAloj.TabIndex = 5
 		'
 		'codigoAloj
 		'
@@ -340,45 +379,6 @@ Partial Class DetallesReserva
 		Me.numeroPersonas.Size = New System.Drawing.Size(58, 23)
 		Me.numeroPersonas.TabIndex = 23
 		'
-		'GroupBox1
-		'
-		Me.GroupBox1.Controls.Add(Me.capacidadDisponible)
-		Me.GroupBox1.Controls.Add(Me.Label11)
-		Me.GroupBox1.Controls.Add(Me.Label7)
-		Me.GroupBox1.Controls.Add(Me.capacidadAloj)
-		Me.GroupBox1.Location = New System.Drawing.Point(24, 120)
-		Me.GroupBox1.Name = "GroupBox1"
-		Me.GroupBox1.Size = New System.Drawing.Size(256, 46)
-		Me.GroupBox1.TabIndex = 7
-		Me.GroupBox1.TabStop = False
-		Me.GroupBox1.Text = "Capacidad:"
-		'
-		'Label7
-		'
-		Me.Label7.AutoSize = True
-		Me.Label7.Location = New System.Drawing.Point(6, 19)
-		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(40, 17)
-		Me.Label7.TabIndex = 0
-		Me.Label7.Text = "Total:"
-		'
-		'Label11
-		'
-		Me.Label11.AutoSize = True
-		Me.Label11.Location = New System.Drawing.Point(116, 19)
-		Me.Label11.Name = "Label11"
-		Me.Label11.Size = New System.Drawing.Size(73, 17)
-		Me.Label11.TabIndex = 24
-		Me.Label11.Text = "Disponible:"
-		'
-		'capacidadDisponible
-		'
-		Me.capacidadDisponible.AutoSize = True
-		Me.capacidadDisponible.Location = New System.Drawing.Point(195, 19)
-		Me.capacidadDisponible.Name = "capacidadDisponible"
-		Me.capacidadDisponible.Size = New System.Drawing.Size(0, 17)
-		Me.capacidadDisponible.TabIndex = 24
-		'
 		'DetallesReserva
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
@@ -408,9 +408,9 @@ Partial Class DetallesReserva
 		Me.datosUsuario.PerformLayout()
 		Me.datosAlojamiento.ResumeLayout(False)
 		Me.datosAlojamiento.PerformLayout()
-		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.GroupBox1.ResumeLayout(False)
 		Me.GroupBox1.PerformLayout()
+		CType(Me.numeroPersonas, System.ComponentModel.ISupportInitialize).EndInit()
 		Me.ResumeLayout(False)
 		Me.PerformLayout()
 
