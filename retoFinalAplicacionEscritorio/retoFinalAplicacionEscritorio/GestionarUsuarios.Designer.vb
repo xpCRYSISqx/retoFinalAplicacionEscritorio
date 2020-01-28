@@ -82,7 +82,7 @@ Partial Class GestionarUsuarios
 		'
 		'crearUsuario
 		'
-		Me.crearUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.crearUsuario.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.crearUsuario.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.crearUsuario.FlatAppearance.BorderSize = 0
 		Me.crearUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat

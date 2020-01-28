@@ -73,7 +73,7 @@ Partial Class DetallesAlojamiento
 		'
 		'cancelar
 		'
-		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cancelar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.cancelar.FlatAppearance.BorderSize = 0
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
@@ -481,7 +481,7 @@ Partial Class DetallesAlojamiento
 		'
 		'cargarImagen
 		'
-		Me.cargarImagen.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cargarImagen.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.cargarImagen.FlatAppearance.BorderSize = 0
 		Me.cargarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cargarImagen.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
@@ -495,7 +495,7 @@ Partial Class DetallesAlojamiento
 		'editar
 		'
 		Me.editar.AutoSize = True
-		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.editar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.editar.FlatAppearance.BorderSize = 0
 		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.editar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
@@ -508,7 +508,7 @@ Partial Class DetallesAlojamiento
 		'
 		'actualizar
 		'
-		Me.actualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.actualizar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.actualizar.Enabled = False
 		Me.actualizar.FlatAppearance.BorderSize = 0
 		Me.actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -530,7 +530,7 @@ Partial Class DetallesAlojamiento
 		'
 		'terminarEdicion
 		'
-		Me.terminarEdicion.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.terminarEdicion.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.terminarEdicion.Enabled = False
 		Me.terminarEdicion.FlatAppearance.BorderSize = 0
 		Me.terminarEdicion.FlatStyle = System.Windows.Forms.FlatStyle.Flat

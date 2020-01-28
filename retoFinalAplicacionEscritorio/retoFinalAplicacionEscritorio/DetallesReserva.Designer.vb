@@ -309,7 +309,7 @@ Partial Class DetallesReserva
 		'
 		'terminar
 		'
-		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.terminar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.terminar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.terminar.FlatAppearance.BorderSize = 0
 		Me.terminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -323,7 +323,7 @@ Partial Class DetallesReserva
 		'
 		'actualiza
 		'
-		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.actualiza.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.actualiza.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.actualiza.Enabled = False
 		Me.actualiza.FlatAppearance.BorderSize = 0
@@ -337,7 +337,7 @@ Partial Class DetallesReserva
 		'
 		'editar
 		'
-		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.editar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.editar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.editar.FlatAppearance.BorderSize = 0
 		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -350,7 +350,7 @@ Partial Class DetallesReserva
 		'
 		'atras
 		'
-		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.atras.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.atras.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.atras.FlatAppearance.BorderSize = 0
 		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat

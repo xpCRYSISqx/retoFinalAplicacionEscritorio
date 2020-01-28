@@ -170,7 +170,7 @@ Partial Class CrearUsuario
 		'
 		'cancelar
 		'
-		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cancelar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.cancelar.FlatAppearance.BorderSize = 0
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -184,7 +184,7 @@ Partial Class CrearUsuario
 		'
 		'aceptar
 		'
-		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.aceptar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.aceptar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.aceptar.FlatAppearance.BorderSize = 0
 		Me.aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat

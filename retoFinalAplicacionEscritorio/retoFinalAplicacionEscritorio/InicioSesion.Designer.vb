@@ -85,7 +85,7 @@ Partial Class InicioSesion
 		'
 		'iniciarSesion
 		'
-		Me.iniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.iniciarSesion.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.iniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.iniciarSesion.FlatAppearance.BorderSize = 0
 		Me.iniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -99,7 +99,7 @@ Partial Class InicioSesion
 		'
 		'cancelar
 		'
-		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cancelar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.cancelar.FlatAppearance.BorderSize = 0
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat

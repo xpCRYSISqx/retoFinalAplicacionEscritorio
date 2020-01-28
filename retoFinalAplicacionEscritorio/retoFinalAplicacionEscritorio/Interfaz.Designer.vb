@@ -130,7 +130,7 @@ Partial Class Interfaz
 		Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
 		Me.PictureBox2.Location = New System.Drawing.Point(12, 12)
 		Me.PictureBox2.Name = "PictureBox2"
-		Me.PictureBox2.Size = New System.Drawing.Size(70, 70)
+		Me.PictureBox2.Size = New System.Drawing.Size(60, 60)
 		Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 		Me.PictureBox2.TabIndex = 0
 		Me.PictureBox2.TabStop = False
@@ -184,6 +184,7 @@ Partial Class Interfaz
 		'
 		'Contenedor
 		'
+		Me.Contenedor.BackColor = System.Drawing.SystemColors.ButtonShadow
 		Me.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.Contenedor.Location = New System.Drawing.Point(250, 75)
 		Me.Contenedor.Name = "Contenedor"

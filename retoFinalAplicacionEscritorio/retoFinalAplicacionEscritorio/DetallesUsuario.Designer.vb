@@ -177,7 +177,7 @@ Partial Class DetallesUsuario
 		'
 		'atras
 		'
-		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.atras.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.atras.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.atras.FlatAppearance.BorderSize = 0
 		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -203,7 +203,7 @@ Partial Class DetallesUsuario
 		'
 		'editar
 		'
-		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.editar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.editar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.editar.FlatAppearance.BorderSize = 0
 		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -216,7 +216,7 @@ Partial Class DetallesUsuario
 		'
 		'actualiza
 		'
-		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.actualiza.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.actualiza.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.actualiza.Enabled = False
 		Me.actualiza.FlatAppearance.BorderSize = 0
@@ -230,7 +230,7 @@ Partial Class DetallesUsuario
 		'
 		'terminar
 		'
-		Me.terminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.terminar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.terminar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.terminar.FlatAppearance.BorderSize = 0
 		Me.terminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -316,7 +316,7 @@ Partial Class DetallesUsuario
 		'
 		'cancelar
 		'
-		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.cancelar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.cancelar.FlatAppearance.BorderSize = 0
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -329,7 +329,7 @@ Partial Class DetallesUsuario
 		'
 		'aceptar
 		'
-		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(221, Byte), Integer))
+		Me.aceptar.BackColor = System.Drawing.Color.LightSkyBlue
 		Me.aceptar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.aceptar.Enabled = False
 		Me.aceptar.FlatAppearance.BorderSize = 0

@@ -24,8 +24,10 @@ Public Class Interfaz
 	'Metodo para plegar y desplegar el menu lateral
 	Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles DesplegarMenu.Click
 		If MenuVertical.Width = 250 Then
-			MenuVertical.Width = 95
+			PictureBox2.Location = New Point(0, 12)
+			MenuVertical.Width = 60
 		Else
+			PictureBox2.Location = New Point(12, 12)
 			MenuVertical.Width = 250
 		End If
 	End Sub
@@ -50,7 +52,7 @@ Public Class Interfaz
 		formHijo = form
 		formHijo.TopLevel = False
 		formHijo.Dock = DockStyle.Fill
-		formHijo.Anchor = AnchorStyles.Top.Right
+		formHijo.Anchor = AnchorStyles.Right
 		Me.Contenedor.Controls.Add(formHijo)
 		Me.Contenedor.Tag = formHijo
 		formHijo.Show()
