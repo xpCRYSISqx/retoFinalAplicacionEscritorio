@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrearReserva.Designer.vb">
+      <DependentUpon>CrearReserva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrearReserva.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CrearUsuario.Designer.vb">
       <DependentUpon>CrearUsuario.vb</DependentUpon>
     </Compile>

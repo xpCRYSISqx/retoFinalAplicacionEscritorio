@@ -31,7 +31,6 @@ Public Class DetallesUsuario
 		Else
 			actNo.Checked = True
 		End If
-		DeshabilitarCampos()
 	End Sub
 
 	'Contructor del formulario
@@ -56,86 +55,46 @@ Public Class DetallesUsuario
 		Me.Close()
 	End Sub
 
-	'listener del boton de edtiar, el cual habilita la edición de los diferentes campos del usuario
-	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
-		HabilitarCampos()
-		terminar.Enabled = True
-		terminar.Visible = True
-		editar.Enabled = False
-		editar.Visible = False
-		actualiza.Enabled = False
-	End Sub
-
 	'Listener del boton actualizar, actualiza la informacion del usuario en la base de datos una vez terminada la edición
 	Private Sub Actualizar_Click(sender As Object, e As EventArgs) Handles actualiza.Click
-		Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
-		actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod.ToString
+		Dim respuesta As MsgBoxResult
+		respuesta = MsgBox("¿Esta segur@ de que quiere guardar los cambios en la informacion del usuario?", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information + MsgBoxStyle.DefaultButton2, "Actualización de usuario")
 
-		actualizacion.Parameters.AddWithValue("@nombre", nombre.Text)
-		actualizacion.Parameters.AddWithValue("@apellido", apellido.Text)
-		actualizacion.Parameters.AddWithValue("@telefono", telefono.Text)
-		actualizacion.Parameters.AddWithValue("@email", mail.Text)
-		If adminSi.Checked = True Then
-			actualizacion.Parameters.AddWithValue("@admin", 1)
-		Else
-			actualizacion.Parameters.AddWithValue("@admin", 0)
+		If respuesta = MsgBoxResult.Yes Then
+			Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.usuarios SET nombre = @nombre, apellido = @apellido, telefono = @telefono, email = @email, administrador = @admin, activo = @activo WHERE dni = @dni", conexion)
+			actualizacion.Parameters.Add("@dni", MySqlDbType.VarChar).Value = cod.ToString
+
+			actualizacion.Parameters.AddWithValue("@nombre", nombre.Text)
+			actualizacion.Parameters.AddWithValue("@apellido", apellido.Text)
+			actualizacion.Parameters.AddWithValue("@telefono", telefono.Text)
+			actualizacion.Parameters.AddWithValue("@email", mail.Text)
+			If adminSi.Checked = True Then
+				actualizacion.Parameters.AddWithValue("@admin", 1)
+			Else
+				actualizacion.Parameters.AddWithValue("@admin", 0)
+			End If
+			If actSi.Checked = True Then
+				actualizacion.Parameters.AddWithValue("@activo", "activo")
+			Else
+				actualizacion.Parameters.AddWithValue("@activo", "inactivo")
+			End If
+			Try
+				conexion.Open()
+				actualizacion.ExecuteNonQuery()
+				conexion.Close()
+			Catch ex As MySqlException
+				MessageBox.Show("Error al cargar los datos actualizados en la base de datos")
+			End Try
+			inter.AbrirFormulario(New GestionarUsuarios(inter))
+			Me.Close()
+		ElseIf respuesta = MsgBoxResult.Cancel Then
+			If TypeOf reserva Is DetallesReserva Then
+				inter.AbrirFormulario(reserva)
+			Else
+				inter.AbrirFormulario(New GestionarUsuarios(inter))
+			End If
+			Me.Close()
 		End If
-		If actSi.Checked = True Then
-			actualizacion.Parameters.AddWithValue("@activo", "activo")
-		Else
-			actualizacion.Parameters.AddWithValue("@activo", "inactivo")
-		End If
-		Try
-			conexion.Open()
-			actualizacion.ExecuteNonQuery()
-			conexion.Close()
-		Catch ex As MySqlException
-			MessageBox.Show("Error al cargar los datos actualizados en la base de datos")
-		End Try
-		inter.AbrirFormulario(New GestionarUsuarios(inter))
-		Me.Close()
-	End Sub
-
-	'Listener del boton terminar edición, vuelve a desabilitar los campos del usuario y habilita la posibilidad de actualizar la base de datos con los nuevos detalles
-	Private Sub Terminar_Click(sender As Object, e As EventArgs) Handles terminar.Click
-		DeshabilitarCampos()
-		terminar.Enabled = False
-		terminar.Visible = False
-		editar.Enabled = True
-		editar.Visible = True
-		actualiza.Enabled = True
-	End Sub
-
-	'Habilita los distintos campos del formulario
-	Private Sub HabilitarCampos()
-		nombre.ReadOnly = False
-		nombre.Cursor = Cursors.IBeam
-		apellido.ReadOnly = False
-		apellido.Cursor = Cursors.IBeam
-		mail.ReadOnly = False
-		mail.Cursor = Cursors.IBeam
-		telefono.ReadOnly = False
-		telefono.Cursor = Cursors.IBeam
-		admin.Enabled = True
-		admin.Cursor = Cursors.Default
-		activo.Enabled = True
-		activo.Cursor = Cursors.Default
-	End Sub
-
-	'Deshabilita los distintos campos del formulario
-	Private Sub DeshabilitarCampos()
-		nombre.ReadOnly = True
-		nombre.Cursor = Cursors.No
-		apellido.ReadOnly = True
-		apellido.Cursor = Cursors.No
-		mail.ReadOnly = True
-		mail.Cursor = Cursors.No
-		telefono.ReadOnly = True
-		telefono.Cursor = Cursors.No
-		admin.Enabled = False
-		admin.Cursor = Cursors.No
-		activo.Enabled = False
-		activo.Cursor = Cursors.No
 	End Sub
 
 	'Habilita el panel para cambiar la contraseña

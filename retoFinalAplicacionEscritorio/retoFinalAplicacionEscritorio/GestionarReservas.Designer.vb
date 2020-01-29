@@ -77,6 +77,7 @@ Partial Class GestionarReservas
 		'Button1
 		'
 		Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
+		Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.Button1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
@@ -91,6 +92,7 @@ Partial Class GestionarReservas
 		'editar
 		'
 		Me.editar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
+		Me.editar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.editar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.editar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)

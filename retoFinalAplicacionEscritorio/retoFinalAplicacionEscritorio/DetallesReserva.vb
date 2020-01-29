@@ -48,7 +48,6 @@ Public Class DetallesReserva
 		CargarCliente()
 		CargarAlojamiento()
 		ComprobarOcupacion()
-		DeshabilitarCampos()
 		AddHandler fechaEntrada.ValueChanged, AddressOf ComprobarOcupacion
 		AddHandler fechaSalida.ValueChanged, AddressOf ComprobarOcupacion
 	End Sub
@@ -117,40 +116,6 @@ Public Class DetallesReserva
 		inter.AbrirFormulario(New DetallesAlojamiento(nombreAloj.SelectedValue, inter, Me))
 	End Sub
 
-	Private Sub DeshabilitarCampos()
-		numeroPersonas.Enabled = False
-		dniUsu.Enabled = False
-		nombreAloj.Enabled = False
-		fechaEntrada.Enabled = False
-		fechaSalida.Enabled = False
-	End Sub
-
-	Private Sub HabilitarCampos()
-		numeroPersonas.Enabled = True
-		dniUsu.Enabled = True
-		nombreAloj.Enabled = True
-		fechaEntrada.Enabled = True
-		fechaSalida.Enabled = True
-	End Sub
-
-	Private Sub Terminar_Click(sender As Object, e As EventArgs) Handles terminar.Click
-		DeshabilitarCampos()
-		terminar.Enabled = False
-		terminar.Visible = False
-		editar.Enabled = True
-		editar.Visible = True
-		actualiza.Enabled = True
-	End Sub
-
-	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
-		HabilitarCampos()
-		editar.Enabled = False
-		editar.Visible = False
-		terminar.Enabled = True
-		terminar.Visible = True
-		actualiza.Enabled = False
-	End Sub
-
 	Private Sub Atras_Click(sender As Object, e As EventArgs) Handles atras.Click
 		inter.AbrirFormulario(New GestionarReservas(inter))
 		Me.Close()
@@ -160,29 +125,37 @@ Public Class DetallesReserva
 		If numeroPersonas.Value > Integer.Parse(capacidadDisponible.Text) Then
 			MsgBox("El numero de personas excede la capacidad del alojamiento", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
 		Else
-			Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.reservas SET dni = @dni, fecha_entrada = @entrada, fecha_salida = @salida, alojamiento = @alojamiento, personas = @personas WHERE id = @id", conexion)
-			actualizacion.Parameters.Add("@id", MySqlDbType.Int16).Value = Integer.Parse(codigoRes.Text)
+			Dim respuesta As MsgBoxResult
+			respuesta = MsgBox("¿Esta segur@ de que quiere guardar los cambios en la informacion de la reserva?", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information + MsgBoxStyle.DefaultButton2, "Actualización de reserva")
+			If respuesta = MsgBoxResult.Yes Then
+				Dim actualizacion As New MySqlCommand("UPDATE alojamientos_fac.reservas SET dni = @dni, fecha_entrada = @entrada, fecha_salida = @salida, alojamiento = @alojamiento, personas = @personas WHERE id = @id", conexion)
+				actualizacion.Parameters.Add("@id", MySqlDbType.Int16).Value = Integer.Parse(codigoRes.Text)
 
-			actualizacion.Parameters.AddWithValue("@dni", dniUsu.SelectedValue)
-			actualizacion.Parameters.AddWithValue("@entrada", fechaEntrada.Value.ToString("yyyy-MM-dd"))
-			actualizacion.Parameters.AddWithValue("@salida", fechaSalida.Value.ToString("yyyy-MM-dd"))
-			actualizacion.Parameters.AddWithValue("@alojamiento", codigoAloj.Text)
-			If tipo = "Casas Rurales" Or tipo = "Agroturismos" Then
-				actualizacion.Parameters.AddWithValue("@personas", Integer.Parse(capacidadAloj.Text))
-			Else
-				actualizacion.Parameters.AddWithValue("@personas", numeroPersonas.Value)
+				actualizacion.Parameters.AddWithValue("@dni", dniUsu.SelectedValue)
+				actualizacion.Parameters.AddWithValue("@entrada", fechaEntrada.Value.ToString("yyyy-MM-dd"))
+				actualizacion.Parameters.AddWithValue("@salida", fechaSalida.Value.ToString("yyyy-MM-dd"))
+				actualizacion.Parameters.AddWithValue("@alojamiento", codigoAloj.Text)
+				If tipo = "Casas Rurales" Or tipo = "Agroturismos" Then
+					actualizacion.Parameters.AddWithValue("@personas", Integer.Parse(capacidadAloj.Text))
+				Else
+					actualizacion.Parameters.AddWithValue("@personas", numeroPersonas.Value)
+				End If
+				Try
+					conexion.Open()
+					actualizacion.ExecuteNonQuery()
+					conexion.Close()
+				Catch ex As MySqlException
+					MsgBox("Error al cargar los datos actualizados en la base de datos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
+				End Try
+				inter.AbrirFormulario(New GestionarReservas(inter))
+				Me.Close()
+
+			ElseIf respuesta = MsgBoxResult.Cancel Then
+				inter.AbrirFormulario(New GestionarReservas(inter))
+				Me.Close()
 			End If
-			Try
-				conexion.Open()
-				actualizacion.ExecuteNonQuery()
-				conexion.Close()
-			Catch ex As MySqlException
-				MsgBox("Error al cargar los datos actualizados en la base de datos", MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Critical, "Error")
-			End Try
-			inter.AbrirFormulario(New GestionarReservas(inter))
-			Me.Close()
 		End If
-	End Sub
+    End Sub
 
 	Private Sub ComprobarOcupacion()
 		Dim comando As New MySqlCommand("SELECT SUM(`personas`) FROM alojamientos_fac.reservas WHERE alojamiento = @alojamiento AND ((fecha_entrada BETWEEN @fechaEntrada AND @fechaSalida) OR (fecha_salida BETWEEN @fechaEntrada AND @fechaSalida) OR (@fechaEntrada BETWEEN fecha_entrada AND fecha_salida) OR (@fechaSalida BETWEEN fecha_entrada AND fecha_salida))", conexion)

@@ -47,9 +47,7 @@ Partial Class DetallesReserva
 		Me.Label8 = New System.Windows.Forms.Label()
 		Me.Label9 = New System.Windows.Forms.Label()
 		Me.fechaSalida = New System.Windows.Forms.DateTimePicker()
-		Me.terminar = New System.Windows.Forms.Button()
 		Me.actualiza = New System.Windows.Forms.Button()
-		Me.editar = New System.Windows.Forms.Button()
 		Me.atras = New System.Windows.Forms.Button()
 		Me.Label10 = New System.Windows.Forms.Label()
 		Me.numeroPersonas = New System.Windows.Forms.NumericUpDown()
@@ -62,20 +60,22 @@ Partial Class DetallesReserva
 		'Label1
 		'
 		Me.Label1.AutoSize = True
-		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.Location = New System.Drawing.Point(123, 100)
+		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.Label1.Location = New System.Drawing.Point(123, 99)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(163, 20)
+		Me.Label1.Size = New System.Drawing.Size(182, 22)
 		Me.Label1.TabIndex = 0
 		Me.Label1.Text = "Código de la reserva:"
 		'
 		'codigoRes
 		'
 		Me.codigoRes.AutoSize = True
-		Me.codigoRes.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
-		Me.codigoRes.Location = New System.Drawing.Point(292, 100)
+		Me.codigoRes.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.codigoRes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.codigoRes.Location = New System.Drawing.Point(311, 103)
 		Me.codigoRes.Name = "codigoRes"
-		Me.codigoRes.Size = New System.Drawing.Size(0, 20)
+		Me.codigoRes.Size = New System.Drawing.Size(0, 22)
 		Me.codigoRes.TabIndex = 1
 		'
 		'datosUsuario
@@ -87,6 +87,8 @@ Partial Class DetallesReserva
 		Me.datosUsuario.Controls.Add(Me.Label4)
 		Me.datosUsuario.Controls.Add(Me.dniUsu)
 		Me.datosUsuario.Controls.Add(Me.Label2)
+		Me.datosUsuario.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.datosUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.datosUsuario.Location = New System.Drawing.Point(127, 140)
 		Me.datosUsuario.Name = "datosUsuario"
 		Me.datosUsuario.Size = New System.Drawing.Size(302, 230)
@@ -96,10 +98,11 @@ Partial Class DetallesReserva
 		'
 		'detallesCliente
 		'
-		Me.detallesCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
+		Me.detallesCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.detallesCliente.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.detallesCliente.FlatAppearance.BorderSize = 0
+		Me.detallesCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
 		Me.detallesCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.detallesCliente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.detallesCliente.Location = New System.Drawing.Point(24, 172)
 		Me.detallesCliente.Name = "detallesCliente"
 		Me.detallesCliente.Size = New System.Drawing.Size(256, 34)
@@ -118,9 +121,10 @@ Partial Class DetallesReserva
 		'Label5
 		'
 		Me.Label5.AutoSize = True
+		Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label5.Location = New System.Drawing.Point(21, 127)
 		Me.Label5.Name = "Label5"
-		Me.Label5.Size = New System.Drawing.Size(59, 17)
+		Me.Label5.Size = New System.Drawing.Size(63, 17)
 		Me.Label5.TabIndex = 4
 		Me.Label5.Text = "Apellido:"
 		'
@@ -135,14 +139,18 @@ Partial Class DetallesReserva
 		'Label4
 		'
 		Me.Label4.AutoSize = True
+		Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label4.Location = New System.Drawing.Point(21, 90)
 		Me.Label4.Name = "Label4"
-		Me.Label4.Size = New System.Drawing.Size(60, 17)
+		Me.Label4.Size = New System.Drawing.Size(61, 17)
 		Me.Label4.TabIndex = 2
 		Me.Label4.Text = "Nombre:"
 		'
 		'dniUsu
 		'
+		Me.dniUsu.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.dniUsu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.dniUsu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.dniUsu.FormattingEnabled = True
 		Me.dniUsu.Location = New System.Drawing.Point(24, 52)
 		Me.dniUsu.Name = "dniUsu"
@@ -152,9 +160,10 @@ Partial Class DetallesReserva
 		'Label2
 		'
 		Me.Label2.AutoSize = True
+		Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label2.Location = New System.Drawing.Point(21, 32)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(34, 17)
+		Me.Label2.Size = New System.Drawing.Size(35, 17)
 		Me.Label2.TabIndex = 0
 		Me.Label2.Text = "DNI:"
 		'
@@ -166,6 +175,8 @@ Partial Class DetallesReserva
 		Me.datosAlojamiento.Controls.Add(Me.Label6)
 		Me.datosAlojamiento.Controls.Add(Me.nombreAloj)
 		Me.datosAlojamiento.Controls.Add(Me.Label3)
+		Me.datosAlojamiento.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.datosAlojamiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.datosAlojamiento.Location = New System.Drawing.Point(525, 140)
 		Me.datosAlojamiento.Name = "datosAlojamiento"
 		Me.datosAlojamiento.Size = New System.Drawing.Size(302, 230)
@@ -179,6 +190,7 @@ Partial Class DetallesReserva
 		Me.GroupBox1.Controls.Add(Me.Label11)
 		Me.GroupBox1.Controls.Add(Me.Label7)
 		Me.GroupBox1.Controls.Add(Me.capacidadAloj)
+		Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.GroupBox1.Location = New System.Drawing.Point(24, 120)
 		Me.GroupBox1.Name = "GroupBox1"
 		Me.GroupBox1.Size = New System.Drawing.Size(256, 46)
@@ -197,18 +209,20 @@ Partial Class DetallesReserva
 		'Label11
 		'
 		Me.Label11.AutoSize = True
+		Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label11.Location = New System.Drawing.Point(116, 19)
 		Me.Label11.Name = "Label11"
-		Me.Label11.Size = New System.Drawing.Size(73, 17)
+		Me.Label11.Size = New System.Drawing.Size(78, 17)
 		Me.Label11.TabIndex = 24
 		Me.Label11.Text = "Disponible:"
 		'
 		'Label7
 		'
 		Me.Label7.AutoSize = True
+		Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label7.Location = New System.Drawing.Point(6, 19)
 		Me.Label7.Name = "Label7"
-		Me.Label7.Size = New System.Drawing.Size(40, 17)
+		Me.Label7.Size = New System.Drawing.Size(43, 17)
 		Me.Label7.TabIndex = 0
 		Me.Label7.Text = "Total:"
 		'
@@ -222,10 +236,11 @@ Partial Class DetallesReserva
 		'
 		'detallesAlojamiento
 		'
-		Me.detallesAlojamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
+		Me.detallesAlojamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.detallesAlojamiento.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.detallesAlojamiento.FlatAppearance.BorderSize = 0
+		Me.detallesAlojamiento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
 		Me.detallesAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.detallesAlojamiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.detallesAlojamiento.Location = New System.Drawing.Point(24, 172)
 		Me.detallesAlojamiento.Name = "detallesAlojamiento"
 		Me.detallesAlojamiento.Size = New System.Drawing.Size(256, 34)
@@ -244,14 +259,18 @@ Partial Class DetallesReserva
 		'Label6
 		'
 		Me.Label6.AutoSize = True
+		Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label6.Location = New System.Drawing.Point(21, 90)
 		Me.Label6.Name = "Label6"
-		Me.Label6.Size = New System.Drawing.Size(54, 17)
+		Me.Label6.Size = New System.Drawing.Size(55, 17)
 		Me.Label6.TabIndex = 2
 		Me.Label6.Text = "Código:"
 		'
 		'nombreAloj
 		'
+		Me.nombreAloj.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.nombreAloj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.nombreAloj.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.nombreAloj.FormattingEnabled = True
 		Me.nombreAloj.Location = New System.Drawing.Point(24, 52)
 		Me.nombreAloj.Name = "nombreAloj"
@@ -261,16 +280,20 @@ Partial Class DetallesReserva
 		'Label3
 		'
 		Me.Label3.AutoSize = True
+		Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label3.Location = New System.Drawing.Point(21, 32)
 		Me.Label3.Name = "Label3"
-		Me.Label3.Size = New System.Drawing.Size(60, 17)
+		Me.Label3.Size = New System.Drawing.Size(61, 17)
 		Me.Label3.TabIndex = 0
 		Me.Label3.Text = "Nombre:"
 		'
 		'fechaEntrada
 		'
+		Me.fechaEntrada.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.fechaEntrada.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
 		Me.fechaEntrada.Cursor = System.Windows.Forms.Cursors.Default
 		Me.fechaEntrada.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+		Me.fechaEntrada.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.fechaEntrada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.fechaEntrada.Location = New System.Drawing.Point(187, 406)
 		Me.fechaEntrada.Name = "fechaEntrada"
@@ -280,100 +303,85 @@ Partial Class DetallesReserva
 		'Label8
 		'
 		Me.Label8.AutoSize = True
-		Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+		Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label8.Location = New System.Drawing.Point(213, 383)
 		Me.Label8.Name = "Label8"
-		Me.Label8.Size = New System.Drawing.Size(138, 20)
+		Me.Label8.Size = New System.Drawing.Size(116, 17)
 		Me.Label8.TabIndex = 5
 		Me.Label8.Text = "Fecha de entrada:"
 		'
 		'Label9
 		'
 		Me.Label9.AutoSize = True
-		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
+		Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label9.Location = New System.Drawing.Point(615, 383)
 		Me.Label9.Name = "Label9"
-		Me.Label9.Size = New System.Drawing.Size(123, 20)
+		Me.Label9.Size = New System.Drawing.Size(105, 17)
 		Me.Label9.TabIndex = 6
 		Me.Label9.Text = "Fecha de salida:"
 		'
 		'fechaSalida
 		'
+		Me.fechaSalida.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
 		Me.fechaSalida.Cursor = System.Windows.Forms.Cursors.Default
 		Me.fechaSalida.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+		Me.fechaSalida.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.fechaSalida.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
 		Me.fechaSalida.Location = New System.Drawing.Point(580, 406)
 		Me.fechaSalida.Name = "fechaSalida"
 		Me.fechaSalida.Size = New System.Drawing.Size(192, 23)
 		Me.fechaSalida.TabIndex = 7
 		'
-		'terminar
-		'
-		Me.terminar.BackColor = System.Drawing.Color.LightSkyBlue
-		Me.terminar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.terminar.FlatAppearance.BorderSize = 0
-		Me.terminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.terminar.Location = New System.Drawing.Point(418, 532)
-		Me.terminar.Name = "terminar"
-		Me.terminar.Size = New System.Drawing.Size(116, 30)
-		Me.terminar.TabIndex = 21
-		Me.terminar.Text = "Terminar edición"
-		Me.terminar.UseVisualStyleBackColor = False
-		Me.terminar.Visible = False
-		'
 		'actualiza
 		'
-		Me.actualiza.BackColor = System.Drawing.Color.LightSkyBlue
+		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.actualiza.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.actualiza.Enabled = False
-		Me.actualiza.FlatAppearance.BorderSize = 0
+		Me.actualiza.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.actualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.actualiza.Location = New System.Drawing.Point(812, 532)
+		Me.actualiza.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.actualiza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.actualiza.Location = New System.Drawing.Point(801, 532)
 		Me.actualiza.Name = "actualiza"
-		Me.actualiza.Size = New System.Drawing.Size(75, 30)
+		Me.actualiza.Size = New System.Drawing.Size(86, 30)
 		Me.actualiza.TabIndex = 20
-		Me.actualiza.Text = "Actualizar"
+		Me.actualiza.Text = "Guardar"
 		Me.actualiza.UseVisualStyleBackColor = False
-		'
-		'editar
-		'
-		Me.editar.BackColor = System.Drawing.Color.LightSkyBlue
-		Me.editar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.editar.FlatAppearance.BorderSize = 0
-		Me.editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.editar.Location = New System.Drawing.Point(436, 532)
-		Me.editar.Name = "editar"
-		Me.editar.Size = New System.Drawing.Size(75, 30)
-		Me.editar.TabIndex = 19
-		Me.editar.Text = "Editar"
-		Me.editar.UseVisualStyleBackColor = False
 		'
 		'atras
 		'
-		Me.atras.BackColor = System.Drawing.Color.LightSkyBlue
+		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.atras.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.atras.FlatAppearance.BorderSize = 0
+		Me.atras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.atras.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.atras.Location = New System.Drawing.Point(63, 532)
 		Me.atras.Name = "atras"
-		Me.atras.Size = New System.Drawing.Size(75, 30)
+		Me.atras.Size = New System.Drawing.Size(86, 30)
 		Me.atras.TabIndex = 18
-		Me.atras.Text = "Atras"
+		Me.atras.Text = "Cancelar"
 		Me.atras.UseVisualStyleBackColor = False
 		'
 		'Label10
 		'
 		Me.Label10.AutoSize = True
-		Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!)
-		Me.Label10.Location = New System.Drawing.Point(521, 100)
+		Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.Label10.Location = New System.Drawing.Point(521, 99)
 		Me.Label10.Name = "Label10"
-		Me.Label10.Size = New System.Drawing.Size(78, 20)
+		Me.Label10.Size = New System.Drawing.Size(88, 22)
 		Me.Label10.TabIndex = 22
 		Me.Label10.Text = "Personas:"
 		'
 		'numeroPersonas
 		'
-		Me.numeroPersonas.Location = New System.Drawing.Point(605, 101)
+		Me.numeroPersonas.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.numeroPersonas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.numeroPersonas.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.numeroPersonas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.numeroPersonas.Location = New System.Drawing.Point(615, 98)
 		Me.numeroPersonas.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
 		Me.numeroPersonas.Name = "numeroPersonas"
 		Me.numeroPersonas.Size = New System.Drawing.Size(58, 23)
@@ -383,12 +391,11 @@ Partial Class DetallesReserva
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+		Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.ClientSize = New System.Drawing.Size(950, 625)
 		Me.Controls.Add(Me.numeroPersonas)
 		Me.Controls.Add(Me.Label10)
-		Me.Controls.Add(Me.terminar)
 		Me.Controls.Add(Me.actualiza)
-		Me.Controls.Add(Me.editar)
 		Me.Controls.Add(Me.atras)
 		Me.Controls.Add(Me.fechaSalida)
 		Me.Controls.Add(Me.Label9)
@@ -437,9 +444,7 @@ Partial Class DetallesReserva
 	Friend WithEvents Label8 As Label
 	Friend WithEvents Label9 As Label
 	Friend WithEvents fechaSalida As DateTimePicker
-	Friend WithEvents terminar As Button
 	Friend WithEvents actualiza As Button
-	Friend WithEvents editar As Button
 	Friend WithEvents atras As Button
 	Friend WithEvents Label10 As Label
 	Friend WithEvents numeroPersonas As NumericUpDown
