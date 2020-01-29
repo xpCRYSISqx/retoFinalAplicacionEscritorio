@@ -149,6 +149,8 @@ Partial Class DetallesReserva
 		'dniUsu
 		'
 		Me.dniUsu.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.dniUsu.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.dniUsu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.dniUsu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.dniUsu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.dniUsu.FormattingEnabled = True
@@ -269,6 +271,8 @@ Partial Class DetallesReserva
 		'nombreAloj
 		'
 		Me.nombreAloj.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.nombreAloj.Cursor = System.Windows.Forms.Cursors.Hand
+		Me.nombreAloj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
 		Me.nombreAloj.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.nombreAloj.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.nombreAloj.FormattingEnabled = True
@@ -383,9 +387,11 @@ Partial Class DetallesReserva
 		Me.numeroPersonas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.numeroPersonas.Location = New System.Drawing.Point(615, 98)
 		Me.numeroPersonas.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+		Me.numeroPersonas.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
 		Me.numeroPersonas.Name = "numeroPersonas"
 		Me.numeroPersonas.Size = New System.Drawing.Size(58, 23)
 		Me.numeroPersonas.TabIndex = 23
+		Me.numeroPersonas.Value = New Decimal(New Integer() {1, 0, 0, 0})
 		'
 		'DetallesReserva
 		'

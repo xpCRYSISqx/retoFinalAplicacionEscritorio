@@ -41,20 +41,27 @@ Partial Class InicioSesion
 		'
 		'email
 		'
+		Me.email.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
 		Me.email.Cursor = System.Windows.Forms.Cursors.IBeam
-		Me.email.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.email.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.email.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.email.Location = New System.Drawing.Point(51, 123)
 		Me.email.Name = "email"
-		Me.email.Size = New System.Drawing.Size(276, 25)
+		Me.email.Size = New System.Drawing.Size(276, 23)
 		Me.email.TabIndex = 0
 		'
 		'contrasena
 		'
 		Me.contrasena.AccessibleDescription = ""
-		Me.contrasena.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+		Me.contrasena.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(98, Byte), Integer))
+		Me.contrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+		Me.contrasena.Cursor = System.Windows.Forms.Cursors.IBeam
+		Me.contrasena.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.contrasena.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.contrasena.Location = New System.Drawing.Point(51, 195)
 		Me.contrasena.Name = "contrasena"
-		Me.contrasena.Size = New System.Drawing.Size(276, 25)
+		Me.contrasena.Size = New System.Drawing.Size(276, 23)
 		Me.contrasena.TabIndex = 1
 		Me.contrasena.Tag = ""
 		Me.contrasena.UseSystemPasswordChar = True
@@ -63,11 +70,11 @@ Partial Class InicioSesion
 		'
 		Me.Label1.AutoSize = True
 		Me.Label1.BackColor = System.Drawing.Color.Transparent
-		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label1.Location = New System.Drawing.Point(47, 101)
 		Me.Label1.Name = "Label1"
-		Me.Label1.Size = New System.Drawing.Size(54, 19)
+		Me.Label1.Size = New System.Drawing.Size(52, 17)
 		Me.Label1.TabIndex = 2
 		Me.Label1.Text = "Correo:"
 		'
@@ -75,38 +82,40 @@ Partial Class InicioSesion
 		'
 		Me.Label2.AutoSize = True
 		Me.Label2.BackColor = System.Drawing.Color.Transparent
-		Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-		Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
+		Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.Label2.Location = New System.Drawing.Point(47, 173)
 		Me.Label2.Name = "Label2"
-		Me.Label2.Size = New System.Drawing.Size(82, 19)
+		Me.Label2.Size = New System.Drawing.Size(80, 17)
 		Me.Label2.TabIndex = 3
 		Me.Label2.Text = "Contraseña:"
 		'
 		'iniciarSesion
 		'
-		Me.iniciarSesion.BackColor = System.Drawing.Color.LightSkyBlue
+		Me.iniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.iniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.iniciarSesion.FlatAppearance.BorderSize = 0
+		Me.iniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.iniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.iniciarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
-		Me.iniciarSesion.Location = New System.Drawing.Point(230, 278)
+		Me.iniciarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.iniciarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
+		Me.iniciarSesion.Location = New System.Drawing.Point(219, 278)
 		Me.iniciarSesion.Name = "iniciarSesion"
-		Me.iniciarSesion.Size = New System.Drawing.Size(97, 31)
+		Me.iniciarSesion.Size = New System.Drawing.Size(108, 31)
 		Me.iniciarSesion.TabIndex = 4
-		Me.iniciarSesion.Text = "Iniciar Sesion"
+		Me.iniciarSesion.Text = "Iniciar Sesión"
 		Me.iniciarSesion.UseVisualStyleBackColor = False
 		'
 		'cancelar
 		'
-		Me.cancelar.BackColor = System.Drawing.Color.LightSkyBlue
+		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.cancelar.FlatAppearance.BorderSize = 0
+		Me.cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!)
+		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
+		Me.cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.cancelar.Location = New System.Drawing.Point(51, 278)
 		Me.cancelar.Name = "cancelar"
-		Me.cancelar.Size = New System.Drawing.Size(97, 31)
+		Me.cancelar.Size = New System.Drawing.Size(108, 31)
 		Me.cancelar.TabIndex = 5
 		Me.cancelar.Text = "Cancelar"
 		Me.cancelar.UseVisualStyleBackColor = False
@@ -161,7 +170,7 @@ Partial Class InicioSesion
 		'
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.BackColor = System.Drawing.SystemColors.Control
+		Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.ClientSize = New System.Drawing.Size(378, 366)
 		Me.Controls.Add(Me.Cabecera)
 		Me.Controls.Add(Me.cancelar)

@@ -8,8 +8,9 @@ Public Class DetallesReserva
 	Dim dni As String
 	Dim codigo As String
 	Dim tipo As String
+	Dim usuario As GestionarUsuarios
 
-	Public Sub New(ByVal codigo As Integer, ByRef form As Interfaz)
+	Public Sub New(ByVal codigo As Integer, ByRef form As Interfaz, ByRef form2 As GestionarUsuarios)
 
 		' Esta llamada es exigida por el diseñador.
 		InitializeComponent()
@@ -17,6 +18,7 @@ Public Class DetallesReserva
 		' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 		inter = form
 		cod = codigo
+		usuario = form2
 	End Sub
 
 	Private Sub DetallesReserva_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -117,9 +119,13 @@ Public Class DetallesReserva
 	End Sub
 
 	Private Sub Atras_Click(sender As Object, e As EventArgs) Handles atras.Click
-		inter.AbrirFormulario(New GestionarReservas(inter))
+		If TypeOf usuario Is GestionarUsuarios Then
+			inter.AbrirFormulario(New GestionarUsuarios(inter))
+		Else
+			inter.AbrirFormulario(New GestionarReservas(inter))
+		End If
 		Me.Close()
-	End Sub
+    End Sub
 
 	Private Sub Actualiza_Click(sender As Object, e As EventArgs) Handles actualiza.Click
 		If numeroPersonas.Value > Integer.Parse(capacidadDisponible.Text) Then
@@ -151,7 +157,11 @@ Public Class DetallesReserva
 				Me.Close()
 
 			ElseIf respuesta = MsgBoxResult.Cancel Then
-				inter.AbrirFormulario(New GestionarReservas(inter))
+				If TypeOf usuario Is GestionarUsuarios Then
+					inter.AbrirFormulario(New GestionarUsuarios(inter))
+				Else
+					inter.AbrirFormulario(New GestionarReservas(inter))
+				End If
 				Me.Close()
 			End If
 		End If

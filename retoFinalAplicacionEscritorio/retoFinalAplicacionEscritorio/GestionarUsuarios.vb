@@ -50,4 +50,11 @@ Public Class GestionarUsuarios
 
 		listaReservas.DataSource = tabla
 	End Sub
+
+	Private Sub ListaReservas_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaReservas.CellDoubleClick
+		If e.RowIndex <> -1 Then
+			inter.AbrirFormulario(New DetallesReserva(listaReservas.Rows(e.RowIndex).Cells(0).Value, inter, Me))
+			Me.Close()
+		End If
+	End Sub
 End Class

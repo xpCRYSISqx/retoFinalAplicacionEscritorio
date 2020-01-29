@@ -22,14 +22,14 @@ Public Class GestionarReservas
 
 	Private Sub ListaReservas_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles listaReservas.CellDoubleClick
 		If e.RowIndex <> -1 Then
-			inter.AbrirFormulario(New DetallesReserva(listaReservas.Rows(e.RowIndex).Cells(0).Value, inter))
+			inter.AbrirFormulario(New DetallesReserva(listaReservas.Rows(e.RowIndex).Cells(0).Value, inter, Nothing))
 			Me.Close()
 		End If
 	End Sub
 
 	Private Sub Editar_Click(sender As Object, e As EventArgs) Handles editar.Click
 		If listaReservas.CurrentRow.Cells(0).Value >= 1 Then
-			inter.AbrirFormulario(New DetallesReserva(listaReservas.CurrentRow.Cells(0).Value, inter))
+			inter.AbrirFormulario(New DetallesReserva(listaReservas.CurrentRow.Cells(0).Value, inter, Nothing))
 			Me.Close()
 		End If
 	End Sub

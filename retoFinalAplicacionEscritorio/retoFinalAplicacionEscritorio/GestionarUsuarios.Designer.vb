@@ -93,7 +93,7 @@ Partial Class GestionarUsuarios
 		DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.listaReservas.RowsDefaultCellStyle = DataGridViewCellStyle4
 		Me.listaReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-		Me.listaReservas.Size = New System.Drawing.Size(725, 210)
+		Me.listaReservas.Size = New System.Drawing.Size(725, 280)
 		Me.listaReservas.TabIndex = 3
 		'
 		'listaUsuarios
