@@ -99,7 +99,7 @@ Public Class CrearUsuario
 	Private Sub Mail_Enter(sender As Object, e As EventArgs) Handles mail.Enter
 		If mail.Text = "ejemplo@ejemplo.com" Then
 			mail.Text = ""
-			mail.ForeColor = Color.Black
+			mail.ForeColor = Color.FromArgb(230, 230, 230)
 		End If
 	End Sub
 
