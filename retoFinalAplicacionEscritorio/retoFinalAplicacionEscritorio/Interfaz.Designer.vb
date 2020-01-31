@@ -44,7 +44,7 @@ Partial Class Interfaz
 		'
 		'MenuVertical
 		'
-		Me.MenuVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(136, Byte), Integer))
+		Me.MenuVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(92, Byte), Integer))
 		Me.MenuVertical.Controls.Add(Me.CerrarSesion)
 		Me.MenuVertical.Controls.Add(Me.Alojamientos)
 		Me.MenuVertical.Controls.Add(Me.Reservas)
@@ -58,6 +58,7 @@ Partial Class Interfaz
 		'
 		'CerrarSesion
 		'
+		Me.CerrarSesion.BackColor = System.Drawing.Color.Transparent
 		Me.CerrarSesion.FlatAppearance.BorderSize = 0
 		Me.CerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(24, Byte), Integer))
 		Me.CerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -71,10 +72,11 @@ Partial Class Interfaz
 		Me.CerrarSesion.TabIndex = 4
 		Me.CerrarSesion.Text = "Cerrar Sesión"
 		Me.CerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.CerrarSesion.UseVisualStyleBackColor = True
+		Me.CerrarSesion.UseVisualStyleBackColor = False
 		'
 		'Alojamientos
 		'
+		Me.Alojamientos.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(92, Byte), Integer))
 		Me.Alojamientos.FlatAppearance.BorderSize = 0
 		Me.Alojamientos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(48, Byte), Integer))
 		Me.Alojamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -88,10 +90,11 @@ Partial Class Interfaz
 		Me.Alojamientos.TabIndex = 3
 		Me.Alojamientos.Text = "Alojamientos"
 		Me.Alojamientos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.Alojamientos.UseVisualStyleBackColor = True
+		Me.Alojamientos.UseVisualStyleBackColor = False
 		'
 		'Reservas
 		'
+		Me.Reservas.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(92, Byte), Integer))
 		Me.Reservas.FlatAppearance.BorderSize = 0
 		Me.Reservas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(48, Byte), Integer))
 		Me.Reservas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -105,11 +108,11 @@ Partial Class Interfaz
 		Me.Reservas.TabIndex = 2
 		Me.Reservas.Text = "Reservas"
 		Me.Reservas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-		Me.Reservas.UseVisualStyleBackColor = True
+		Me.Reservas.UseVisualStyleBackColor = False
 		'
 		'Usuarios
 		'
-		Me.Usuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(136, Byte), Integer))
+		Me.Usuarios.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(92, Byte), Integer))
 		Me.Usuarios.FlatAppearance.BorderSize = 0
 		Me.Usuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(48, Byte), Integer))
 		Me.Usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -137,7 +140,7 @@ Partial Class Interfaz
 		'
 		'Cabecera
 		'
-		Me.Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(175, Byte), Integer))
+		Me.Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.Cabecera.Controls.Add(Me.Minimizar)
 		Me.Cabecera.Controls.Add(Me.Cerrar)
 		Me.Cabecera.Controls.Add(Me.DesplegarMenu)
@@ -150,6 +153,7 @@ Partial Class Interfaz
 		'Minimizar
 		'
 		Me.Minimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+		Me.Minimizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.Minimizar.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.Minimizar.Image = CType(resources.GetObject("Minimizar.Image"), System.Drawing.Image)
 		Me.Minimizar.Location = New System.Drawing.Point(892, 3)

@@ -57,17 +57,17 @@ Public Class Interfaz
 		Me.Contenedor.Tag = formHijo
 		formHijo.Show()
 		If TypeOf formHijo Is GestionarUsuarios Or TypeOf formHijo Is CrearUsuario Or TypeOf formHijo Is DetallesUsuario Then
-			Usuarios.BackColor = Color.FromArgb(60, 179, 113)
-			Alojamientos.BackColor = Color.FromArgb(0, 134, 136)
-			Reservas.BackColor = Color.FromArgb(0, 134, 136)
+			Usuarios.BackColor = Color.FromArgb(248, 148, 6)
+			Alojamientos.BackColor = Color.FromArgb(0, 38, 92)
+			Reservas.BackColor = Color.FromArgb(0, 38, 92)
 		ElseIf TypeOf formHijo Is GestionarReservas Or TypeOf formHijo Is DetallesReserva Then
-			Reservas.BackColor = Color.FromArgb(60, 179, 113)
-			Alojamientos.BackColor = Color.FromArgb(0, 134, 136)
-			Usuarios.BackColor = Color.FromArgb(0, 134, 136)
+			Reservas.BackColor = Color.FromArgb(248, 148, 6)
+			Alojamientos.BackColor = Color.FromArgb(0, 38, 92)
+			Usuarios.BackColor = Color.FromArgb(0, 38, 92)
 		Else
-			Alojamientos.BackColor = Color.FromArgb(60, 179, 113)
-			Usuarios.BackColor = Color.FromArgb(0, 134, 136)
-			Reservas.BackColor = Color.FromArgb(0, 134, 136)
+			Alojamientos.BackColor = Color.FromArgb(248, 148, 6)
+			Usuarios.BackColor = Color.FromArgb(0, 38, 92)
+			Reservas.BackColor = Color.FromArgb(0, 38, 92)
 		End If
 	End Sub
 
