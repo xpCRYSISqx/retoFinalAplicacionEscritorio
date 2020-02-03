@@ -188,7 +188,7 @@ Partial Class Interfaz
 		'
 		'Contenedor
 		'
-		Me.Contenedor.BackColor = System.Drawing.SystemColors.ButtonShadow
+		Me.Contenedor.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill
 		Me.Contenedor.Location = New System.Drawing.Point(250, 75)
 		Me.Contenedor.Name = "Contenedor"

@@ -101,6 +101,7 @@ Partial Class DetallesReserva
 		Me.detallesCliente.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.detallesCliente.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.detallesCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
+		Me.detallesCliente.FlatAppearance.BorderSize = 2
 		Me.detallesCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.detallesCliente.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.detallesCliente.Location = New System.Drawing.Point(24, 172)
@@ -241,6 +242,7 @@ Partial Class DetallesReserva
 		Me.detallesAlojamiento.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.detallesAlojamiento.Cursor = System.Windows.Forms.Cursors.Hand
 		Me.detallesAlojamiento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(123, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(178, Byte), Integer))
+		Me.detallesAlojamiento.FlatAppearance.BorderSize = 2
 		Me.detallesAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.detallesAlojamiento.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
 		Me.detallesAlojamiento.Location = New System.Drawing.Point(24, 172)
@@ -342,7 +344,8 @@ Partial Class DetallesReserva
 		'
 		Me.actualiza.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.actualiza.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.actualiza.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.actualiza.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.actualiza.FlatAppearance.BorderSize = 2
 		Me.actualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.actualiza.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.actualiza.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
@@ -357,7 +360,8 @@ Partial Class DetallesReserva
 		'
 		Me.atras.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.atras.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.atras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.atras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.atras.FlatAppearance.BorderSize = 2
 		Me.atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.atras.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
 		Me.atras.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))

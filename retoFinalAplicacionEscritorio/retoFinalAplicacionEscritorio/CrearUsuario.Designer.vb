@@ -196,7 +196,8 @@ Partial Class CrearUsuario
 		'
 		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.cancelar.FlatAppearance.BorderSize = 2
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
 		Me.cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
@@ -211,7 +212,8 @@ Partial Class CrearUsuario
 		'
 		Me.aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.aceptar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.aceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.aceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.aceptar.FlatAppearance.BorderSize = 2
 		Me.aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.aceptar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
 		Me.aceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))

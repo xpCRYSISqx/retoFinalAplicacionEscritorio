@@ -100,7 +100,7 @@ Public Class Interfaz
 	End Sub
 
 	Private Sub Cerrar_MouseLeave(sender As Object, e As EventArgs) Handles Cerrar.MouseLeave
-		Cerrar.BackColor = Color.FromArgb(85, 174, 175)
+		Cerrar.BackColor = Color.FromArgb(0, 53, 128)
 	End Sub
 
 	Private Sub Minimizar_MouseEnter(sender As Object, e As EventArgs) Handles Minimizar.MouseEnter
@@ -108,6 +108,6 @@ Public Class Interfaz
 	End Sub
 
 	Private Sub Minimizar_MouseLeave(sender As Object, e As EventArgs) Handles Minimizar.MouseLeave
-		Minimizar.BackColor = Color.FromArgb(85, 174, 175)
+		Minimizar.BackColor = Color.FromArgb(0, 53, 128)
 	End Sub
 End Class

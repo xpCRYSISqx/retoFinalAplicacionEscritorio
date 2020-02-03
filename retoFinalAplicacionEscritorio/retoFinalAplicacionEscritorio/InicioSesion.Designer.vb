@@ -94,7 +94,8 @@ Partial Class InicioSesion
 		'
 		Me.iniciarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.iniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.iniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.iniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.iniciarSesion.FlatAppearance.BorderSize = 2
 		Me.iniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.iniciarSesion.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
 		Me.iniciarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
@@ -109,7 +110,8 @@ Partial Class InicioSesion
 		'
 		Me.cancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(71, Byte), Integer))
 		Me.cancelar.Cursor = System.Windows.Forms.Cursors.Hand
-		Me.cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+		Me.cancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(6, Byte), Integer))
+		Me.cancelar.FlatAppearance.BorderSize = 2
 		Me.cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
 		Me.cancelar.Font = New System.Drawing.Font("Microsoft YaHei", 9.0!, System.Drawing.FontStyle.Bold)
 		Me.cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
@@ -122,7 +124,7 @@ Partial Class InicioSesion
 		'
 		'Cabecera
 		'
-		Me.Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(175, Byte), Integer))
+		Me.Cabecera.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(128, Byte), Integer))
 		Me.Cabecera.Controls.Add(Me.PictureBox1)
 		Me.Cabecera.Controls.Add(Me.Minimizar)
 		Me.Cabecera.Controls.Add(Me.Cerrar)
