@@ -161,4 +161,9 @@ Public Class DetallesAlojamiento
 			Me.Close()
 		End If
 	End Sub
+
+    Private Sub reservar_Click(sender As Object, e As EventArgs) Handles reservar.Click
+        inter.AbrirFormulario(New CrearReserva(labelCodigo.Text, inter, Me))
+        Me.Close()
+    End Sub
 End Class

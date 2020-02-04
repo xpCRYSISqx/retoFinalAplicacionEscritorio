@@ -33,4 +33,9 @@ Public Class GestionarReservas
 			Me.Close()
 		End If
 	End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        inter.AbrirFormulario(New CrearReserva(Nothing, inter, Nothing))
+        Me.Close()
+    End Sub
 End Class
