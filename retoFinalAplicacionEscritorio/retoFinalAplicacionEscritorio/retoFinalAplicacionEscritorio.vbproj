@@ -155,6 +155,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrearReserva.resx">
+      <DependentUpon>CrearReserva.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearUsuario.resx">
       <DependentUpon>CrearUsuario.vb</DependentUpon>
     </EmbeddedResource>
